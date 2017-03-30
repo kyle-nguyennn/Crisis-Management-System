@@ -7,3 +7,10 @@ cirsis/__pycache__
 .DS_Store
 
 cirsis/.DS_Store
+
+crisis/__pycache__/
+
+__pycache__/
+
+*.py[cod]
+crisis/migrations/__pycache__

@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crisis.apps.CrisisConfig'
+    'crisis.apps.CrisisConfig',
+
+    # RESTful framework
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -119,3 +122,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+NEA_KEY = '781CF461BB6606AD80A87393DAFA402A7EA9AD290B3A9747'
