@@ -63,3 +63,6 @@ def index(request):
         print(sys.stderr, user.username)
         context = {'user': user}
     return render(request, 'crisis/index.html', context)
+
+def test(request):
+    return render(request, 'crisis/test.html', {})
