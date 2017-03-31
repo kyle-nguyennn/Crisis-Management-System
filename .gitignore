@@ -1,0 +1,9 @@
+.idea
+
+CMS/__pycache__
+
+cirsis/__pycache__
+
+.DS_Store
+
+cirsis/.DS_Store
