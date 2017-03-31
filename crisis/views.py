@@ -1,5 +1,6 @@
+import sys
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
 from .forms import UserForm
 
@@ -35,5 +36,30 @@ class UserFormView(View):
         return render(request, self.template_name, {'form': form})
 
 
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect('crisis:index')
+            else:
+                return render(request, 'crisis/login.html', {'error_message': 'Your account has been disabled'})
+        else:
+            return render(request, 'crisis/login.html', {'error_message:': 'Invalid login!!!'})
+    return render(request, 'crisis/login.html')
+
+def logout_user(request):
+    logout(request)
+    return render(request, 'crisis/login.html')
+
+
 def index(request):
-    return render(request, 'crisis/index.html', {})
+    context = {}
+    if request.user.is_authenticated():
+        user = request.user
+        print(sys.stderr, user.username)
+        context = {'user': user}
+    return render(request, 'crisis/index.html', context)

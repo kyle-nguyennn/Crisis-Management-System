@@ -2,4 +2,30 @@
 {% block title %}Home{% endblock %}
 {% block body %}
     <h1>hello world</h1>
+    {% if user.username %}
+        <h2>{{ user.username }}</h2>
+        <form class="form-horizontal" role="form" action="{% url 'crisis:logout_user' %}" method="post"
+              enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-success">Log out</button>
+                </div>
+            </div>
+        </form>
+    {% else %}
+        <form class="form-horizontal" role="form" action="{% url 'crisis:login_user' %}" method="get"
+              enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-success">Log in</button>
+                </div>
+            </div>
+        </form>
+    {% endif %}
+
+
+
+
 {% endblock %}
