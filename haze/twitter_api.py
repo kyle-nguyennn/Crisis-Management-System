@@ -12,6 +12,3 @@ def post_on_twitter(message):
                       access_token_key='848440381591011329-7jT0wZAmOMbgwkCpDDeGzyWdvMFrdxJ',
                       access_token_secret='SS6JEUvZHc7zOiG8atc0RqLX44wAmKgq26hRssgis4ymF')
     api.PostUpdate(message)
-
-
-post_on_twitter('Test Message 1')
