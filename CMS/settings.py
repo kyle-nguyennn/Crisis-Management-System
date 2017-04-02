@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Custom apps
     'crisis.apps.CrisisConfig',
+    'haze.apps.HazeConfig',
 
     # RESTful framework
     'rest_framework',
@@ -124,3 +127,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 NEA_KEY = '781CF461BB6606AD80A87393DAFA402A7EA9AD290B3A9747'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'wuevnas@gmail.com'
+EMAIL_HOST_PASSWORD = 'AXAwzh83826317'
