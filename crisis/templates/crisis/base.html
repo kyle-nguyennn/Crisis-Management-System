@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     {% block add_meta %}{% endblock %}
     <title>{% block title %}CMS{% endblock %}</title>
-    {% load staticfiles %}
+    {% load static %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{% static 'crisis/style.css' %}"/>
@@ -17,8 +17,7 @@
 <body>
     {# TODO   #}
 
-    {% block body %}
-    {% endblock %}
+    {% block body %}{% endblock %}
     {% block add_js %}{% endblock %}
 </body>
 </html>

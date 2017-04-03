@@ -19,11 +19,11 @@ function initMap() {
     myMarker.addListener('click', toggleBounce);
 
     google.maps.event.addListener(myMarker, 'dragstart', function (evt) {
-        document.getElementById('current').innerHTML = '<p>Currently dragging marker...</p>';
+        console.log("Start dragging...")
     });
     google.maps.event.addListener(myMarker, 'dragend', function (evt) {
-        document.getElementById('current').innerHTML =
-            '<p>Marker dropped: Current Lat: ' + evt.latLng.lat().toFixed(7) + ' Current Lng: ' + evt.latLng.lng().toFixed(7) + '</p>';
+        $('#latitude').val(evt.latLng.lat().toFixed(7));
+        $('#longitude').val(evt.latLng.lng().toFixed(7));
     });
 
 }

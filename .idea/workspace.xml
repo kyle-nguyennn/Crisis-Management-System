@@ -2,25 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73f7ecf6-b2af-406b-86fd-db451fc16d60" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/email.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/serializer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/services.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/sms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/static/crisis/js/hazeAPI.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/templates/crisis/new_case.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/twitter_api.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMS/settings.py" afterPath="$PROJECT_DIR$/CMS/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/admin.py" afterPath="$PROJECT_DIR$/crisis/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/forms.py" afterPath="$PROJECT_DIR$/crisis/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/models.py" afterPath="$PROJECT_DIR$/crisis/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/static/crisis/js/main.js" afterPath="$PROJECT_DIR$/crisis/static/crisis/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/static/crisis/style.css" afterPath="$PROJECT_DIR$/crisis/static/crisis/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/static/crisis/js/map.js" afterPath="$PROJECT_DIR$/crisis/static/crisis/js/map.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/templates/crisis/base.html" afterPath="$PROJECT_DIR$/crisis/templates/crisis/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/templates/crisis/new_case.html" afterPath="$PROJECT_DIR$/crisis/templates/crisis/new_case.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/templates/crisis/test.html" afterPath="$PROJECT_DIR$/crisis/templates/crisis/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/urls.py" afterPath="$PROJECT_DIR$/crisis/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/views.py" afterPath="$PROJECT_DIR$/crisis/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/crisis/js/main.js" afterPath="$PROJECT_DIR$/static/crisis/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/crisis/js/map.js" afterPath="$PROJECT_DIR$/static/crisis/js/map.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,11 +25,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crisis/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="73" column="42" lean-forward="true" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
+            <state relative-caret-position="548">
+              <caret line="73" column="55" lean-forward="false" selection-start-line="73" selection-start-column="55" selection-end-line="73" selection-end-column="55" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -47,12 +37,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_case.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+              <folding>
+                <marker date="1491184997802" expanded="true" signature="1518:1537" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_case.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/new_case.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-              <folding />
+            <state relative-caret-position="32">
+              <caret line="67" column="34" lean-forward="true" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+              <folding>
+                <element signature="e#189#221#0#HTML" expanded="true" />
+                <element signature="n#if#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,8 +65,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crisis/static/crisis/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="48" lean-forward="true" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+            <state relative-caret-position="352">
+              <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -72,6 +77,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="110">
               <caret line="5" column="62" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -91,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/crisis/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
-              <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="20" />
+              <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="20" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -114,21 +129,9 @@
       <file leaf-file-name="map.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crisis/static/crisis/js/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="286">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crisis/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -156,21 +159,21 @@
         <option value="$PROJECT_DIR$/CMS/urls.py" />
         <option value="$PROJECT_DIR$/crisis/templates/crisis/login.html" />
         <option value="$PROJECT_DIR$/crisis/templates/crisis/index.html" />
-        <option value="$PROJECT_DIR$/crisis/static/crisis/js/map.js" />
         <option value="$PROJECT_DIR$/crisis/urls.py" />
         <option value="$PROJECT_DIR$/crisis/admin.py" />
         <option value="$PROJECT_DIR$/crisis/forms.py" />
-        <option value="$PROJECT_DIR$/crisis/templates/crisis/base.html" />
         <option value="$PROJECT_DIR$/crisis/static/crisis/style.css" />
         <option value="$PROJECT_DIR$/crisis/static/crisis/js/hazeAPI.js" />
         <option value="$PROJECT_DIR$/CMS/settings.py" />
         <option value="$PROJECT_DIR$/crisis/twitter_api.py" />
-        <option value="$PROJECT_DIR$/crisis/templates/crisis/test.html" />
         <option value="$PROJECT_DIR$/crisis/models.py" />
         <option value="$PROJECT_DIR$/crisis/templates/crisis/registration_form.html" />
-        <option value="$PROJECT_DIR$/crisis/views.py" />
-        <option value="$PROJECT_DIR$/crisis/templates/crisis/new_case.html" />
         <option value="$PROJECT_DIR$/crisis/static/crisis/js/main.js" />
+        <option value="$PROJECT_DIR$/crisis/templates/crisis/test.html" />
+        <option value="$PROJECT_DIR$/crisis/templates/crisis/base.html" />
+        <option value="$PROJECT_DIR$/crisis/templates/crisis/new_case.html" />
+        <option value="$PROJECT_DIR$/crisis/static/crisis/js/map.js" />
+        <option value="$PROJECT_DIR$/crisis/views.py" />
       </list>
     </option>
   </component>
@@ -1071,16 +1074,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-          <folding>
-            <marker date="1491171548143" expanded="true" signature="1510:1529" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crisis/static/crisis/js/hazeAPI.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1106,14 +1099,6 @@
           <folding>
             <element signature="e#0#32#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,14 +1130,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/static/crisis/js/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/web-forms2.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -1177,6 +1154,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/form_template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -1185,38 +1172,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/new_case.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crisis/static/crisis/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="48" lean-forward="true" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+        <state relative-caret-position="352">
+          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/static/crisis/js/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+          <folding>
+            <marker date="1491184997802" expanded="true" signature="1518:1537" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crisis/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="73" column="42" lean-forward="true" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
+        <state relative-caret-position="548">
+          <caret line="73" column="55" lean-forward="false" selection-start-line="73" selection-start-column="55" selection-end-line="73" selection-end-column="55" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/new_case.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="67" column="34" lean-forward="true" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+          <folding>
+            <element signature="e#189#221#0#HTML" expanded="true" />
+            <element signature="n#if#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

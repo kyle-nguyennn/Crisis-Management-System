@@ -15,11 +15,12 @@ function submitNewCase() {
         type: "POST",
         url: "/new_case/",
         data: formData,
-        success: function () {
+        success: function (data, status, xhttp) {
+            alert(data);
             console.log("sumitted successfully")
         },
-        dataType: "json",
-        contentType: "application/json"
+        dataType: "application/json",
+        async: true
     });
 }
 

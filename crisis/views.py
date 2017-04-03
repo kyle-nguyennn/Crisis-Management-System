@@ -71,7 +71,7 @@ def new_case(request):
     context = {}
     if request.user is not None:
         if request.method == "POST":
-            return HttpResponse(json.dumps({'status': 'reading new case'}), content_type='application/json')
+            return HttpResponse(json.dumps(request.POST), content_type='application/json')
         else:
             return render(request, 'crisis/new_case.html', {})
     else:

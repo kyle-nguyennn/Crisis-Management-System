@@ -2,8 +2,9 @@
 {% block title %}New Case{% endblock %}
 {% block body %}
     <div class="container-fluid">
-
-        <div class="row">
+        <div class="row inline-group">
+            <div id="map" style="width:400px;height:400px" class="inline-group">
+            </div>
             <div class="col-sm-12 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -11,7 +12,8 @@
                         {% if error_message %}
                             <p><strong>{{ error_message }}</strong></p>
                         {% endif %}
-                        <form id="newCaseForm"  class="form-horizontal" role="form" action="" method="post" enctype="application/json">
+                        <form id="newCaseForm" class="form-horizontal" role="form" action="" method="post"
+                              enctype="application/json">
                             {% csrf_token %}
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
@@ -74,6 +76,11 @@
                 </div>
             </div>
         </div>
-
     </div>
+{% endblock %}
+{% block add_js %}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB23tTsBQveSf2yGzxSw8We-178QdxzIh8&callback=initMap"
+            async defer></script>
+    {% load static %}
+    <script type="text/javascript" src="{% static 'crisis/js/map.js' %}"></script>
 {% endblock %}
