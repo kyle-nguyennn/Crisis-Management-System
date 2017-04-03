@@ -1,0 +1,79 @@
+{% extends 'crisis/base.html' %}
+{% block title %}New Case{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3>New Case</h3>
+                        {% if error_message %}
+                            <p><strong>{{ error_message }}</strong></p>
+                        {% endif %}
+                        <form id="newCaseForm"  class="form-horizontal" role="form" action="" method="post" enctype="application/json">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <label class="control-label col-sm-2">
+                                        <label for="longitude">Longitude:</label>
+                                    </label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <input id="longitude" maxlength="254" name="longitude">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <label class="control-label col-sm-2">
+                                        <label for="latitude">Latitude:</label>
+                                    </label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <input id="latitude" maxlength="254" name="latitude">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10 ">
+                                    <label class="control-label col-sm-2">
+                                        <label for="catergory">Category:</label>
+                                    </label>
+                                </div>
+                                <div class="col-sm-10" id="category">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="category" value="1">Fire
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="category" value="2">Ambulance
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="category" value="3">Traffic accidents
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="category" value="4">Terrorism attack
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <label class="control-label col-sm-2">
+                                        <label for="detail">Details:</label>
+                                    </label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" id="detail" name="detail" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-success">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

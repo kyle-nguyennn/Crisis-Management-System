@@ -1,4 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-#admin.site.register(User)
+from crisis.models import Case
+
+admin.site.register(Case)

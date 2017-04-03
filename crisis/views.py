@@ -1,4 +1,7 @@
 import sys
+
+import json
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
@@ -63,6 +66,16 @@ def index(request):
         print(sys.stderr, user.username)
         context = {'user': user}
     return render(request, 'crisis/index.html', context)
+
+def new_case(request):
+    context = {}
+    if request.user is not None:
+        if request.method == "POST":
+            return HttpResponse(json.dumps({'status': 'reading new case'}), content_type='application/json')
+        else:
+            return render(request, 'crisis/new_case.html', {})
+    else:
+        return HttpResponse(json.dumps({'status':'no user'}), content_type='application/json')
 
 def test(request):
     return render(request, 'crisis/test.html', {})
