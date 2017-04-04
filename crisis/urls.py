@@ -9,5 +9,5 @@ urlpatterns = [
     url(r'^login/$', views.login_user, name='login_user'),
     url(r'^logout/$', views.logout_user, name='logout_user'),
     url(r'^test/$', views.test, name='test'),
-    url(r'^new_case/$', views.new_case, name='new_case'),
+    url(r'^new_case/$', views.CaseFormView.as_view(), name='new_case'),
 ]
