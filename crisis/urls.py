@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^logout/$', views.logout_user, name='logout_user'),
     url(r'^test/$', views.test, name='test'),
     url(r'^new_case/$', views.CaseFormView.as_view(), name='new_case'),
+    url(r'^change_case_status', views.change_case_status, name='change_case_status'),
 ]

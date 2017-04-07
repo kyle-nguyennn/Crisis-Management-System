@@ -10,6 +10,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
 from django.core import serializers
 
+from crisis import caseDao
 from crisis.caseDao import CaseDao
 from crisis.models import MyUser, CaseStatus, UserType, Case
 from .forms import UserForm, CaseForm
@@ -93,18 +94,16 @@ def index(request):
     return render(request, 'crisis/index.html', {})
 
 def get_cases(request):
-    context = {}
     if request.user.is_authenticated():
         user = request.user
-        context = {'user': user}
         userType = user.userType
         print(userType)
-        cases = CaseDao.getByUserType(userType)
+        cases = CaseDao.getByUserType(CaseDao(), userType)
         data = serializers.serialize('json', cases,
                                      fields=('pk', 'longitude', 'latitude', 'category', 'status', 'detail'))
         return HttpResponse(data, content_type='application/json')
     else:
-        return HttpResponse(request)
+        return None
 
 def new_case(request):
     context = {}
@@ -116,5 +115,22 @@ def new_case(request):
     else:
         return HttpResponse(json.dumps({'status':'no user'}), content_type='application/json')
 
+def change_case_status(request):
+    if request.user.is_authenticated():
+        user = MyUser.objects.filter(username=request.user.username)
+        if user.userType != 1:
+            caseId = request.POST['caseId']
+            newStatus = request.POST['status']
+            if CaseDao.upDateStatus(user.userType, caseId, newStatus): #update success:
+                return HttpResponse(json.dumps({'status', 'success'}), content_type='application/json')
+            else:
+                return HttpResponse(json.dumps({'status', 'user not authenticated to change this entry'}),
+                                    content_type='application/json')
+        else:
+            return HttpResponse(json.dumps({'status', 'Call Operator is not authorised to change this entry'}),
+                                content_type='application/json')
+    return None
 def test(request):
     return render(request, 'crisis/test.html', {})
+
+

@@ -31,8 +31,12 @@
             url: "/get_cases/",
             data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
             success: function (data, status, xhttp) {
-                console.log(data.text)
                 console.log("sumitted successfully")
+                $.each(data, function(idx, acase){
+                    console.log(acase.pk)
+{#                    console.log(acase.fields.longitude)#}
+                });
+                console.log(data.pk)
             },
             error: function(err) {
                 console.log(err)
