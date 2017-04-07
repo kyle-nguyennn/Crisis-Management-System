@@ -25,7 +25,22 @@
         </form>
     {% endif %}
 
-
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "/get_cases/",
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+            success: function (data, status, xhttp) {
+                console.log(data.text)
+                console.log("sumitted successfully")
+            },
+            error: function(err) {
+                console.log(err)
+            },
+            dataType: "json",
+            async: true
+        });
+    </script>
 
 
 {% endblock %}

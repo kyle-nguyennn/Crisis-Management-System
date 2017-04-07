@@ -1,43 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Test map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'crisis/style.css' %}"/>
-    <script type="text/javascript" src="{% static 'crisis/js/main.js' %}"></script>
-    <script type="text/javascript" src="{% static 'crisis/js/hazeAPI.js' %}"></script>
-    <script type="text/javascript" src="{% static 'crisis/js/map.js' %}"></script>
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
-        #map {
-            height: 100%;
-        }
+{% extends 'crisis/base.html' %}
+{% block title %}test{% endblock %}
+{% block body %}
+    <script>
+        $(document).ready(function () {
+            console.log("inside test.html")
+            $.ajax({
+                type: "GET",
+                url: "/",
+                data: {},
+                success: function (data, status, xhttp) {
+                    alert(data);
+                    console.log("sumitted successfully")
+                },
+                error: function (err) {
+                    alert(err);
+                },
+                dataType: "application/json",
+                async: true
+            });
+        });
 
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-</head>
-<body>
-<div id="current">Nothing in here yet ...</div>
-<div id="psi"></div>
-<div id="map"></div>
-{#<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB23tTsBQveSf2yGzxSw8We-178QdxzIh8&callback=initMap"#}
-{#        async defer></script>#}
-<script>
-
-</script>
-
-
-</body>
-</html>
+    </script>
+{% endblock %}

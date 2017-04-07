@@ -12,7 +12,6 @@ from django.core import serializers
 
 from crisis.caseDao import CaseDao
 from crisis.models import MyUser, CaseStatus, UserType, Case
-from crisis.serializer import CaseSerializer
 from .forms import UserForm, CaseForm
 
 
@@ -67,10 +66,12 @@ class CaseFormView(View):
 
 def login_user(request):
     if request.method == "POST":
+        print("this is post")
         username = request.POST["username"]
         password = request.POST["password"]
         user = authenticate(username=username, password=password)
         if user is not None:
+            print("user is not none")
             if user.is_active:
                 login(request, user)
                 user = request.user
@@ -89,17 +90,21 @@ def logout_user(request):
     return render(request, 'crisis/login.html')
 
 def index(request):
+    return render(request, 'crisis/index.html', {})
+
+def get_cases(request):
     context = {}
     if request.user.is_authenticated():
         user = request.user
         context = {'user': user}
         userType = user.userType
-        #cases = CaseDao.getByUserType(userType)
-        cases = Case.objects.all()
-        print(cases)
-        data = serializers.serialize('json', cases)
+        print(userType)
+        cases = CaseDao.getByUserType(userType)
+        data = serializers.serialize('json', cases,
+                                     fields=('pk', 'longitude', 'latitude', 'category', 'status', 'detail'))
         return HttpResponse(data, content_type='application/json')
-    return render(request, 'crisis/index.html', context)
+    else:
+        return HttpResponse(request)
 
 def new_case(request):
     context = {}

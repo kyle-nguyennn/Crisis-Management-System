@@ -22,8 +22,8 @@ class ChoiceEnum(Enum):
 
 class CaseStatus(ChoiceEnum):
     Pending = 0
-    Dispatched = 1
-    Resolved = 2
+    Resolving = 1
+    Closed = 2
 
 
 class UserType(ChoiceEnum):
@@ -32,21 +32,23 @@ class UserType(ChoiceEnum):
     Police = 3
     LTA = 4
 
-USER_TYPE_CHOICES = [(1, 'CallOperator'), (2, 'CivilDefense'), (3, 'Police'), (4, 'LTA')]
+USER_TYPE_CHOICES = [(1, 'Call Operator'), (2, 'Civil Defense'), (3, 'LTA'), (4, 'Police')]
 class MyUser(AbstractUser):
+    pass
     userType = models.IntegerField(choices=USER_TYPE_CHOICES, null=True)
 
-STATUS_CHOICES = [(0, 'Pending'), (1, 'Dispatched'), (2, 'Resolved')]
+STATUS_CHOICES = [(0, 'Pending'), (1, 'Resolving'), (2, 'Closed')]
+CASE_CATEGORY_CHOICE = [(0,'Rescue and Emergency'), (1,'Traffic Accient'), (2,'Terrorist Attack')]
 class Case(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     longitude = models.DecimalField(max_digits=12, decimal_places=7)
     latitude = models.DecimalField(max_digits=12, decimal_places=7)
-    category = models.IntegerField()
-    status = models.IntegerField(choices=STATUS_CHOICES)
+    category = models.IntegerField(choices=CASE_CATEGORY_CHOICE)
+    status = models.IntegerField(choices=STATUS_CHOICES, default=0)
     detail = models.CharField(max_length=1000, default="")
     name = models.CharField(max_length=10, default="")
     phoneNum = models.CharField(max_length=10, default="")
-    gender = models.CharField(max_length=10, default="")
+    gender = models.CharField(max_length=10, choices=[('male', 'Male'), ('female','Female')])
     ic = models.CharField(max_length=8, default="")
 
     def __str__(self):
