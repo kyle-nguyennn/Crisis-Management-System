@@ -1,49 +1,149 @@
-{% extends 'crisis/base.html' %}
-{% block title %}Log In{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block body %}
-<div class="container-fluid">
+<head>
+    <meta charset="utf-8">
+    <title>Crisis Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crisis-Management-System">
+    <meta name="author" content="Group Null">
 
-    <div class="row">
-        <div class="col-sm-12 col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3>Log In</h3>
-                    {% if error_message %}
-                        <p><strong>{{ error_message }}</strong></p>
-                    {% endif %}
-                    <form class="form-horizontal" role="form" action="{% url 'crisis:login_user'%}" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="id_username">
-                                Username:
-                            </label>
-                            <div class="col-sm-10">
-                                <input id="id_username" maxlength="30" name="username" type="text">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="id_password">
-                                Password:
-                            </label>
-                            <div class="col-sm-10">
-                                <input id="id_password" maxlength="30" name="password" type="password">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-success">Submit</button>
-                            </div>
-                        </div>
-                    </form>
+    <!-- Le styles -->
+    <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+
+   <!--  <link rel="stylesheet" href="/assets/css/style.css"> -->
+    <link rel="stylesheet" href="/assets/css/loader-style.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/signin.css">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.js"></script>
+        <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="/assets/ico/minus.png">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+
+	<div class="container">
+
+        <div class="" id="login-wrapper">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div id="logo-login">
+                        <h1>Crisis Management
+                            <span>v1.0</span>
+                        </h1>
+                    </div>
                 </div>
-                <div class="panel-footer">
-                    Don't have an account? <a href="{% url 'crisis:register' %}">Click here</a> to register.
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="account-box">
+
+                        <form role="form" action="localhost/login">
+                            <div class="form-group">
+                                <label for="inputUsernameEmail">Username</label>
+                                <input type="text" id="inputUsernameEmail" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" id="inputPassword" class="form-control">
+                            </div>
+                            <div class="checkbox pull-left">
+                                <label>
+                                    <input type="checkbox">Remember me</label>
+                            </div>
+                            <button class="btn btn btn-primary pull-right" type="submit">
+                                Log In
+                            </button>
+                        </form>
+						<br/>
+                        <a class="forgotLnk" href="index.html"></a>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div style="text-align:center;margin:0 auto;">
+            <h6 style="color:#fff;">Release Version 1.0 Powered by © Themesmiles 2014</h6>
+        </div>
+
     </div>
 
-</div>
+    <!--  END OF PAPER WRAP -->
 
-{% endblock %}
+
+    <!-- MAIN EFFECT -->
+    <script type="text/javascript" src="/assets/js/preloader.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+    <script type="text/javascript" src="/assets/js/load.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+    <script type="text/javascript" src="/assets/js/map/gmap3.js"></script>
+
+
+    <script type="text/javascript">
+    $(function() {
+
+        $("#googleMap").gmap3({
+            marker: {
+                latLng: [1.3178964, 103.8153753],
+                options: {
+                    draggable: true
+                },
+                events: {
+                    dragend: function(marker) {
+                        $(this).gmap3({
+                            getaddress: {
+                                latLng: marker.getPosition(),
+                                callback: function(results) {
+                                    var map = $(this).gmap3("get"),
+                                        infowindow = $(this).gmap3({
+                                            get: "infowindow"
+                                        }),
+                                        content = results && results[1] ? results && results[1].formatted_address : "no address";
+                                    if (infowindow) {
+                                        infowindow.open(map, marker);
+                                        infowindow.setContent(content);
+                                    } else {
+                                        $(this).gmap3({
+                                            infowindow: {
+                                                anchor: marker,
+                                                options: {
+                                                    content: content
+                                                }
+                                            }
+                                        });
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }
+            },
+            map: {
+                options: {
+                    zoom: 14
+                }
+            }
+        });
+
+    });
+
+
+    </script>
+
+</body>
+
+</html>

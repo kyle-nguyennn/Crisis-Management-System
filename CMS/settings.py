@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crisis',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -48,6 +49,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 ROOT_URLCONF = 'CMS.urls'
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'CMS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [], #[os.path.join(BASE_DIR, 'crisis')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,8 +127,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/assets/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'crisis/assets'),
+]
 # from CMS-api
 NEA_KEY = '781CF461BB6606AD80A87393DAFA402A7EA9AD290B3A9747'
 
@@ -134,3 +140,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'wuevnas@gmail.com'
 EMAIL_HOST_PASSWORD = 'AXAwzh83826317'
+
+#allow CSRF token to be sent in cross domain communication
+CORS_ALLOW_CREDENTIALS = True

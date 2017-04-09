@@ -1,0 +1,50 @@
+{% extends 'crisis/base.html' %}
+{% block title %}Home{% endblock %}
+{% block body %}
+    <h1>hello world</h1>
+    {% if user.username %}
+        <h2>{{ user.username }}</h2>
+        <form class="form-horizontal" role="form" action="{% url 'crisis:logout_user' %}" method="post"
+              enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-success">Log out</button>
+                </div>
+            </div>
+        </form>
+    {% else %}
+        <form class="form-horizontal" role="form" action="{% url 'crisis:login_user' %}" method="get"
+              enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-success">Log in</button>
+                </div>
+            </div>
+        </form>
+    {% endif %}
+
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "/get_cases/",
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+            success: function (data, status, xhttp) {
+                console.log("sumitted successfully")
+                $.each(data, function(idx, acase){
+                    console.log(acase.pk)
+{#                    console.log(acase.fields.longitude)#}
+                });
+                console.log(data.pk)
+            },
+            error: function(err) {
+                console.log(err)
+            },
+            dataType: "json",
+            async: true
+        });
+    </script>
+
+
+{% endblock %}

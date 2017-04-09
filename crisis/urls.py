@@ -12,4 +12,10 @@ urlpatterns = [
     url(r'^test/$', views.test, name='test'),
     url(r'^new_case/$', views.CaseFormView.as_view(), name='new_case'),
     url(r'^change_case_status', views.change_case_status, name='change_case_status'),
+    url(r'^update_severity', views.update_severity, name='update_severity'),
+    url(r'^update_dead', views.update_dead, name='update_dead'),
+    url(r'^update_injuries', views.update_injuries, name='update_injuries'),
+    url(r'^subscribe', views.subscribe, name='subscribe'),
+    url(r'^unsubscribe', views.unsubscribe, name='unsubscribe'),
+    url(r'^changeSubscription', views.changeSubscription, name='changeSubscription')
 ]
