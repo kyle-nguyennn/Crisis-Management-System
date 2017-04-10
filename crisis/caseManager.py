@@ -1,6 +1,7 @@
 from django.db.models import Sum
 
 from crisis.models import Case
+from crisis import email, sms, twitter_api
 
 
 class CaseManager:
@@ -59,4 +60,30 @@ class CaseManager:
         result['gas_leak'] = Case.objects.filter(category=3).aggregate(Sum('dead'))["dead__sum"]
         return result
 
+    @classmethod
+    def send_email(cls):
+        message = '''Dear Sir,
+
+        The crisis state is triggered, please see the following link for the detailed report of the situation. Thank you.
+
+        http://localhost:8000/government_report/
+
+        CMS Team
+        '''
+        email.send_to_pm(message)
+
+    @classmethod
+    def send_email_check(cls):
+        level = CaseManager.getCrisisLevel()
+        if level == 3:
+            CaseManager.send_email()
+        else:
+            pass
+
+    @classmethod
+    def send_sms(cls, phone_num):
+        message = "Thank you for using CMS, your reported case has been recorded."
+        result = sms.send_sms(phone_num, message)
+        if result == False:
+            print("Unable to send sms. An error has occurred.")
 

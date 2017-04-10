@@ -1,6 +1,11 @@
 import twitter
 
 
+# Twitter Account
+# User Name: cz3003_cms
+# Password: qwertyuiop
+
+
 def post_on_twitter(message):
     """
     Post the given message on twitter
