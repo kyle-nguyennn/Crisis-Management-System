@@ -4,9 +4,10 @@ from crisis.models import Case
 class CaseDao:
     userCaseMatch = [(0,0), (0,1), (0,2), (0,3),(1,0), (1,1), (2,2), (3,3)]
 
-    def getByUserType(self, userType):
+    @classmethod
+    def getByUserType(cls, userType):
         querySet = []
-        for x in self.userCaseMatch:
+        for x in cls.userCaseMatch:
             if x[0] == userType:
                 querySet += Case.objects.filter(category=x[1])
         return querySet
@@ -53,3 +54,10 @@ class CaseDao:
             return True
         else:
             return False
+
+    @classmethod
+    def getActiveCase(cls):
+        result = []
+        result+=Case.objects.filter(status=0)
+        result += Case.objects.filter(status=1)
+        return result

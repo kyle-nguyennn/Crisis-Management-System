@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Crisis Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/loader-style.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="/assets/js/button/ladda/ladda.min.css">
+
+    <link href="/assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
+    <link href="/assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="/assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css" />
+    <link rel="stylesheet" href="/assets/js/dataTable/css/datatables.responsive.css" />
+
+    <script>
+        $(document).ready(function(){
+            $.ajaxSetup({ cache: false });
+
+            var d = new Date();
+            var day_now = d.getDay();
+            var hour_now = d.getHours();
+            var minute_now = d.getMinutes();
+            var day_now = convertToDay(day_now);
+            var am_pm = hour_now <= 11 ? "AM" : "PM";
+            $('.temperature').append("<b>" + day_now + "</b>, " + hour_now + ":" + minute_now + " " + am_pm);
+
+            $.getJSON("http://api.openweathermap.org/data/2.5/forecast?id=1880252&APPID=9cf15d7fd4d3917e79f7c0f3e386f7af",function(data){
+                var weather_convert = {
+                    "01d" : "wi-day-sunny",
+                    "01n" : "wi-night-clear",
+                    "02d" : "wi-day-cloudy",
+                    "02n" : "wi-night-cloudy",
+                    "03d" : "wi-day-cloudy",
+                    "03n" : "wi-night-cloudy",
+                    "04d" : "wi-day-cloudy",
+                    "04n" : "wi-night-cloudy",
+                    "09d" : "wi-day-rain",
+                    "09n" : "wi-night-rain",
+                    "10d" : "wi-day-rain",
+                    "10n" : "wi-night-rain",
+                    "11d" : "wi-day-thunderstorm",
+                    "11n" : "wi-night-thunderstorm",
+                    "13d" : "wi-day-snow",
+                    "13n" : "wi-night-snow",
+                    "50d" : "wi-day-fog",
+                    "50n" : "wi-night-fog"
+                };
+                weather_array = [];
+                weather_array.push(data.list[0].weather[0].icon);
+                weather_array.push(data.list[8].weather[0].icon);
+                weather_array.push(data.list[16].weather[0].icon);
+                weather_array.push(data.list[24].weather[0].icon);
+
+                var temp_now = data.list[0].main.temp - 273;
+
+                var temp_array = [];
+
+                temp_array.push(kelvinToFahrenheit(data.list[0].main.temp));
+                temp_array.push(kelvinToFahrenheit(data.list[8].main.temp));
+                temp_array.push(kelvinToFahrenheit(data.list[16].main.temp));
+                temp_array.push(kelvinToFahrenheit(data.list[24].main.temp));
+
+                var wind_speed_array = [];
+
+                wind_speed_array.push(data.list[0].wind.speed);
+                wind_speed_array.push(data.list[8].wind.speed);
+                wind_speed_array.push(data.list[16].wind.speed);
+                wind_speed_array.push(data.list[24].wind.speed);
+
+                var day_array = [];
+
+                var day_now = d.getDay();
+
+                day_array.push(convertToDay(day_now));
+                day_array.push(convertToDay((day_now+1) % 7));
+                day_array.push(convertToDay((day_now+2) % 7));
+                day_array.push(convertToDay((day_now+3) % 7));
+
+                $('#dashboard_weather_icon').append("<i class='" + weather_convert[weather_array[0]] + "'></i>");
+                $('#dashboard_weather_text').append("<h2>Singapore<br><i>" + weather_convert[weather_array[0]].slice(3) + "</i></h2>");
+                $('#temp_now').append("<h3><i class='wi-thermometer'></i>" + parseInt(temp_now) + "<i class='wi-celcius'</i></h3>");
+
+                $('#weather1').append("<h2>" + day_array[0].slice(0,3) + "</h2><h3>" + parseInt(temp_array[0]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[0]] + "'></i></h4><h5>" + wind_speed_array[0] + "<br /><i>m/s</i></h5>");
+                $('#weather2').append("<h2>" + day_array[1].slice(0,3) + "</h2><h3>" + parseInt(temp_array[1]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[1]] + "'></i></h4><h5>" + wind_speed_array[1] + "<br /><i>m/s</i></h5>");
+                $('#weather3').append("<h2>" + day_array[2].slice(0,3) + "</h2><h3>" + parseInt(temp_array[2]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[2]] + "'></i></h4><h5>" + wind_speed_array[2] + "<br /><i>m/s</i></h5>");
+                $('#weather4').append("<h2>" + day_array[3].slice(0,3) + "</h2><h3>" + parseInt(temp_array[3]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[3]] + "'></i></h4><h5>" + wind_speed_array[3] + "<br /><i>m/s</i></h5>");
+            })
+
+            var marker_array = [];
+            var labels = "ABCD";
+            $.getJSON('usecasetype.json', function(data){
+            //$.getJSON("/get_cases", function(data){
+                var counter = 0;
+                $.each(data, function(index){
+                    var id = data[index].pk;
+                    var lat = data[index].latitude;
+                    var lon = data[index].longitude;
+                    var cat = data[index].category;
+                    var desc = data[index].detail;
+                    var stat = data[index].status;
+                    var place_name = data[index].place_name;
+                    counter = counter + 1;
+                    if(stat === 0){
+                        stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="status' + id +'"></input>';
+                        var check = '<input value="Accept" type="button" id="accept' + id + '"class = "btn btn-success accepted"></input>   <input value="Reject" id="reject' + id + '"type="button" class="btn btn-danger rejected"></input>';
+                    }
+                    else
+                    if(stat === 1){
+                        stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="status' + id +'"></input>';
+                        var check = '<input value="Done" type="button" class="btn btn-info resolving" id="resolving' + id + '"></input>';
+                    }
+                    else
+                    if(stat === 2){
+                        stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="status' + id +'" disabled></input>';
+                        var check = "";
+                    }
+
+                    if(stat === 1){
+                        $('#cases').append("<tr><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + stat + "</td>" + "<td>" + check + "</td>" + "<td><input type='number' name='casualities_number' id='casualities_number"+ id + "' /></td>" + "<td><input type='number' name='injuries_number' id='injuries_number" + id + "' /></td>" + "<td><input type='number' name='severity' min='1' max='5' id='severity" + id + "' /></td></tr>");
+                    }
+                    else{
+                        $('#cases').append("<tr><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + stat + "</td>" + "<td>" + check + "</td>" + "<td><input type='number' name='casualities_number' id='casualities_number"+ id + "' disabled/></td>" +"<td><input type='number' name='injuries_number' id='injuries_number" + id + "' disabled/></td>" +  "<td><input type='number' name='severity' min='1' max='5' id='severity" + id + "' disabled/></td></tr>");
+                    }
+                     var myLatLng = {lat: lat, lng: lon};
+                     var marker = new google.maps.Marker({
+                         position: myLatLng,
+                         label: labels[0],
+                         title:"Hello World!"
+                     });
+                     marker.setMap(map_google);
+                })
+            })
+            $(document).on("click",".accepted", function(){
+                var id_now = this.id;
+                var id_status = "#status" + id_now.slice(6);
+                var casualities_number = '#casualities_number' + id_now.slice(6);
+                var severity_index = '#severity' + id_now.slice(6);
+                var injuries_number = '#injuries_number' + id_now.slice(6);
+
+                $(id_status).removeClass("status-suspended");
+                $(id_status).addClass("status-disabled");
+                $(id_status).attr('value', 'Resolving');
+                $(this).removeClass("btn btn-success");
+                $(this).removeClass("accepted");
+                $(this).addClass("btn btn-info resolving");
+                $(this).attr('value', 'Done');
+                $(this).attr('id', 'resolving' + id_now.slice(6));
+                $('#reject' + id_now.slice(6)).remove();
+                $(casualities_number).prop("disabled", false);
+                $(severity_index).prop("disabled", false);
+                $(injuries_number).prop("disabled", false);
+                $(casualities_number).prop("required", true);
+                $(severity_index).prop("required", true);
+                $(injuries_number).prop("required", true);
+                var changedObject = {
+                    "pk" : parseInt(id_now.slice(6)),
+                    "valid" : 1
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "/validate",
+                    dataType: "json",
+                    data: changedObject,
+                    success: function(data){
+                        alert('Success');
+                    },
+                    error: function(){
+                        alert('Error');
+                    }
+                });
+            })
+            $(document).on("click",".rejected", function(){
+                var id_now = this.id;
+                var id_status = "#status" + id_now.slice(6);
+                $(id_status).removeClass("status-suspended");
+                $(id_status).addClass("status-active");
+                $(id_status).attr('value', 'Closed');
+                $(this).remove();
+                $("#accept" + id_now.slice(6)).remove();
+                var changedObject = {
+                    "pk" : parseInt(id_now.slice(6)),
+                    "status" : 0
+                };
+                $.ajax({
+                    type: "POST",
+                    url: "/validate",
+                    dataType: "json",
+                    data: changedObject,
+                    success: function(data){
+                        alert('Success');
+                    },
+                    error: function(){
+                        alert('Error');
+                    }
+                });
+            })
+            $(document).on("click",".resolving", function(){
+                var id_now = this.id;
+                var id_status = "#status" + id_now.slice(9);
+                var casualities_number = '#casualities_number' + id_now.slice(9);
+                var severity_index = '#severity' + id_now.slice(9);
+                var injuries_number = '#injuries_number' + id_now.slice(9);
+
+                if($(severity_index).val() != "" && $(casualities_number).val() != "" && $(injuries_number).val() != ""){
+                    $(id_status).removeClass("status-disabled");
+                    $(id_status).addClass("status-active");
+                    $(id_status).attr('value', 'Closed');
+                    $(this).remove();
+                    $(casualities_number).prop("disabled", true);
+                    $(severity_index).prop("disabled", true);
+                    $(injuries_number).prop("disabled", true);
+                    $(injuries_number).prop("required", false);
+                    var changedObject = {
+                        "pk" : parseInt(id_now.slice(9)),
+                        "severity" : $(severity_index).val(),
+                        "dead" : $(casualities_number).val(),
+                        "injured" : $(injuries_number).val(),
+                    }
+                    $.ajax({
+                        type: "POST",
+                        url: "/resolve",
+                        dataType: "json",
+                        data: changedObject,
+                        success: function(data){
+                            alert('Success');
+                        },
+                        error: function(){
+                            alert('Error');
+                        }
+                    });
+                }
+            })
+        });
+    </script>
+    <script>
+        function convertToDay(today){
+            if(today === 0){
+                return "Sunday";
+            }
+            else
+            if(today === 1){
+                return "Monday";
+            }
+            else
+            if(today === 2){
+                return "Tuesday";
+            }
+            else
+            if(today === 3){
+                return "Wednesday";
+            }
+            else
+            if(today === 4){
+                return "Thursday";
+            }
+            else
+            if(today === 5){
+                return "Friday";
+            }
+            else
+            if(today === 6){
+                return "Saturday";
+            }
+        }
+
+        function kelvinToFahrenheit(temp){
+            return (temp -273) * 9 / 5;
+        }
+        function changeCategory(category){
+            if(category === 1){
+                return "Fire";
+            }
+            else if(category === 2){
+                return "Traffic Accident";
+            }
+            else if(category === 3){
+                return "Terrorists Activity";
+            }
+            else if(category === 4){
+                return "Gas Leak";
+            }
+        }
+    </script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="/assets/js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="/assets/ico/minus.png">
+</head>
+
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+<!-- TOP NAVBAR -->
+<nav role="navigation" class="navbar navbar-static-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle"
+                    type="button">
+                <span class="entypo-menu"></span>
+            </button>
+            <div id="logo-mobile" class="visible-xs">
+                <h1>CMS
+                    <span>v1.0</span>
+                </h1>
+            </div>
+
+        </div>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+
+            </ul>
+            <div id="nt-title-container" class="navbar-left running-text visible-lg">
+                <ul class="date-top">
+                    <li class="entypo-calendar" style="margin-right:5px"></li>
+                    <li id="Date"></li>
+                </ul>
+
+                <ul id="digital-clock" class="digital">
+                    <li class="entypo-clock" style="margin-right:5px"></li>
+                    <li class="hour"></li>
+                    <li>:</li>
+                    <li class="min"></li>
+                    <li>:</li>
+                    <li class="sec"></li>
+                    <li class="meridiem"></li>
+                </ul>
+
+            </div>
+
+            <ul style="margin-right:0;" class="nav navbar-nav navbar-right">
+
+
+                <li>
+                    <!--{% if user %}
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            Hi, {{ user.username }} <b class="caret"></b>
+                        </a>
+                    {% endif %} -->
+                    <form action="login.html">
+                        <button type="submit" margin-top="20px" class="btn btn-info">Login</input>
+                    </form>
+                    <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
+                        <li>
+                            <a href="#">
+                                <span class="entypo-vcard"></span>&#160;&#160;Account Setting</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="entypo-lifebuoy"></span>&#160;&#160;Help</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <span class="entypo-logout"></span>&#160;&#160;Logout</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">                       </a>
+                    <ul role="menu" class="dropdown-setting dropdown-menu">
+
+                        <li class="theme-bg">
+                            <div id="button-bg"></div>
+                            <div id="button-bg2"></div>
+                            <div id="button-bg3"></div>
+                            <div id="button-bg5"></div>
+                            <div id="button-bg6"></div>
+                            <div id="button-bg7"></div>
+                            <div id="button-bg8"></div>
+                            <div id="button-bg9"></div>
+                            <div id="button-bg10"></div>
+                            <div id="button-bg11"></div>
+                            <div id="button-bg12"></div>
+                            <div id="button-bg13"></div>
+                        </li>
+                    </ul>
+                </li>
+
+
+            </ul>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<!-- /END OF TOP NAVBAR -->
+
+<!-- SIDE MENU -->
+<div id="skin-select">
+    <div id="logo">
+        <h1>CMS
+            <span>v1.0</span>
+        </h1>
+    </div>
+
+    <a id="toggle">
+        <span class="entypo-menu"></span>
+    </a>
+</div>
+<!-- END OF SIDE MENU -->
+
+
+<!--  PAPER WRAP -->
+<div class="wrap-fluid">
+    <div class="container-fluid paper-wrap bevel tlbr">
+
+        <!-- CONTENT -->
+        <!--TITLE -->
+        <div class="row">
+            <div id="paper-top">
+                <div class="col-sm-3">
+                    <h2 class="tittle-content-header">
+                        <i class="icon-media-record"></i>
+                        <span>Map Overview
+                            </span>
+                    </h2>
+
+                </div>
+
+                <div class="col-sm-9">
+                    <div class="devider-vertical visible-lg"></div>
+
+                    <div class="tittle-middle-header">
+                        <!-- BREADCRUMB -->
+                        <ul id="breadcrumb">
+                            <li>
+                                <span class="entypo-home"></span>
+                            </li>
+                            <li><i class="fa fa-lg fa-angle-right"></i>
+                            </li>
+                            <li><a href="#map_overview.html" title="Sample page 1">Map Overview</a>
+                            </li>
+                        </ul>
+                        <!-- END OF BREADCRUMB -->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--/ TITLE -->
+
+
+        <div class="content-wrap">
+
+
+            <div class="row">
+
+
+                <div class="col-lg-12">
+                    <!-- BLANK PAGE-->
+
+                    <div class="nest" id="Blank_PageClose">
+                        <div class="title-alt">
+                            <h6>
+                                Mapview Of Incidents</h6>
+                            <div class="titleClose">
+
+                            </div>
+                            <div class="titleToggle">
+
+                            </div>
+
+                        </div>
+
+                        <div class="nest">
+                            <div class="body-nest">
+                                <div id="google_map_base" style="width: 100%; height:630px; "></div>
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAO8DAewXZ2oJDavX6qFxLJCBhkWYpwcY&callback=initMap"
+                                        async defer></script>
+                                <script>
+                                    var map_google;
+                                    function initMap() {
+                                        map_google = new google.maps.Map(document.getElementById('google_map_base'), {
+                                            center: {lat: 1.376010, lng: 103.8153315},
+                                            zoom: 13
+                                        });
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF BLANK PAGE -->
+
+
+            </div>
+
+            <div style="margin-top: 20px;"></div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="weather-wrap">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="temperature">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="weather-icon" id="dashboard_weather_icon">
+
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="weather-text" id="dashboard_weather_text">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="weather-text" id="temp_now">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weather-dash">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="daily-weather" id="weather1">
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="daily-weather" id="weather2">
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="daily-weather" id="weather3">
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="daily-weather" id="weather4">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-sm-8">
+
+                    <div class="nest" id="FootableClose">
+                        <div class="title-alt">
+                            <h6>
+                                Footable paginate</h6>
+                            <div class="titleClose">
+                                <a class="gone" href="#FootableClose">
+                                    <span class="entypo-cancel"></span>
+                                </a>
+                            </div>
+                            <div class="titleToggle">
+                                <a class="nav-toggle-alt" href="#Footable">
+                                    <span class="entypo-up-open"></span>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="body-nest" id="Footable">
+
+                            <p class="lead well">FooTable is a jQuery plugin that aims to make HTML tables on smaller devices look awesome - No matter how many columns of data you may have in them. And it's responsive i think this better than DataTable in some way</p>
+
+                            <table class="table-striped footable-res footable metro-blue" data-page-size="6">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        No
+                                    </th>
+                                    <th>
+                                        Latitude
+                                    </th>
+                                    <th data-hide="phone,tablet">
+                                        Longitude
+                                    </th>
+                                    <th data-hide="phone,tablet">
+                                        category
+                                    </th>
+
+                                    <th data-hide="phone">
+                                        Status
+                                    </th>
+                                    <th data-hide="phone">
+                                        Action
+                                    </th>
+                                    <th data-hide="phone" max-width="10px">
+                                        Number Of Dead
+                                    </th>
+                                    <th data-hide="phone" max-width="10px">
+                                        Number Of Injuries
+                                    </th>
+                                    <th data-hide="phone">
+                                        Severity
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="cases">
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <div class="pagination pagination-centered"></div>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!-- /END OF CONTENT -->
+
+
+            <!-- FOOTER -->
+            <div class="footer-space"></div>
+            <div id="footer">
+                <div class="devider-footer-left"></div>
+                <div class="time">
+                    <p id="spanDate"></p>
+                    <p id="clock"></p>
+                </div>
+                <div class="copyright">Make with Love
+                    <span class="entypo-heart"></span>2014 <a href="http://gamatechno.com">Thesmile</a> All Rights
+                    Reserved
+                </div>
+                <div class="devider-footer"></div>
+
+            </div>
+            <!-- / END OF FOOTER -->
+        </div>
+
+    </div>
+
+</div>
+<!--  END OF PAPER WRAP -->
+
+<!-- MAIN EFFECT -->
+<script type="text/javascript" src="/assets/js/preloader.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="/assets/js/app.js"></script>
+<script type="text/javascript" src="/assets/js/load.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script>
+
+<!-- GAGE -->
+<script type="text/javascript" src="/assets/js/toggle_close.js"></script>
+<script src="/assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
+<script src="/assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+<script src="/assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+<script src="/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+
+</body>
+
+</html>

@@ -101,6 +101,8 @@ def index(request):
         user = request.user
         if user.userType == 0:
             return redirect('crisis:dashboard')
+        else:
+            return redirect('crisis:relevant_agency')
     return render(request, 'crisis/index.html')
 
 
@@ -112,6 +114,9 @@ def dashboard(request):
         else:
             return redirect('crisis:index')
     return redirect('crisis:index')
+
+def relevant_agency(request):
+    return render(request, 'crisis/relevant_agency.html')
 
 def summary(request):
     if request.user.is_authenticated():
@@ -135,12 +140,12 @@ def get_cases(request):
         user = request.user
         userType = user.userType
         print(userType)
-        cases = CaseDao.getByUserType(CaseDao(), userType)
-        data = serializers.serialize('json', cases,
-                                     fields=('pk', 'longitude', 'latitude', 'category', 'status', 'detail', 'place_name'))
-        return HttpResponse(data, content_type='json')
+        cases = CaseDao.getByUserType(userType)
     else:
-        return None
+        cases = CaseDao.getActiveCase()
+    data = serializers.serialize('json', cases,
+                                     fields=('pk', 'longitude', 'latitude', 'category', 'status', 'detail', 'place_name'))
+    return HttpResponse(data, content_type='json')
 
 def new_case(request):
     if request.user is not None:
@@ -148,7 +153,32 @@ def new_case(request):
         userType = user.userType
         if userType == 0:
             if request.method == "POST":
-                return HttpResponse(json.dumps(request.POST), content_type='json')
+                case = Case(
+                    name=request.POST['name'],
+                    phoneNum=request.POST['phoneNum'],
+                    gender=request.POST['gender'],
+                    ic=request.POST['ic'],
+                    longitude=request.POST['longitude'],
+                    latitude=request.POST['latitude'],
+                    category=request.POST['category'],
+                    detail=request.POST['detail'],
+                    place_name=request.POST['place_name'],
+                    region=request.POST['region']
+                )
+                # case={}
+                # case['name'] = request.POST['name']
+                # case['phoneNum'] = request.POST['phoneNum']
+                # case['gender'] = request.POST['gender']
+                # case['ic'] = request.POST['ic']
+                # case['longitude'] = request.POST['longitude']
+                # case['latitude'] = request.POST['latitude']
+                # case['category'] = request.POST['category']
+                # case['detail'] = request.POST['detail']
+                # case['place_name'] = request.POST['place_name']
+                # case['region'] = request.POST['region']
+                # case = Case(case)
+                case.save()
+                return redirect('crisis:dashboard')
             else:
                 return render(request, 'crisis/report_incident.html', {})
         else:

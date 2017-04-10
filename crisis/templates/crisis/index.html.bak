@@ -16,25 +16,153 @@
 
     <link rel="stylesheet" href="assets/js/button/ladda/ladda.min.css">
 
-    <link href="assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
-    <link href="assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css" />
-    <link href="assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css" />
+    <link href="assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css"/>
+    <link href="assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css"/>
 
-    <link rel="stylesheet" href="assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css" />
-    <link rel="stylesheet" href="assets/js/dataTable/css/datatables.responsive.css" />
+    <link rel="stylesheet" href="assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css"/>
+    <link rel="stylesheet" href="assets/js/dataTable/css/datatables.responsive.css"/>
 
     <link rel="stylesheet" href="assets/css/hazeMap.css">
 
     <script>
-        $.ajax({
-            type: "POST",
-            url: "/get_cases/",
-            data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
-            success: function (data, status, xhttp) {
-                console.log("sumitted successfully")
-                $.each(data, function(idx, acase){
-                    console.log(acase.pk)
-{#                    console.log(acase.fields.longitude)#}
+        $(document).ready(function () {
+
+            $.ajax({
+                type: "POST",
+                url: "/get_cases/",
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+                success: function (data, status, xhttp) {
+                    console.log("sumitted successfully");
+                    $.each(data, function (index) {
+                    var id = data[index].pk;
+                    var lat = data[index].latitude;
+                    var lon = data[index].longitude;
+                    var cat = data[index].category;
+                    var desc = data[index].detail;
+                    var stat = data[index].status;
+                    var place_name = data[index].place_name;
+
+                    var counter = $('#cases').children('tr').length;
+                    if (stat === 0) {
+                        stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
+                    }
+                    else if (stat === 1) {
+                        stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
+                    }
+                    else if (stat === 2) {
+                        stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
+                    }
+                    counter = counter + 1;
+                    if(cat === 1){
+                        $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                    }
+                    else if(cat === 2){
+                        $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                    }
+                    else if (cat === 3){
+                        $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                    }
+                    else if(cat === 4){
+                        $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                    }
+
+                    var myLatLng = {lat: lat, lng: lon};
+                    var marker = new google.maps.Marker({
+                        position: myLatLng,
+                        label: labels[0],
+                        title: "Hello World!"
+                    });
+                    marker.setMap(map_google);
+                    var marker_object = {
+                        marker: marker,
+                        category: 1
+                    };
+                    marker_array.push(marker_object);
+                },
+                error: function (err) {
+                    console.log(err)
+                },
+                dataType: "json",
+                async: true
+            });
+
+{#            $.ajaxSetup({cache: false});#}
+
+            var east_psi;
+            var west_psi;
+            var south_psi;
+            var north_psi;
+            var center_psi;
+
+            var east_pos = {lat: 1.336091, lng: 103.94371};
+
+            var west_pos = {lat: 1.338837, lng: 103.697891};
+
+            var north_pos = {lat: 1.404736, lng: 103.815308};
+
+            var south_pos = {lat: 1.268817, lng: 103.83728};
+
+            var centre_pos = {lat: 1.327854, lng: 103.823547};
+
+            var east_marker = new google.maps.Marker({
+                position: east_pos,
+                map: map_google,
+                title: "Halo",
+                optimized: false
+            });
+
+            console.log("halo");
+
+            var west_marker = new google.maps.Marker({
+                position: west_pos,
+                map: map_google,
+                title: "Halo",
+                optimized: false
+            });
+
+            var north_marker = new google.maps.Marker({
+                position: north_pos,
+                map: map_google,
+                title: "Halo",
+                optimized: false
+            });
+
+            var south_marker = new google.maps.Marker({
+                position: south_pos,
+                map: map_google,
+                title: "Halo",
+                optimized: false
+            });
+
+            var centre_marker = new google.maps.Marker({
+                position: centre_pos,
+                map: map_google,
+                title: "Halo",
+                optimized: false
+            });
+
+            east_marker.setVisible(false);
+            west_marker.setVisible(false);
+            north_marker.setVisible(false);
+            south_marker.setVisible(false);
+            centre_marker.setVisible(false);
+
+            $.getJSON('haze.json', function (data) {
+                east_psi = data.east;
+                west_psi = data.west;
+                south_psi = data.south;
+                north_psi = data.north;
+                center_psi = data.center;
+
+                var contentString = "<div style='background-color: white, opacity: 1'><font color='" + hazeConverter(east_psi) + "'>East<br /><center>" + east_psi + "</center></font></div>";
+                window.east_infoWindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
+                var contentString = "<div style='background-color: white, opacity: 1'><font color='" + hazeConverter(west_psi) + "'>West<br /><center>" + west_psi + "</center></font></div>";
+                window.west_infoWindow = new google.maps.InfoWindow({
+                    content: contentString
                 });
 
                 var contentString = "<div style='background-color: white, opacity: 1'><font color='" + hazeConverter(north_psi) + "'>North<br /><center>" + north_psi + "</center></font></div>";
@@ -44,12 +172,12 @@
 
 
                 var contentString = "<div style='background-color: white, opacity: 1'><font color='" + hazeConverter(south_psi) + "'>South<br /><center>" + south_psi + "</center></font></div>";
-                 window.south_infoWindow = new google.maps.InfoWindow({
+                window.south_infoWindow = new google.maps.InfoWindow({
                     content: contentString
                 });
 
                 var contentString = "<div style='background-color: white, opacity: 1'><font color='" + hazeConverter(center_psi) + "'>Center<br /><center>" + center_psi + "</center></div>";
-                 window.centre_infoWindow = new google.maps.InfoWindow({
+                window.centre_infoWindow = new google.maps.InfoWindow({
                     content: contentString
                 });
             });
@@ -62,26 +190,26 @@
             var am_pm = hour_now <= 11 ? "AM" : "PM";
             $('.temperature').append("<b>" + day_now + "</b>, " + hour_now + ":" + minute_now + " " + am_pm);
 
-            $.getJSON("http://api.openweathermap.org/data/2.5/forecast?id=1880252&APPID=9cf15d7fd4d3917e79f7c0f3e386f7af",function(data){
+            $.getJSON("http://api.openweathermap.org/data/2.5/forecast?id=1880252&APPID=9cf15d7fd4d3917e79f7c0f3e386f7af", function (data) {
                 var weather_convert = {
-                    "01d" : "wi-day-sunny",
-                    "01n" : "wi-night-clear",
-                    "02d" : "wi-day-cloudy",
-                    "02n" : "wi-night-cloudy",
-                    "03d" : "wi-day-cloudy",
-                    "03n" : "wi-night-cloudy",
-                    "04d" : "wi-day-cloudy",
-                    "04n" : "wi-night-cloudy",
-                    "09d" : "wi-day-rain",
-                    "09n" : "wi-night-rain",
-                    "10d" : "wi-day-rain",
-                    "10n" : "wi-night-rain",
-                    "11d" : "wi-day-thunderstorm",
-                    "11n" : "wi-night-thunderstorm",
-                    "13d" : "wi-day-snow",
-                    "13n" : "wi-night-snow",
-                    "50d" : "wi-day-fog",
-                    "50n" : "wi-night-fog"
+                    "01d": "wi-day-sunny",
+                    "01n": "wi-night-clear",
+                    "02d": "wi-day-cloudy",
+                    "02n": "wi-night-cloudy",
+                    "03d": "wi-day-cloudy",
+                    "03n": "wi-night-cloudy",
+                    "04d": "wi-day-cloudy",
+                    "04n": "wi-night-cloudy",
+                    "09d": "wi-day-rain",
+                    "09n": "wi-night-rain",
+                    "10d": "wi-day-rain",
+                    "10n": "wi-night-rain",
+                    "11d": "wi-day-thunderstorm",
+                    "11n": "wi-night-thunderstorm",
+                    "13d": "wi-day-snow",
+                    "13n": "wi-night-snow",
+                    "50d": "wi-day-fog",
+                    "50n": "wi-night-fog"
                 };
                 weather_array = [];
                 weather_array.push(data.list[0].weather[0].icon);
@@ -110,18 +238,18 @@
                 var day_now = d.getDay();
 
                 day_array.push(convertToDay(day_now));
-                day_array.push(convertToDay((day_now+1) % 7));
-                day_array.push(convertToDay((day_now+2) % 7));
-                day_array.push(convertToDay((day_now+3) % 7));
+                day_array.push(convertToDay((day_now + 1) % 7));
+                day_array.push(convertToDay((day_now + 2) % 7));
+                day_array.push(convertToDay((day_now + 3) % 7));
 
                 $('#dashboard_weather_icon').append("<i class='" + weather_convert[weather_array[0]] + "'></i>");
                 $('#dashboard_weather_text').append("<h2>Singapore<br><i>" + weather_convert[weather_array[0]].slice(3) + "</i></h2>");
                 $('#temp_now').append("<h3><i class='wi-thermometer'></i>" + parseInt(temp_now) + "<i class='wi-celcius'</i></h3>");
 
-                $('#weather1').append("<h2>" + day_array[0].slice(0,3) + "</h2><h3>" + parseInt(temp_array[0]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[0]] + "'></i></h4><h5>" + wind_speed_array[0] + "<br /><i>m/s</i></h5>");
-                $('#weather2').append("<h2>" + day_array[1].slice(0,3) + "</h2><h3>" + parseInt(temp_array[1]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[1]] + "'></i></h4><h5>" + wind_speed_array[1] + "<br /><i>m/s</i></h5>");
-                $('#weather3').append("<h2>" + day_array[2].slice(0,3) + "</h2><h3>" + parseInt(temp_array[2]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[2]] + "'></i></h4><h5>" + wind_speed_array[2] + "<br /><i>m/s</i></h5>");
-                $('#weather4').append("<h2>" + day_array[3].slice(0,3) + "</h2><h3>" + parseInt(temp_array[3]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[3]] + "'></i></h4><h5>" + wind_speed_array[3] + "<br /><i>m/s</i></h5>");
+                $('#weather1').append("<h2>" + day_array[0].slice(0, 3) + "</h2><h3>" + parseInt(temp_array[0]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[0]] + "'></i></h4><h5>" + wind_speed_array[0] + "<br /><i>m/s</i></h5>");
+                $('#weather2').append("<h2>" + day_array[1].slice(0, 3) + "</h2><h3>" + parseInt(temp_array[1]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[1]] + "'></i></h4><h5>" + wind_speed_array[1] + "<br /><i>m/s</i></h5>");
+                $('#weather3').append("<h2>" + day_array[2].slice(0, 3) + "</h2><h3>" + parseInt(temp_array[2]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[2]] + "'></i></h4><h5>" + wind_speed_array[2] + "<br /><i>m/s</i></h5>");
+                $('#weather4').append("<h2>" + day_array[3].slice(0, 3) + "</h2><h3>" + parseInt(temp_array[3]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[3]] + "'></i></h4><h5>" + wind_speed_array[3] + "<br /><i>m/s</i></h5>");
             });
 
             var marker_array = [];
@@ -132,11 +260,11 @@
             var transportation_checked = false;
             var gasLeak_checked = false;
 
-            $(document).on("change","#fire", function(){
-                if(this.checked === true && !fire_checked){
+            $(document).on("change", "#fire", function () {
+                if (this.checked === true && !fire_checked) {
                     fire_checked = true;
-                    $.getJSON("usecasetype.json", function(data){
-                        $.each(data, function(index){
+                    $.getJSON("usecasetype.json", function (data) {
+                        $.each(data, function (index) {
                             var id = data[index].pk;
                             var lat = data[index].latitude;
                             var lon = data[index].longitude;
@@ -146,17 +274,15 @@
                             var place_name = data[index].place_name;
 
                             var counter = $('#cases').children('tr').length;
-                            if(cat === 1){
-                                if(stat === 0){
-                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id +'"></input>';
+                            if (cat === 1) {
+                                if (stat === 0) {
+                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 1){
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
+                                else if (stat === 1) {
+                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 2){
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
+                                else if (stat === 2) {
+                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                                 }
                                 counter = counter + 1;
                                 $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
@@ -165,11 +291,11 @@
                                 var marker = new google.maps.Marker({
                                     position: myLatLng,
                                     label: labels[0],
-                                    title:"Hello World!"
+                                    title: "Hello World!"
                                 });
                                 marker.setMap(map_google);
                                 var marker_object = {
-                                    marker : marker,
+                                    marker: marker,
                                     category: 1
                                 };
                                 marker_array.push(marker_object);
@@ -177,21 +303,21 @@
                         })
                     })
                 }
-                else if(this.checked === false && fire_checked){
+                else if (this.checked === false && fire_checked) {
                     fire_checked = false;
                     $('.fire_cases').remove();
-                    for(var i=0; i<marker_array.length; i++){
-                        if(marker_array[i].category === 1){
+                    for (var i = 0; i < marker_array.length; i++) {
+                        if (marker_array[i].category === 1) {
                             marker_array[i].marker.setMap(null);
                         }
                     }
                 }
-             })
-             $(document).on("change","#transportation", function(){
-                if(this.checked === true && !transportation_checked){
+            })
+            $(document).on("change", "#transportation", function () {
+                if (this.checked === true && !transportation_checked) {
                     transportation_checked = true
-                    $.getJSON("usecasetype.json", function(data){
-                        $.each(data, function(index){
+                    $.getJSON("usecasetype.json", function (data) {
+                        $.each(data, function (index) {
                             var id = data[index].pk;
                             var lat = data[index].latitude;
                             var lon = data[index].longitude;
@@ -201,17 +327,15 @@
                             var place_name = data[index].place_name;
 
                             var counter = $('#cases').children('tr').length;
-                            if(cat === 2){
-                                if(stat === 0){
-                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id +'"></input>';
+                            if (cat === 2) {
+                                if (stat === 0) {
+                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 1){
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
+                                else if (stat === 1) {
+                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 2){
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
+                                else if (stat === 2) {
+                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                                 }
                                 counter = counter + 1;
                                 $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
@@ -219,11 +343,11 @@
                                 var marker = new google.maps.Marker({
                                     position: myLatLng,
                                     label: labels[1],
-                                    title:"Hello World!"
+                                    title: "Hello World!"
                                 });
                                 marker.setMap(map_google);
                                 var marker_object = {
-                                    marker : marker,
+                                    marker: marker,
                                     category: 2
                                 };
                                 marker_array.push(marker_object);
@@ -231,21 +355,21 @@
                         })
                     })
                 }
-                else if(this.checked === false && transportation_checked){
+                else if (this.checked === false && transportation_checked) {
                     transportation_checked = false;
                     $('.transportation_cases').remove();
-                    for(var i=0; i<marker_array.length; i++){
-                        if(marker_array[i].category === 2){
+                    for (var i = 0; i < marker_array.length; i++) {
+                        if (marker_array[i].category === 2) {
                             marker_array[i].marker.setMap(null);
                         }
                     }
                 }
-             })
-            $(document).on("change","#terrorism", function(){
-                if(this.checked === true && !terrorism_checked){
+            })
+            $(document).on("change", "#terrorism", function () {
+                if (this.checked === true && !terrorism_checked) {
                     terrorism_checked = true
-                    $.getJSON("usecasetype.json", function(data){
-                        $.each(data, function(index){
+                    $.getJSON("usecasetype.json", function (data) {
+                        $.each(data, function (index) {
                             var id = data[index].pk;
                             var lat = data[index].latitude;
                             var lon = data[index].longitude;
@@ -255,17 +379,15 @@
                             var place_name = data[index].place_name;
 
                             var counter = $('#cases').children('tr').length;
-                            if(cat === 3){
-                                if(stat === 0){
-                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id +'"></input>';
+                            if (cat === 3) {
+                                if (stat === 0) {
+                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 1){
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
+                                else if (stat === 1) {
+                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 2){
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
+                                else if (stat === 2) {
+                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                                 }
                                 counter = counter + 1;
                                 $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
@@ -274,11 +396,11 @@
                                 var marker = new google.maps.Marker({
                                     position: myLatLng,
                                     label: labels[2],
-                                    title:"Hello World!"
+                                    title: "Hello World!"
                                 });
                                 marker.setMap(map_google);
                                 var marker_object = {
-                                    marker : marker,
+                                    marker: marker,
                                     category: 3
                                 };
                                 marker_array.push(marker_object);
@@ -286,22 +408,22 @@
                         })
                     })
                 }
-                else if(this.checked === false && terrorism_checked){
+                else if (this.checked === false && terrorism_checked) {
                     terrorism_checked = false;
                     $('.terrorism_cases').remove();
-                    for(var i=0; i<marker_array.length; i++){
-                        if(marker_array[i].category === 3){
+                    for (var i = 0; i < marker_array.length; i++) {
+                        if (marker_array[i].category === 3) {
                             marker_array[i].marker.setMap(null);
                         }
                     }
                 }
-             })
+            })
 
-            $(document).on("change","#gasLeak", function(){
-                if(this.checked === true && !gasLeak_checked){
+            $(document).on("change", "#gasLeak", function () {
+                if (this.checked === true && !gasLeak_checked) {
                     gasLeak_checked = true
-                    $.getJSON("usecasetype.json", function(data){
-                        $.each(data, function(index){
+                    $.getJSON("usecasetype.json", function (data) {
+                        $.each(data, function (index) {
                             var id = data[index].pk;
                             var lat = data[index].latitude;
                             var lon = data[index].longitude;
@@ -311,29 +433,27 @@
                             var place_name = data[index].place_name;
 
                             var counter = $('#cases').children('tr').length;
-                            if(cat === 4){
-                                if(stat === 0){
-                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id +'"></input>';
+                            if (cat === 4) {
+                                if (stat === 0) {
+                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 1){
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
+                                else if (stat === 1) {
+                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 2){
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
+                                else if (stat === 2) {
+                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                                 }
                                 counter = counter + 1;
-                                $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" +  "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                                $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
                                 var myLatLng = {lat: lat, lng: lon};
                                 var marker = new google.maps.Marker({
                                     position: myLatLng,
                                     label: labels[3],
-                                    title:"Hello World!"
+                                    title: "Hello World!"
                                 });
                                 marker.setMap(map_google);
                                 var marker_object = {
-                                    marker : marker,
+                                    marker: marker,
                                     category: 4
                                 };
                                 marker_array.push(marker_object);
@@ -341,121 +461,115 @@
                         })
                     })
                 }
-                else if(this.checked === false && gasLeak_checked){
+                else if (this.checked === false && gasLeak_checked) {
                     gasLeak_checked = false;
                     $('.gasLeak_cases').remove();
-                    for(var i=0; i<marker_array.length; i++){
-                        if(marker_array[i].category === 4){
+                    for (var i = 0; i < marker_array.length; i++) {
+                        if (marker_array[i].category === 4) {
                             marker_array[i].marker.setMap(null);
                         }
                     }
                 }
-             })
-
-            $(document).on('click', '#haze', function(){
-            /*var styledMapType = new google.maps.StyledMapType(
-                [
-                    {
-                        featureType: "all",
-                        elementType: "all",
-                        stylers:[
-                            { "invert_lightness" : true}
-                        ]
-                    }
-                ],
-                {name : 'Styled Map'});
-            */
-            map_google.setZoom(12);
-            //map_google.mapTypes.set('styled_map', styledMapType);
-            //map_google.setMapTypeId('styled_map');
-
-            east_infoWindow.open(map_google,east_marker);
-            west_infoWindow.open(map_google, west_marker);
-            north_infoWindow.open(map_google,north_marker);
-            south_infoWindow.open(map_google,south_marker);
-            centre_infoWindow.open(map_google,centre_marker);
-
-            $('#google_map_base').append("<div class='overlay'></div>");
             })
 
-            $(document).on('click', '#incident', function(){
-            east_marker.setMap(null);
-            west_marker.setMap(null);
-            north_marker.setMap(null);
-            south_marker.setMap(null);
-            centre_marker.setMap(null);
+            $(document).on('click', '#haze', function () {
+                /*var styledMapType = new google.maps.StyledMapType(
+                 [
+                 {
+                 featureType: "all",
+                 elementType: "all",
+                 stylers:[
+                 { "invert_lightness" : true}
+                 ]
+                 }
+                 ],
+                 {name : 'Styled Map'});
+                 */
+                map_google.setZoom(12);
+                //map_google.mapTypes.set('styled_map', styledMapType);
+                //map_google.setMapTypeId('styled_map');
 
-            $('.overlay').remove();
-            for(var i=0; i<marker_array.length; i++){
-                marker_array[i].marker.setMap(map_google);
-            }
+                east_infoWindow.open(map_google, east_marker);
+                west_infoWindow.open(map_google, west_marker);
+                north_infoWindow.open(map_google, north_marker);
+                south_infoWindow.open(map_google, south_marker);
+                centre_infoWindow.open(map_google, centre_marker);
+
+                $('#google_map_base').append("<div class='overlay'></div>");
+            })
+
+            $(document).on('click', '#incident', function () {
+                east_marker.setMap(null);
+                west_marker.setMap(null);
+                north_marker.setMap(null);
+                south_marker.setMap(null);
+                centre_marker.setMap(null);
+
+                $('.overlay').remove();
+                for (var i = 0; i < marker_array.length; i++) {
+                    marker_array[i].marker.setMap(map_google);
+                }
             })
         });
     </script>
 
     <script>
-        function hazeConverter(psi){
-            if(psi > 300){
+        function hazeConverter(psi) {
+            if (psi > 300) {
                 return "red";
             }
-            else if(psi > 200){
+            else if (psi > 200) {
                 return "orange";
             }
-            else if(psi > 100){
+            else if (psi > 100) {
                 return "yellow";
             }
-            else if(psi > 50) {
+            else if (psi > 50) {
                 return "blue";
             }
-            else{
+            else {
                 return "green";
             }
         }
 
-        function convertToDay(today){
-            if(today === 0){
+        function convertToDay(today) {
+            if (today === 0) {
                 return "Sunday";
             }
-            else
-            if(today === 1){
+            else if (today === 1) {
                 return "Monday";
             }
-            else
-            if(today === 2){
+            else if (today === 2) {
                 return "Tuesday";
             }
-            else
-            if(today === 3){
+            else if (today === 3) {
                 return "Wednesday";
             }
-            else
-            if(today === 4){
+            else if (today === 4) {
                 return "Thursday";
             }
-            else
-            if(today === 5){
+            else if (today === 5) {
                 return "Friday";
             }
-            else
-            if(today === 6){
+            else if (today === 6) {
                 return "Saturday";
             }
         }
 
-        function kelvinToFahrenheit(temp){
-            return (temp -273) * 9 / 5;
+        function kelvinToFahrenheit(temp) {
+            return (temp - 273) * 9 / 5;
         }
-        function changeCategory(category){
-            if(category === 1){
+        function changeCategory(category) {
+            if (category === 1) {
                 return "Fire";
             }
-            else if(category === 2){
+            else if (category === 2) {
                 return "Traffic Accident";
             }
-            else if(category === 3){
+            else if (category === 3) {
                 return "Terrorists Activity";
             }
-            else if(category === 4){
+            else if (category === 4) {
                 return "Gas Leak";
             }
         }
@@ -520,7 +634,7 @@
 
                 <li>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        Hi, Dave Mattew <b class="caret"></b>
+                        Hi, {{ user.username }} <b class="caret"></b>
                     </a>
                     <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
                         <li>
@@ -533,7 +647,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">
+                            <a href="/logout">
                                 <span class="entypo-logout"></span>&#160;&#160;Logout</a>
                         </li>
                     </ul>
@@ -601,19 +715,19 @@
             <div class="side-bar">
                 <ul class="topnav menu-left-nest">
                     <li>
-                        <a class="tooltip-tip ajax-load" href="subscribe.html" title="Dashboard">
+                        <a class="tooltip-tip ajax-load" href="/subscribe" title="Dashboard">
                             <i class="icon-window"></i>
                             <span>Subscribe</span>
                         </a>
                     </li>
                     <li>
-                        <a class="tooltip-tip ajax-load" href="unsubscribe.html" title="Dashboard">
+                        <a class="tooltip-tip ajax-load" href="/unsubscribe" title="Dashboard">
                             <i class="icon-window"></i>
                             <span>Unsubscribe</span>
                         </a>
                     </li>
                     <li>
-                        <a class="tooltip-tip ajax-load" href="changeSubscription.html" title="Dashboard">
+                        <a class="tooltip-tip ajax-load" href="/changeSubscription" title="Dashboard">
                             <i class="icon-window"></i>
                             <span>Change Subscription</span>
                         </a>
@@ -717,30 +831,30 @@
 
             <div class="row">
                 <center>
-                 <form>
-                    <input type="button" id="incident" class="btn btn-primary" value="Incident"></input>
-                    <input type="button" id="haze" class="btn btn-success" value="Haze"></input>
-                </form>
-                <center>
+                    <form>
+                        <input type="button" id="incident" class="btn btn-primary" value="Incident"></input>
+                        <input type="button" id="haze" class="btn btn-success" value="Haze"></input>
+                    </form>
+                    <center>
             </div>
-            <br />
-            <br />
+            <br/>
+            <br/>
             <center>
-            <div class="row">
-                <label class="checkbox-inline">
-                    <input type="checkbox" value="" id="fire">Fire</input>
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" value="" id="transportation">Traffic Accident</input>
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" value="" id="terrorism">Terrorists Activity</input>
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" id="gasLeak" value="">Gas Leak</input>
-                </label>
-            </div>
-        </center>
+                <div class="row">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="" id="fire">Fire</input>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="" id="transportation">Traffic Accident</input>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="" id="terrorism">Terrorists Activity</input>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="gasLeak" value="">Gas Leak</input>
+                    </label>
+                </div>
+            </center>
             <div class="row">
                 <div class="col-sm-4">
                     <div class="weather-wrap">
@@ -794,7 +908,7 @@
                         </div>
                     </div>
                 </div>
-            <div class="col-sm-8">
+                <div class="col-sm-8">
 
                     <div class="nest" id="FootableClose">
                         <div class="title-alt">
@@ -815,7 +929,9 @@
 
                         <div class="body-nest" id="Footable">
 
-                            <p class="lead well">FooTable is a jQuery plugin that aims to make HTML tables on smaller devices look awesome - No matter how many columns of data you may have in them. And it's responsive i think this better than DataTable in some way</p>
+                            <p class="lead well">FooTable is a jQuery plugin that aims to make HTML tables on smaller
+                                devices look awesome - No matter how many columns of data you may have in them. And it's
+                                responsive i think this better than DataTable in some way</p>
 
                             <table class="table-striped footable-res footable metro-blue" data-page-size="6">
                                 <thead>

@@ -6,6 +6,7 @@ app_name = 'crisis'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^dashboard/$', views.dashboard, name='dashboard'),
+    url(r'^relevant_agency/$', views.relevant_agency, name='relevant_agency'),
     url(r'^summary/$', views.summary, name='summary'),
     url(r'^get_cases/$', views.get_cases, name='get_cases'),
     url(r'^register/$', views.UserFormView.as_view(), name='register'),
