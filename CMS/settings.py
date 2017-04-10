@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'crisis',
     'rest_framework',
     'corsheaders',
+    'django_cron',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -51,6 +52,10 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+]
+
+CRON_CLASSES = [
+    "crisis.scheduled_email",
 ]
 
 ROOT_URLCONF = 'CMS.urls'
