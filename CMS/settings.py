@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'crisis',
     'rest_framework',
     'corsheaders',
-    'django_crontab',
+    #'django_crontab',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -54,9 +54,9 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
-CRONJOBS = [
-     ('*/5 * * * *', 'crisis.scheduled_email.my_scheduled_job'),
-]
+# CRONJOBS = [
+#      ('* * * * *', 'crisis.scheduled_email.my_scheduled_job''>>crisis/cronlog.log'),
+# ]
 
 ROOT_URLCONF = 'CMS.urls'
 
