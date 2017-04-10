@@ -2,1001 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73f7ecf6-b2af-406b-86fd-db451fc16d60" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/dripicons.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/dripicons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/dripicons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/entypo.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/entypo.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/entypo.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/maki.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/maki.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/maki.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/typicons.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/typicons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/typicons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/weathericons-regular-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/weathericons-regular-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/weathericons-regular-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/fonts/open-sans-bold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/fonts/open-sans-light.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/fonts/open-sans-normal.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/ico/minus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/bg10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/bg11.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/bg12.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/bg13.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/bg2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/bg3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/bg3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/bg4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/bg5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/bg8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/bg9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/blue-sky.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/blurred-background-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/credit/american-express.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/credit/cirrus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/credit/mastercard.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/credit/mestro.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/credit/paypal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/credit/paypal2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/credit/visa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/food.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/giftly.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/grid-baseline-20px.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/insta-pic.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/insta-pic2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/marker.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/minus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/06.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/07.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/08.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/09.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/overlays/15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/people-q-c-350-250-5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/people-q-c-350-250-7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/people-q-c-350-250-8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/plus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/search-dark.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/search-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/small-bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/small-bg10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/small-bg11.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/small-bg12.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/small-bg13.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/small-bg2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/small-bg5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/small-bg8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/small-bg9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/img/xglyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap2/img/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap2/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap3/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap3/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap3/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/img/tick.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/clock/clockface.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/clock/hourhand.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/clock/minhand.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/clock/sechand.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/clock/sechand.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/colorPicker/img/bootstrap-colorpicker/alpha.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/colorPicker/img/bootstrap-colorpicker/hue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/colorPicker/img/bootstrap-colorpicker/saturation.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/img/minus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/img/plus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/bootstrap/img/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/bootstrap/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/images/Sorting icons.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/images/back_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/images/back_enabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/images/back_enabled_hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/images/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/images/forward_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/images/forward_enabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/images/forward_enabled_hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/images/sort_asc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/images/sort_asc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/images/sort_both.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/images/sort_desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/images/sort_desc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dropZone/downloads/images/spritemap.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dropZone/downloads/images/spritemap@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/fancybox_loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/fancybox_loading@2x.gif.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/fancybox_overlay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/fancybox_sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/fancybox_sprite@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/helpers/fancybox_buttons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/img/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/img/progressbar.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/gae-go/static/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/gae-python/static/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/node/public/files/thumbnail/_gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/node/tmp/_gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/fonts/footable.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/fonts/footable.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/fonts/footable.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footbar/dn.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footbar/hide.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footbar/show.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footbar/ttd.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footbar/ttu.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footbar/up.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gritter/images/gritter-light.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gritter/images/gritter-long.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gritter/images/gritter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gritter/images/ie-spacer.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gritter/images/trees.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/aero.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/aero@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/blue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/blue@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/flat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/flat@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/green@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/grey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/grey@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/orange.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/orange@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/pink.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/pink@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/purple.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/purple@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/red@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/yellow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/yellow@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/line/line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/line/line@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/aero.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/aero@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/blue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/blue@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/flat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/flat@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/green@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/grey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/grey@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/orange.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/orange@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/pink.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/pink@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/purple.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/purple@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/red@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/yellow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/yellow@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/futurico/futurico.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/futurico/futurico@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/line/line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/line/line@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/aero.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/aero@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/blue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/blue@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/green@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/grey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/grey@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/minimal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/minimal@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/orange.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/orange@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/pink.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/pink@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/purple.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/purple@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/red@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/yellow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/yellow@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/polaris/polaris.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/polaris/polaris@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/aero.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/aero@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/blue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/blue@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/green@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/grey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/grey@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/orange.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/orange@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/pink.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/pink@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/purple.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/purple@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/red@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/square.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/square@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/yellow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/yellow@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/aero.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/aero@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/blue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/blue@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/green@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/grey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/grey@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/orange.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/orange@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/pink.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/pink@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/purple.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/purple@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/red@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/square.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/square@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/yellow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/yellow@2x.png.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/idealform/img/datepicker.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/idealform/img/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/idealform/img/radiocheck.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/idealform/img/validation.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/skin-select/img/style-toggle - Copy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/skin-select/img/style-toggle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/img/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/alien.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/angel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/angry.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/blink.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/blush.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/cheerful.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/cool.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/cwy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/devil.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/dizzy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/ermm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/face.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/getlost.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/grin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/happy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/heart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/kissing.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/laughing.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/ninja.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/pinch.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/pouty.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/sad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/shocked.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/sick.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/sideways.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/silly.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/sleeping.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/smile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/tongue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/unsure.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/w00t.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/wassat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/whistling.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/wink.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/wub.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/themes/famfamfam.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/themes/monocons/monocons.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/themes/monocons/monocons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/ajax-loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/file.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/folder-closed.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/folder.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/minus.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/plus.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/treeview-black-line.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/treeview-black.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/treeview-default-line.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/treeview-default.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/treeview-famfamfam-line.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/treeview-famfamfam.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/treeview-gray-line.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/treeview-gray.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/treeview-red-line.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/images/treeview-red.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/demos/css/images/dark-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/validate/img/error.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/validate/img/valid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/images/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/06.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/07.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/08.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/09.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/overlays/15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/animation.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/docs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/dripicon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/entypo-icon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/extra-pages.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/flat-ui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/flat.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/hazeMap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/hint.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/icons-style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/loader-style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/login.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/mail.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/maki-icons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/media.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/open-sans.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/profile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/signin.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/social.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/typicons-codes.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/typicons-embedded.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/typicons-ie7-codes.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/typicons-ie7.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/typicons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/css/weather-icons.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/dripicons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/typicons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/font/weathericons-regular-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/application.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/bootstrap-select.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/button/ladda/ladda-themeless.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/button/ladda/ladda.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/button/ladda/ladda.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/button/ladda/spin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/button/progressbutton.jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap2/css/bootstrap-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap2/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap2/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap3/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap3/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap3/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap3/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap3/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap3/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/bootstrap3/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/calendar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/calendar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/css/calendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/css/calendar.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/events.json.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/jstimezonedetect/LICENCE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/jstimezonedetect/jstz.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/jstimezonedetect/jstz.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/language/de-DE.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/language/el-GR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/language/es-ES.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/language/es-MX.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/language/fr-FR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/language/it-IT.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/language/pl-PL.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/language/pt-BR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/language/ru-RU.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/language/sv-SE.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/language/template.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/tmpls/day.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/tmpls/events-list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/tmpls/month-day.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/tmpls/month.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/tmpls/week-days.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/tmpls/week.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/tmpls/year-month.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/tmpls/year.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/calendar/underscore/underscore-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/chart/barChart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/chart/chart-float-stacking.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/chart/chart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/chart/chart.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/chart/chartjs-option.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/chart/jquery.flot.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/chart/jquery.flot.resize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/chart/jquery.flot2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/chart/jquery.sparkline.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/chart/lineChart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/chart/polarChart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/chart/radarChart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/chart/realTime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/clock/analog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/clock/date.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/clock/digital.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/clock/jquery.clock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/colorPicker/bootstrap-colorpicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/colorPicker/bootstrap-colorpicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/colorPicker/bootstrap-colorpicker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/corner/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/corner/jquery.corner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/countdown/countdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/countdown/jquery.countdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/countdown/jquery.countdown.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/custom/accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/custom/scriptbreaker-multiple-accordion-1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/css/datatables.responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/js/ajax-bootstrap-recreate-table.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/js/ajax-bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/js/datatables.responsive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/js/dom-bootstrap-multiple-table.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/js/dom-bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/bootstrap/css/bootstrap-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/bootstrap/css/bootstrap-responsive.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/js/DT_bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/js/jquery.dataTables.fnDisplayRow.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/js/jquery.dataTables.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/js/jquery.dataTables.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery.dataTables/js/jquery.dataTables.naturalSort.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/jquery/jquery.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dataTable/lib/lodash/lodash.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/datepicker/bootstrap-datepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/datepicker/bootstrap-datetimepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/datepicker/bootstrap-datetimepicker.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/datepicker/clockface.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/datepicker/clockface.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/datepicker/datepicker-coustom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/datepicker/datepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/datepicker/daterangepicker-bs2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/datepicker/daterangepicker-bs3.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/datepicker/daterangepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/datepicker/moment.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/datepicker/moment.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/drag/jquery.shapeshift.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/drag/jquery.shapeshift.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/drag/jquery.touch-punch.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dropZone/downloads/css/basic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dropZone/downloads/css/dropzone.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dropZone/downloads/css/stylus/basic.styl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dropZone/downloads/css/stylus/dropzone.styl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dropZone/downloads/dropzone-amd-module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dropZone/downloads/dropzone-amd-module.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dropZone/downloads/dropzone.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dropZone/downloads/dropzone.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dropZone/dropzone.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dropZone/lib/dropzone.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/dropZone/upload/dropzone.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/helpers/jquery.fancybox-buttons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/helpers/jquery.fancybox-buttons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/helpers/jquery.fancybox-media.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/helpers/jquery.fancybox-thumbs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/helpers/jquery.fancybox-thumbs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/jquery.fancybox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/jquery.fancybox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fancybox/jquery.fancybox.pack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/cors/postmessage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/cors/result.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/css/demo-ie8.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/css/demo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/css/jquery.fileupload-noscript.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/css/jquery.fileupload-ui-noscript.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/css/jquery.fileupload-ui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/css/jquery.fileupload.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/cors/jquery.postmessage-transport.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/cors/jquery.xdr-transport.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/jquery.fileupload-angular.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/jquery.fileupload-audio.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/jquery.fileupload-image.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/jquery.fileupload-jquery-ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/jquery.fileupload-process.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/jquery.fileupload-ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/jquery.fileupload-validate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/jquery.fileupload-video.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/jquery.fileupload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/jquery.iframe-transport.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/js/vendor/jquery.ui.widget.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/gae-go/app.yaml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/gae-go/app/main.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/gae-go/static/robots.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/gae-python/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/gae-python/app.yaml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/gae-python/main.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/gae-python/static/robots.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/node/_gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/node/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/node/public/files/_gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/node/server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/php/UploadHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/php/files/_gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/php/files/_htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/server/php/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/test/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fileUpload/test/test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/flatvideo/jquery.fitvids.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/arbitrary_toggle_markup.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/bootstrap-glyphicons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/bootstrap-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/bootstrapSwitch.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/fonts/footable.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/footable-demos.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/footable.core.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/footable.core.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/footable.metro.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/footable.metro.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/footable.standalone.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/css/footable.standalone.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/_jshintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/bootstrap-tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/bootstrapSwitch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/data-generator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/demos.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/footable.filter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/footable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/footable.paginate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/footable.plugin.template.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/footable.sort.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/footable.striping.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/jquery-1.9.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/jquery.mockjax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footable/js/mustache.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footbar/jquery.jixedbar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footbar/jquery.jixedbar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footbar/jx.bar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/footbar/jx.stylesheet.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fullscreen/fseditor.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fullscreen/jquery.fseditor-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fullscreen/jquery.fseditor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fullscreen/jquery.fullscreen-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/fullscreen/jquery.fullscreen.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gage/easypiechart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gage/easypiechart.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gage/jquery.easy-pie-chart.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gage/jquery.easypiechart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gage/jquery.easypiechart.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gage/jquery.knob.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gage/jquery.percentageloader-0.1.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gage/jquery.percentageloader-0.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gage/jquery.percentageloader-0.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gage/just-gage.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gage/justgage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gage/raphael.2.1.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/google-code-prettify/prettify.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/google-code-prettify/prettify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gritter/jquery.gritter.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gritter/jquery.gritter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/gritter/jquery.gritter.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/html5shiv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/aero.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/flat.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/grey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/orange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/pink.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/purple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/red.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/flat/yellow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/jquery.icheck.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/jquery.icheck.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/line/aero.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/line/all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/line/blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/line/green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/line/grey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/line/line.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/line/orange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/line/pink.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/line/purple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/line/red.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/line/yellow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/_all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/aero.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/flat.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/grey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/orange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/pink.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/purple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/red.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/flat/yellow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/futurico/futurico.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/line/_all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/line/aero.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/line/blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/line/green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/line/grey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/line/line.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/line/orange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/line/pink.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/line/purple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/line/red.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/line/yellow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/_all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/aero.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/grey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/minimal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/orange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/pink.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/purple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/red.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/minimal/yellow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/polaris/polaris.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/_all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/aero.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/grey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/orange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/pink.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/purple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/red.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/square.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/skins/square/yellow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/_all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/aero.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/grey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/orange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/pink.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/purple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/red.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/square.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/square/yellow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/zepto.icheck.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/iCheck/zepto.icheck.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/idealform/css/jquery.idealforms.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/idealform/img/logo.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/idealform/img/radiocheck.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/idealform/img/validation.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/idealform/jquery.idealforms.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/inputMask/jquery.maskedinput.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/jhere-custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/jquery.cookie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/jquery.fullbg.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/jquery.li-scroller.1.0.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/load.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/map/gmap3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/markdown/bootstrap-markdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/markdown/bootstrap-markdown.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/nano/jquery.nanoscroller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/nano/nanoscroller.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/newsticker/jquery.newsTicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/newsticker/jquery.newsTicker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/newsticker/newsticker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/newsticker/xjquery.mCustomScrollbar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/pace.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/pace.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-barber-shop.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-big-counter.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-bounce.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-center-atom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-center-circle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-center-radar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-center-simple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-corner-indicator.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-fill-left.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-flash.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-flat-top.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-loading-bar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-mac-osx.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pace/themes/pace-theme-minimal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pnotify/jquery.pnotify.default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pnotify/jquery.pnotify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pnotify/jquery.pnotify.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/pnotify/use for pines style icons/jquery.pnotify.default.icons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/preloader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/progress-bar/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/progress-bar/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/progress-bar/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/progress-bar/number-pb.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/progress-bar/number-pb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/progress-bar/progress-app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/progress-bar/src/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/progress-bar/src/jquery.velocity.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/progress-bar/src/normalize.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/progress-bar/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/search/jquery.quicksearch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/sidr/jquery.pageslide.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/sidr/jquery.pageslide.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/sidr/jquery.pageslide.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/skin-select/jquery.cookie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/skin-select/skin-select-edit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/skin-select/skin-select.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/skin-select/skin-select.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/slidebars/example-styles.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/slidebars/slidebars.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/slidebars/slidebars.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/slidebars/slidebars.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/slidebars/slidebars.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/slidebars/xxslidebars.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/speed/canvasgauge-coustom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/stackable/responsive-table.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/stackable/stacktable.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/stackable/stacktable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/switch-style/jquery.cookie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/switch-style/jquery.sheetswitch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/switch/bootstrap-switch.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/switch/bootstrap-switch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/switch/bootstrap-switch.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/switch/flat-ui-fonts.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tabDrop/bootstrap-tabdrop.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tabDrop/tabdrop.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tabs/acc-wizard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tabs/acc-wizard.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tabs/acc-wizard.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tabs/responsive-tabs-2.3.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tabs/responsive-tabs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tag/jquery.tagsinput.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tag/jquery.tagsinput.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tag/jquery.tagsinput.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/bootstrap-wysihtml5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/bootstrap-wysiwyg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/build/minify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/dist/bootstrap-wysihtml5-0.0.2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/dist/bootstrap-wysihtml5-0.0.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/dist/bootstrap-wysihtml5-0.0.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/dist/wysihtml5-0.2.0.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/dist/wysihtml5-0.2.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/dist/wysihtml5-0.3.0.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/dist/wysihtml5-0.3.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/dist/wysihtml5-0.4.0pre.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/dist/wysihtml5-0.4.0pre.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/editor.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/examples/advanced.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/examples/css/stylesheet.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/examples/simple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-apollo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-basic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-clj.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-css.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-dart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-erlang.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-go.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-hs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-lisp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-llvm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-lua.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-matlab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-ml.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-mumps.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-n.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-pascal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-proto.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-r.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-rd.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-scala.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-sql.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-tcl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-tex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-vb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-vhdl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-wiki.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-xq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/lang-yaml.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/prettify.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/prettify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/google-code-prettify/run_prettify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/external/jquery.hotkeys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/css/bootstrap-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/css/bootstrap-responsive.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/css/bootstrap3-wysiwyg5-color.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/css/bootstrap3-wysiwyg5.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/css/prettify.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/css/wysiwyg-color.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/js/bootstrap-button.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/js/jquery-1.7.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/js/prettify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/js/wysihtml5-0.3.0.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/lib/js/wysihtml5-0.3.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/parser_rules/advanced.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/parser_rules/simple.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/emoticons/credits.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/jquery.sceditor.bbcode.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/jquery.sceditor.default.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/jquery.sceditor.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/jquery.sceditor.xhtml.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/plugins/bbcode.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/plugins/format.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/plugins/xhtml.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/themes/default.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/themes/modern.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/themes/office-toolbar.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/themes/office.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/sceditor/minified/themes/square.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/bootstrap-wysihtml5.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/bootstrap-wysihtml5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/bootstrap3-wysihtml5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.ar-AR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.bg-BG.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.ca-CT.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.cs-CZ.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.da-DK.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.de-DE.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.el-GR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.es-AR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.es-ES.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.fr-FR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.hr-HR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.it-IT.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.ja-JP.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.ko-KR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.lt-LT.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.mo-MD.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.nb-NB.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.nl-NL.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.pl-PL.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.pt-BR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.ru-RU.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.sk-SK.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.sv-SE.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.tr-TR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.ua-UA.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.zh-CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/src/locales/bootstrap-wysihtml5.zh-TW.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/topay/css/bootstrap-markdown.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/textEditor/topay/js/bootstrap-markdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/timepicker/bootstrap-timepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/timepicker/bootstrap-timepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/timepicker/bootstrap-timepicker.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/timepicker/bootstrap-timepicker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tip/jquery.tooltipster.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tip/jquery.tooltipster.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tip/themes/tooltipster-light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tip/themes/tooltipster-noir.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tip/themes/tooltipster-punk.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tip/themes/tooltipster-shadow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tip/tooltipster.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/toggle_close.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/demo/async.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/demo/demo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/demo/edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/demo/images.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/demo/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/demo/large.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/demo/prerendered.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/demo/screen.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/demo/simple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/demo/sortable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/demo/source.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/demo/source.phps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/jquery.treeview.async.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/jquery.treeview.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/jquery.treeview.edit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/jquery.treeview.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/jquery.treeview.sortable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/lib/jquery.cookie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/lib/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/tabelizer/jquery-ui-1.10.4.custom.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/tabelizer/jquery.tabelizer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/tabelizer/jquery.tabelizer.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/tabelizer/tabelizer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/tabelizer/tabelizer.jquery.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/tabelizer/tabelizer.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/treetable/javascripts/src/jquery.treetable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/treetable/javascripts/test/jquery.treetable.test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/treetable/stylesheets/jquery.treetable.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/treetable/stylesheets/jquery.treetable.theme.default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/treetable/stylesheets/screen.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/treetable/vendor/chai-jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/treetable/vendor/chai.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/treetable/vendor/jquery-ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/treetable/vendor/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/treetable/vendor/mocha.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/treetable/vendor/mocha.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/treetable/vendor/sinon.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/tree/treetable/vendor/underscore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/demos/css/demo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/demos/css/simple-demo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/demos/css/uploader.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/demos/image-preview.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/demos/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/demos/js/demo-preview.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/demos/js/demo-preview.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/demos/js/demo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/demos/js/demo.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/demos/simple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/demos/upload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/src/dmuploader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/upload/src/dmuploader.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/validate/jquery.validate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/validate/jquery.validate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/validate/validate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/jquery.vegas.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/vegas/jquery.vegas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/build/jquery.steps.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/build/jquery.steps.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/css/jquery.steps.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/css/normalize.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/jquery.stepy.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/jquery.stepy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/jquery.stepy.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/lib/jquery-1.4.4.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/lib/jquery-1.5.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/lib/jquery-1.6.4.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/lib/jquery-1.7.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/lib/jquery-1.8.3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/lib/jquery-1.9.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/lib/jquery.cookie-1.3.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/assets/js/wizard/lib/modernizr-2.6.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/templates/crisis/changeSubscription.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/templates/crisis/index2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/templates/crisis/index3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/templates/crisis/login2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/templates/crisis/subscribe.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/templates/crisis/unsubscribe.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/caseManager.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/templates/crisis/government_report.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crisis/templates/crisis/report_incident.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/crisis/caseDao.py" afterPath="$PROJECT_DIR$/crisis/dao.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/crisis/templates/crisis/index3.html" afterPath="$PROJECT_DIR$/crisis/templates/crisis/dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMS/settings.py" afterPath="$PROJECT_DIR$/CMS/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/caseDao.py" afterPath="$PROJECT_DIR$/crisis/caseDao.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/forms.py" afterPath="$PROJECT_DIR$/crisis/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/models.py" afterPath="$PROJECT_DIR$/crisis/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/templates/crisis/changeSubscription.html" afterPath="$PROJECT_DIR$/crisis/templates/crisis/changeSubscription.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/templates/crisis/index.html" afterPath="$PROJECT_DIR$/crisis/templates/crisis/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/templates/crisis/login.html" afterPath="$PROJECT_DIR$/crisis/templates/crisis/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/templates/crisis/subscribe.html" afterPath="$PROJECT_DIR$/crisis/templates/crisis/subscribe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/templates/crisis/unsubscribe.html" afterPath="$PROJECT_DIR$/crisis/templates/crisis/unsubscribe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/urls.py" afterPath="$PROJECT_DIR$/crisis/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crisis/views.py" afterPath="$PROJECT_DIR$/crisis/views.py" />
     </list>
@@ -1019,28 +38,18 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMS/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="60" column="21" lean-forward="false" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+            <state relative-caret-position="1320">
+              <caret line="60" column="17" lean-forward="false" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/index2.html">
+      <file leaf-file-name="changeSubscription.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/changeSubscription.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="2706">
+              <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1049,73 +58,31 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crisis/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="151" column="58" lean-forward="false" selection-start-line="151" selection-start-column="58" selection-end-line="151" selection-end-column="58" />
+            <state relative-caret-position="357">
+              <caret line="154" column="67" lean-forward="false" selection-start-line="154" selection-start-column="67" selection-end-line="154" selection-end-column="67" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1491749935368" expanded="true" signature="1323:1408" ph="..." />
+                <marker date="1491792946967" expanded="true" signature="1335:1420" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="changeSubscription.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/changeSubscription.html">
+      <file leaf-file-name="new_case_2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/new_case_2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" column="42" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="10" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crisis/forms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2024">
-              <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-              <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-              <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-              <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-              <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-              <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-              <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-              <caret line="85" column="41" lean-forward="false" selection-start-line="85" selection-start-column="41" selection-end-line="85" selection-end-column="41" />
-              <caret line="86" column="41" lean-forward="false" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
-              <caret line="87" column="41" lean-forward="false" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
-              <caret line="88" column="41" lean-forward="false" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
-              <caret line="89" column="41" lean-forward="false" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="41" />
-              <caret line="92" column="41" lean-forward="false" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crisis/assets/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="271" column="0" lean-forward="true" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unsubscribe.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/unsubscribe.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="subscribe.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/subscribe.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-638">
-              <caret line="16" column="56" lean-forward="true" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+              <caret line="0" column="43" lean-forward="true" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -1124,8 +91,50 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crisis/urls.py">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crisis/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="report_incident.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/report_incident.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7084">
+              <caret line="328" column="56" lean-forward="false" selection-start-line="328" selection-start-column="56" selection-end-line="328" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_case.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/new_case.html">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+              <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="233" column="69" lean-forward="true" selection-start-line="233" selection-start-column="69" selection-end-line="233" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -1157,7 +166,23 @@
       <find>STATICFILES_DIRS</find>
       <find>csrf</find>
       <find>temp</find>
+      <find>casedao</find>
+      <find>script</find>
+      <find>&lt;script&gt;</find>
+      <find>hi,</find>
+      <find>report</find>
+      <find>CaseManage</find>
+      <find>getjson</find>
+      <find>logout</find>
+      <find>subscribe</find>
       <find>assets</find>
+      <find>asset</find>
+      <find>submit</find>
+      <find>&lt;form</find>
+      <find>description</find>
+      <find>das</find>
+      <find>ajax</find>
+      <find>$.ajax</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1177,7 +202,6 @@
         <option value="$PROJECT_DIR$/crisis/templates/crisis/new_case_2.html" />
         <option value="$PROJECT_DIR$/crisis/templates/crisis/new_case.html" />
         <option value="$PROJECT_DIR$/crisis/templates/crisis/caseDao.py" />
-        <option value="$PROJECT_DIR$/crisis/forms.py" />
         <option value="$PROJECT_DIR$/crisis/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/crisis/serializer.py" />
         <option value="$PROJECT_DIR$/crisis/templates/crisis/test.html" />
@@ -1187,12 +211,21 @@
         <option value="$PROJECT_DIR$/crisis/caseDao.py" />
         <option value="$PROJECT_DIR$/crisis/static/crisis/js/main.js" />
         <option value="$PROJECT_DIR$/crisis/static/crisis/assets/js/main.js" />
-        <option value="$PROJECT_DIR$/crisis/models.py" />
-        <option value="$PROJECT_DIR$/crisis/templates/crisis/index.html" />
         <option value="$PROJECT_DIR$/crisis/index.html" />
         <option value="$PROJECT_DIR$/CMS/settings.py" />
-        <option value="$PROJECT_DIR$/crisis/templates/crisis/login.html" />
         <option value="$PROJECT_DIR$/crisis/assets/js/main.js" />
+        <option value="$PROJECT_DIR$/crisis/templates/crisis/login.html" />
+        <option value="$PROJECT_DIR$/crisis/CaseManager.py" />
+        <option value="$PROJECT_DIR$/crisis/templates/crisis/government_report.html" />
+        <option value="$PROJECT_DIR$/crisis/caseManager.py" />
+        <option value="$PROJECT_DIR$/crisis/templates/crisis/subscribe.html" />
+        <option value="$PROJECT_DIR$/crisis/templates/crisis/index.html" />
+        <option value="$PROJECT_DIR$/crisis/templates/crisis/unsubscribe.html" />
+        <option value="$PROJECT_DIR$/crisis/templates/crisis/changeSubscription.html" />
+        <option value="$PROJECT_DIR$/crisis/templates/crisis/dashboard.html" />
+        <option value="$PROJECT_DIR$/crisis/forms.py" />
+        <option value="$PROJECT_DIR$/crisis/templates/crisis/report_incident.html" />
+        <option value="$PROJECT_DIR$/crisis/models.py" />
         <option value="$PROJECT_DIR$/crisis/urls.py" />
         <option value="$PROJECT_DIR$/crisis/views.py" />
       </list>
@@ -1207,8 +240,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1098" />
+    <option name="width" value="1932" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1328,28 +361,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crisis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1533,11 +544,11 @@
       <recent name="C:\SWProjects\CMS\crisis\static\crisis\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\SWProjects\CMS\crisis\templates\crisis" />
       <recent name="C:\SWProjects\CMS\crisis" />
       <recent name="C:\SWProjects\CMS\assets\assets" />
       <recent name="C:\SWProjects\CMS\static\assets" />
       <recent name="C:\SWProjects\CMS" />
-      <recent name="C:\SWProjects\CMS\crisis\templates\crisis" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.CMS">
@@ -1823,17 +834,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1932" height="1092" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19957082" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20236814" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32286024" sideWeight="0.50215286" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497309" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30653805" sideWeight="0.49784714" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30636463" sideWeight="0.49784714" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1874,37 +885,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Miniconda3/Lib/site-packages/django/core/serializers/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2772">
-          <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Miniconda3/Lib/site-packages/django/contrib/auth/middleware.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/migrations/0003_auto_20170403_1508.py" />
-    <entry file="file://$PROJECT_DIR$/crisis/migrations/0004_auto_20170403_1623.py" />
-    <entry file="file://$PROJECT_DIR$/crisis/migrations/0015_auto_20170404_1022.py" />
-    <entry file="file://$PROJECT_DIR$/crisis/migrations/0003_auto_20170404_1025.py" />
     <entry file="file://$PROJECT_DIR$/crisis/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -1987,13 +972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/caseDao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crisis/static/crisis/js/button/ladda/spin.min.js" />
     <entry file="file://$PROJECT_DIR$/crisis/static/crisis/js/hazeAPI.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -2009,91 +987,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/static/crisis/assets/js/map/gmap3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/new_case_2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/static/crisis/assets/js/slidebars/slidebars.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/static/crisis/assets/js/slidebars/slidebars.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/crisis/assets/js/preloader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/static/crisis/assets/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="304" column="35" lean-forward="false" selection-start-line="304" selection-start-column="35" selection-end-line="304" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/static/crisis/assets/js/load.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/static/crisis/assets/js/map/gmap3.js" />
+    <entry file="file://$PROJECT_DIR$/crisis/static/crisis/assets/js/slidebars/slidebars.min.js" />
+    <entry file="file://$PROJECT_DIR$/crisis/static/crisis/assets/js/slidebars/slidebars.js" />
+    <entry file="file://$PROJECT_DIR$/static/crisis/assets/js/preloader.js" />
+    <entry file="file://$PROJECT_DIR$/crisis/static/crisis/assets/js/main.js" />
+    <entry file="file://$PROJECT_DIR$/crisis/static/crisis/assets/js/load.js" />
     <entry file="file://$PROJECT_DIR$/crisis/assets/js/map/gmap3.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/login3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="51" column="50" lean-forward="false" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/login3.html" />
     <entry file="file://$PROJECT_DIR$/CMS/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2105,22 +1016,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="667" column="63" lean-forward="false" selection-start-line="667" selection-start-column="63" selection-end-line="667" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/index.html" />
     <entry file="file://$PROJECT_DIR$/CMS/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -2133,67 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/index3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/index2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="60" column="21" lean-forward="false" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/login2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2024">
-          <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-          <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-          <caret line="85" column="41" lean-forward="false" selection-start-line="85" selection-start-column="41" selection-end-line="85" selection-end-column="41" />
-          <caret line="86" column="41" lean-forward="false" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
-          <caret line="87" column="41" lean-forward="false" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
-          <caret line="88" column="41" lean-forward="false" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
-          <caret line="89" column="41" lean-forward="false" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="41" />
-          <caret line="92" column="41" lean-forward="false" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2201,49 +1036,204 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="271" column="0" lean-forward="true" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/email.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-156">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/login2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="15" column="40" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="15" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/index3.html" />
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/dao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="52" column="32" lean-forward="true" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/government_report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="83" column="46" lean-forward="false" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/caseManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1276">
+          <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/subscribe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+          <caret line="130" column="41" lean-forward="false" selection-start-line="130" selection-start-column="41" selection-end-line="130" selection-end-column="41" />
+          <caret line="131" column="41" lean-forward="false" selection-start-line="131" selection-start-column="41" selection-end-line="131" selection-end-column="41" />
+          <caret line="132" column="41" lean-forward="false" selection-start-line="132" selection-start-column="41" selection-end-line="132" selection-end-column="41" />
+          <caret line="133" column="41" lean-forward="false" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="41" />
+          <caret line="134" column="41" lean-forward="false" selection-start-line="134" selection-start-column="41" selection-end-line="134" selection-end-column="41" />
+          <caret line="137" column="41" lean-forward="false" selection-start-line="137" selection-start-column="41" selection-end-line="137" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15114">
+          <caret line="687" column="82" lean-forward="false" selection-start-line="687" selection-start-column="82" selection-end-line="687" selection-end-column="82" />
+          <folding>
+            <element signature="e#26146#26152#1#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/unsubscribe.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="2046">
+          <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+          <caret line="86" column="41" lean-forward="false" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
+          <caret line="87" column="41" lean-forward="false" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
+          <caret line="88" column="41" lean-forward="false" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
+          <caret line="89" column="41" lean-forward="false" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="41" />
+          <caret line="90" column="41" lean-forward="false" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
+          <caret line="93" column="41" lean-forward="false" selection-start-line="93" selection-start-column="41" selection-end-line="93" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/changeSubscription.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="2706">
+          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/subscribe.html">
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/new_case_2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-638">
-          <caret line="16" column="56" lean-forward="true" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+        <state relative-caret-position="220">
+          <caret line="10" column="42" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="10" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="60" column="17" lean-forward="false" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="233" column="69" lean-forward="true" selection-start-line="233" selection-start-column="69" selection-end-line="233" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="43" lean-forward="true" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/new_case.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crisis/templates/crisis/report_incident.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7084">
+          <caret line="328" column="56" lean-forward="false" selection-start-line="328" selection-start-column="56" selection-end-line="328" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crisis/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        <state relative-caret-position="264">
+          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crisis/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="151" column="58" lean-forward="false" selection-start-line="151" selection-start-column="58" selection-end-line="151" selection-end-column="58" />
+        <state relative-caret-position="357">
+          <caret line="154" column="67" lean-forward="false" selection-start-line="154" selection-start-column="67" selection-end-line="154" selection-end-column="67" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1491749935368" expanded="true" signature="1323:1408" ph="..." />
+            <marker date="1491792946967" expanded="true" signature="1335:1420" ph="..." />
           </folding>
         </state>
       </provider>

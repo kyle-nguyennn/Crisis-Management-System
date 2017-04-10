@@ -13,4 +13,4 @@ class UserForm(forms.ModelForm):
 class CaseForm(forms.ModelForm):
     class Meta:
         model = Case
-        fields = ['name', 'phoneNum', 'gender', 'ic', 'longitude', 'latitude', 'category', 'detail']
+        fields = ['name', 'phoneNum', 'gender', 'ic', 'longitude', 'latitude', 'category', 'detail', 'place_name', 'region']

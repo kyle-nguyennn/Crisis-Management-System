@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Crisis Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/loader-style.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="/assets/js/button/ladda/ladda.min.css">
+
+    <!-- Latest compiled and minified CSS for bootstrap selector-->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+
+    <link href="/assets/js/iCheck/flat/all.css" rel="stylesheet">
+    <link href="/assets/js/iCheck/line/all.css" rel="stylesheet">
+
+    <link href="/assets/js/colorPicker/bootstrap-colorpicker.css" rel="stylesheet">
+    <link href="/assets/js/switch/bootstrap-switch.css" rel="stylesheet">
+    <!--<link href="/assets/js/validate/validate.css" rel="stylesheet">-->
+    <link href="/assets/js/idealform/css/jquery.idealforms.css" rel="stylesheet">
+
+    <script>
+        function initMap() {
+            var map_google = new google.maps.Map(document.getElementById('google_map_base'), {
+                center: {lat: 1.376010, lng: 103.8153315},
+                zoom: 11
+            });
+            var geocoder = new google.maps.Geocoder();
+            document.getElementById('convert_place').addEventListener('click', function(){
+                console.log(document.getElementById('place_name').value);
+                geocodeAddress(geocoder, map_google);
+            })
+        }
+        function geocodeAddress(geocoder, resultsMap) {
+            var address = document.getElementById("place_name").value;
+            geocoder.geocode({'address': address}, function(results, status){
+                if(status === google.maps.GeocoderStatus.OK) {
+                    resultsMap.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: resultsMap,
+                        position: results[0].geometry.location
+                    });
+                    var latitude = results[0].geometry.location.lat();
+                    var longitude = results[0].geometry.location.lng();
+                    document.getElementById("longVal").value = latitude;
+                    document.getElementById("latVal").value = longitude;
+                }
+                else{
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        }
+    </script>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="/assets/js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="/assets/ico/minus.png">
+</head>
+
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+<!-- TOP NAVBAR -->
+<nav role="navigation" class="navbar navbar-static-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle"
+                    type="button">
+                <span class="entypo-menu"></span>
+            </button>
+            <div id="logo-mobile" class="visible-xs">
+                <h1>CMS
+                    <span>v1.0</span>
+                </h1>
+            </div>
+
+        </div>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+
+            </ul>
+            <div id="nt-title-container" class="navbar-left running-text visible-lg">
+                <ul class="date-top">
+                    <li class="entypo-calendar" style="margin-right:5px"></li>
+                    <li id="Date"></li>
+                </ul>
+
+                <ul id="digital-clock" class="digital">
+                    <li class="entypo-clock" style="margin-right:5px"></li>
+                    <li class="hour"></li>
+                    <li>:</li>
+                    <li class="min"></li>
+                    <li>:</li>
+                    <li class="sec"></li>
+                    <li class="meridiem"></li>
+                </ul>
+
+            </div>
+
+            <ul style="margin-right:0;" class="nav navbar-nav navbar-right">
+
+
+                <li>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        Hi, Dave Mattew <b class="caret"></b>
+                    </a>
+                    <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
+                        <li>
+                            <a href="#">
+                                <span class="entypo-vcard"></span>&#160;&#160;Account Setting</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="entypo-lifebuoy"></span>&#160;&#160;Help</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <span class="entypo-logout"></span>&#160;&#160;Logout</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Change Theme</a>
+                    <ul role="menu" class="dropdown-setting dropdown-menu">
+
+                        <li class="theme-bg">
+                            <div id="button-bg"></div>
+                            <div id="button-bg2"></div>
+                            <div id="button-bg3"></div>
+                            <div id="button-bg5"></div>
+                            <div id="button-bg6"></div>
+                            <div id="button-bg7"></div>
+                            <div id="button-bg8"></div>
+                            <div id="button-bg9"></div>
+                            <div id="button-bg10"></div>
+                            <div id="button-bg11"></div>
+                            <div id="button-bg12"></div>
+                            <div id="button-bg13"></div>
+                        </li>
+                    </ul>
+                </li>
+
+
+            </ul>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<!-- /END OF TOP NAVBAR -->
+
+<!-- SIDE MENU -->
+<div id="skin-select">
+    <div id="logo">
+        <h1>CMS
+            <span>v1.0</span>
+        </h1>
+    </div>
+
+    <a id="toggle">
+        <span class="entypo-menu"></span>
+    </a>
+    <div class="dark">
+        <form action="#">
+                <span>
+                    <input type="text" name="search" value="" class="search rounded id_search"
+                           placeholder="Search Menu..." autofocus/>
+                </span>
+        </form>
+    </div>
+
+    <div class="search-hover">
+        <form id="demo-2">
+            <input type="search" placeholder="Search Menu..." class="id_search">
+        </form>
+    </div>
+
+
+    <div class="skin-part">
+        <div id="tree-wrap">
+            <div class="side-bar">
+                <ul class="topnav menu-left-nest">
+                    <li>
+                        <a href="#" style="border-left:0px solid!important;" class="title-menu-left">
+
+                            <span class="main-menu_item"></span>
+                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="index.html" title="Dashboard">
+                            <i class="icon-window"></i>
+                            <span>Dashboard</span>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="map_overview.html" title="Map Overview">
+                            <i class="icon-location"></i>
+                            <span>Map Overview</span>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="tooltip-tip2 ajax-load" href="report_incident.html" title="New Incident">
+                            <i class="icon-document"></i><span>New Incident</span></a>
+                    </li>
+
+                    <li>
+                        <a class="tooltip-tip2 ajax-load" href="table-dynamic.html" title="List Of Incidents">
+                            <i class="fontawesome-th-list"></i><span>List Of Incidents</span></a>
+                    </li>
+
+                    <li>
+                        <a class="tooltip-tip " href="login.html" title="Logout">
+                            <i class="entypo-logout"></i>
+                            <span>Login Out</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END OF SIDE MENU -->
+
+
+<!--  PAPER WRAP -->
+<div class="wrap-fluid">
+    <div class="container-fluid paper-wrap bevel tlbr">
+
+
+        <!--TITLE -->
+        <div class="row">
+            <div id="paper-top">
+                <div class="col-sm-3">
+                    <h2 class="tittle-content-header">
+                        <i class="icon-media-record"></i>
+                        <span>New Incident
+                            </span>
+                    </h2>
+
+                </div>
+
+                <div class="col-sm-9">
+                    <div class="devider-vertical visible-lg"></div>
+
+                    <div class="tittle-middle-header">
+                        <!-- BREADCRUMB -->
+                        <ul id="breadcrumb">
+                            <li>
+                                <span class="entypo-home"></span>
+                            </li>
+                            <li><i class="fa fa-lg fa-angle-right"></i>
+                            </li>
+                            <li><a href="#report_incident" title="New Incident">New Incident</a>
+                            </li>
+                        </ul>
+                        <!-- END OF BREADCRUMB -->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--/ TITLE -->
+
+        <!-- CONTENT -->
+        <div class="content-wrap">
+            <div class="row" style="height: auto;">
+
+                <!-- Incident Form -->
+                <!--Map of Incident-->
+                <div class="col-sm-6">
+                    <div class="nest">
+                        <div class="title-alt">
+                            <h6>
+                                Location Of Incident</h6>
+                            <div class="titleClose">
+                            </div>
+                        </div>
+                        <div class="body-nest">
+                            <div id="google_map_base" style="width: 100%; height:630px; "></div>
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAO8DAewXZ2oJDavX6qFxLJCBhkWYpwcY&callback=initMap"
+                                    async defer></script>
+                        </div>
+                    </div>
+                </div>
+                <!--Incident Form Control-->
+                <div class="col-sm-6">
+                    <div class="nest" id="Blank_PageClose">
+                        <div class="title-alt">
+                            <h6>
+                                Log A New Incident</h6>
+                            <div class="titleClose">
+
+                            </div>
+                        </div>
+                        <div class="body-nest" id="validation">
+                            <div class="form_center">
+
+                                <form action="/new_case/" id="contact-form" class="form-horizontal" method="POST">
+                                    {% csrf_token %}
+                                    <fieldset>
+
+
+                                        <div class="control-group">
+                                            <label class="control-label" for="name">Name Of Person : </label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="name" id="pu_name"
+                                                       placeholder="Enter Name">
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="control-group">
+                                            <label class="control-label" for="contact">Contact Number :</label>
+                                            <div class="input-group ">
+                                            <span class="input-group-addon btn-success">
+                                                <i class="fa fa-phone-square"></i>
+                                            </span>
+                                                <input type="text" class="form-control" id="pu_contact"
+                                                       name="phoneNum"
+                                                       placeholder="Enter Contact">
+                                                <span class="input-group-addon ">eg.(65) 1234-1234</span>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="control-group">
+                                            <label class="control-label" for="ic">NRIC / Work Permit No : </label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="ic" id="pu_nric"
+                                                       placeholder="Enter NRIC / Work Permit No ">
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="control-group">
+                                            <label class="control-label" for="gender">Gender : </label>
+                                            <div style="clear:both;"></div>
+                                            <br/>
+                                            <div class="skin skin-flat">
+                                                <ul class="list" style="padding-left: 0px; margin-top: 10px">
+                                                    <li>
+                                                        <input tabindex="11" type="radio" id="square-radio-1"
+                                                               name="gender" value="1">
+                                                        <label for="square-radio-1">Male</label>
+                                                    </li>
+                                                    <li>
+                                                        <input tabindex="12" type="radio" id="square-radio-2"
+                                                               name="gender" value="2">
+                                                        <label for="square-radio-2">Female</label>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                        <div style="clear:both;"></div>
+
+                                        <div style="clear:both;"></div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="description">Description of Incident
+                                                : </label>
+                                            <div class="controls">
+                                                <textarea class="form-control" name="detail"
+                                                          id="pu_description" rows="5"
+                                                          placeholder="Enter Description Of Incident"></textarea>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="control-group">
+                                            <label class="control-label" for="incident_place">Name of Places </label>
+                                            <div class="controls">
+                                                <input type="textbox" class="form-control" name="place_name"
+                                                         id = "place_name"
+                                                         placeholder="Enter the name of the place of the incident"></input>
+                                            </div>
+                                            <br />
+                                            <input type="button" class="btn" id="convert_place" value="Convert"></input>
+                                            <br />
+                                            <br />
+                                            <label class="control-label" for="regional">Region </label>
+                                            <div class="controls">
+                                                <select class="form-control" name="region" id="region_field">
+                                                    <option value="1">Central Region</option>
+                                                    <option value="2">North-East Region</option>
+                                                    <option value="3">North-West Region</option>
+                                                    <option value="4">South-East Region</option>
+                                                    <option value="5">South-West Region</option>
+                                                </select>
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="lonText" style="float: left">Longtitude
+                                                of Incident :
+                                            </label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="longitude" id="longVal"
+                                                       placeholder="Longtitude Value"
+                                                       style="float: right; width:35%; margin-right: 10%">
+
+                                            </div>
+                                            <div style="clear:both;"></div>
+                                            <label class="control-label" for="latText"
+                                                   style="float: left; margin-top: 4%">Latitude
+                                                of Incident :
+                                            </label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control" name="latitude" id="latVal"
+                                                       placeholder="Latitude Value"
+                                                       style="float: right; width:35%; margin-right: 10%; margin-top: 3%">
+                                            </div>
+                                            <div style="clear:both;"></div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="categoryText"
+                                                       style="float: left; margin-top: 6%">Select Category :</label>
+                                                <div style="clear:both;"></div>
+                                                <br/>
+                                                <div class="skin skin-flat">
+                                                    <ul class="list" style="padding-left: 0px; margin-top: 10px">
+                                                        <li>
+                                                            <input tabindex="11" type="checkbox" id="check-box-1"
+                                                                   name="category" value="0">
+                                                            <label for="check-box-1">1. Fire Incident</label>
+                                                        </li>
+                                                        <li>
+                                                            <input tabindex="12" type="checkbox" id="check-box-2"
+                                                                   name="category" value="1">
+                                                            <label for="check-box-2">2. Transport Incident</label>
+                                                        </li>
+                                                        <li>
+                                                            <input tabindex="12" type="checkbox" id="check-box-3"
+                                                                   name="category" value="2">
+                                                            <label for="check-box-3">3. Terrorism</label>
+                                                        </li>
+                                                        <li>
+                                                            <input tabindex="12" type="checkbox" id="check-box-4"
+                                                                   name="category" value="3">
+                                                            <label for="check-box-4">4. Gas Leak</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div style="clear: both"></div>
+                                        <div class="form-actions" style="margin:20px 0 0 0;">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="reset" class="btn">Cancel</button>
+                                        </div>
+                                        <div style="clear: both"></div>
+                                    </fieldset>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Incident Form-->
+            </div>
+
+
+            <!-- FOOTER -->
+            <div class="footer-space"></div>
+            <div id="footer">
+                <div class="devider-footer-left"></div>
+                <div class="time">
+                    <p id="spanDate"></p>
+                    <p id="clock"></p>
+                </div>
+                <div class="copyright">Make with Love
+                    <span class="entypo-heart"></span>2014 <a href="http://gamatechno.com">Thesmile</a> All Rights
+                    Reserved
+                </div>
+                <div class="devider-footer"></div>
+
+            </div>
+            <!-- / END OF FOOTER -->
+        </div>
+        <!-- /END OF CONTENT -->
+
+    </div>
+
+</div>
+<!--  END OF PAPER WRAP -->
+
+<!-- MAIN EFFECT -->
+<script type="text/javascript" src="/assets/js/preloader.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="/assets/js/app.js"></script>
+<script type="text/javascript" src="/assets/js/load.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script>
+
+
+<script type="text/javascript" src="/assets/js/inputMask/jquery.maskedinput.js"></script>
+<script type="text/javascript" src="/assets/js/switch/bootstrap-switch.js"></script>
+<script type="text/javascript" src="/assets/js/validate/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/assets/js/idealform/jquery.idealforms.js"></script>
+
+
+<script type="text/javascript" src="/assets/js/tag/jquery.tagsinput.js"></script>
+
+
+<!--Bootstrap Selector-->
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/i18n/defaults-*.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        //Validation
+        $('#contact-form').validate({
+            rules: {
+                name: {
+                    minlength: 2,
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                subject: {
+                    minlength: 2,
+                    required: true
+                },
+                message: {
+                    minlength: 2,
+                    required: true
+                }
+            },
+            highlight: function (element) {
+                $(element).closest('.control-group').removeClass('success').addClass('error');
+            },
+            success: function (element) {
+                element
+                    .text('OK!').addClass('valid')
+                    .closest('.control-group').removeClass('error').addClass('success');
+            }
+        });
+
+        // MASKED INPUT
+
+        $("#date").mask("99/99/9999", {
+            completed: function () {
+                alert("Your birthday was: " + this.val());
+            }
+        });
+        $("#pu_contact").mask("(65) 9999-9999");
+
+        $("#money").mask("99.999.9999", {
+            placeholder: "*"
+        });
+        $("#ssn").mask("99--AAA--9999", {
+            placeholder: "*"
+        });
+
+
+    });
+</script>
+
+<script type="text/javascript" src="/assets/js/iCheck/jquery.icheck.js"></script>
+<script type="text/javascript" src="/assets/js/switch/bootstrap-switch.js"></script>
+
+<!--  PLUGIN -->
+<script>
+    $(document).ready(function () {
+        //CHECKBOX PRETTYFY
+        $('.skin-flat input').iCheck({
+            checkboxClass: 'icheckbox_flat-red',
+            radioClass: 'iradio_flat-red'
+        });
+        $('.skin-line input').each(function () {
+            var self = $(this),
+                label = self.next(),
+                label_text = label.text();
+
+            label.remove();
+            self.iCheck({
+                checkboxClass: 'icheckbox_line-blue',
+                radioClass: 'iradio_line-blue',
+                insert: '<div class="icheck_line-icon"></div>' + label_text
+            });
+        });
+        //Switch Button
+
+        $('.make-switch').bootstrapSwitch('setSizeClass', 'switch-small');
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        //CHECKBOX PRETTYFY
+        $('.t-flat input').iCheck({
+            checkboxClass: 'icheckbox_flat-red',
+            radioClass: 'iradio_flat-red'
+        });
+    });
+</script>
+
+</body>
+
+</html>

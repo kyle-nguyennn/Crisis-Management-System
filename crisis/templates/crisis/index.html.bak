@@ -10,99 +10,31 @@
     <!-- Le styles -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
 
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="/crisis/assets/css/loader-style.css">
-    <link rel="stylesheet" href="/crisis/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/loader-style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
 
-    <link rel="stylesheet" href="/crisis/assets/js/button/ladda/ladda.min.css">
+    <link rel="stylesheet" href="assets/js/button/ladda/ladda.min.css">
 
-    <link href="/crisis/assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
-    <link href="/crisis/assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css" />
-    <link href="/crisis/assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css" />
+    <link href="assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
+    <link href="assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css" />
+    <link href="assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css" />
 
-    <link rel="stylesheet" href="/crisis/assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css" />
-    <link rel="stylesheet" href="/crisis/assets/js/dataTable/css/datatables.responsive.css" />
+    <link rel="stylesheet" href="assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css" />
+    <link rel="stylesheet" href="assets/js/dataTable/css/datatables.responsive.css" />
 
-    <link rel="stylesheet" href="/crisis/assets/css/hazeMap.css">
+    <link rel="stylesheet" href="assets/css/hazeMap.css">
 
     <script>
-        $(document).ready(function(){
-            $.ajaxSetup({ cache: false });
-
-            var east_psi;
-            var west_psi;
-            var south_psi;
-            var north_psi;
-            var center_psi;
-
-            var east_pos = {lat: 1.336091, lng: 103.94371};
-
-            var west_pos = {lat: 1.338837, lng: 103.697891};
-
-            var north_pos = {lat: 1.404736, lng: 103.815308};
-
-            var south_pos = {lat: 1.268817, lng: 103.83728};
-
-            var centre_pos = {lat: 1.327854, lng: 103.823547};
-
-            var east_marker = new google.maps.Marker({
-                position: east_pos,
-                map: map_google,
-                title: "Halo",
-                optimized: false
-            });
-
-            console.log("halo");
-
-            var west_marker = new google.maps.Marker({
-                position: west_pos,
-                map: map_google,
-                title: "Halo",
-                optimized: false
-            });
-
-             var north_marker = new google.maps.Marker({
-                position: north_pos,
-                map: map_google,
-                title: "Halo",
-                optimized: false
-            });
-
-             var south_marker = new google.maps.Marker({
-                position: south_pos,
-                map: map_google,
-                title: "Halo",
-                optimized: false
-            });
-
-            var centre_marker = new google.maps.Marker({
-                position: centre_pos,
-                map: map_google,
-                title: "Halo",
-                optimized: false
-            });
-
-            east_marker.setVisible(false);
-            west_marker.setVisible(false);
-            north_marker.setVisible(false);
-            south_marker.setVisible(false);
-            centre_marker.setVisible(false);
-
-            $.getJSON('haze.json',function(data){
-                east_psi = data.east;
-                west_psi = data.west;
-                south_psi = data.south;
-                north_psi = data.north;
-                center_psi = data.center;
-
-                var contentString = "<div style='background-color: white, opacity: 1'><font color='" + hazeConverter(east_psi) + "'>East<br /><center>" + east_psi + "</center></font></div>";
-                window.east_infoWindow = new google.maps.InfoWindow({
-                    content: contentString
-                });
-
-                var contentString = "<div style='background-color: white, opacity: 1'><font color='" + hazeConverter(west_psi) + "'>West<br /><center>" + west_psi + "</center></font></div>";
-                window.west_infoWindow = new google.maps.InfoWindow({
-                    content: contentString
+        $.ajax({
+            type: "POST",
+            url: "/get_cases/",
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+            success: function (data, status, xhttp) {
+                console.log("sumitted successfully")
+                $.each(data, function(idx, acase){
+                    console.log(acase.pk)
+{#                    console.log(acase.fields.longitude)#}
                 });
 
                 var contentString = "<div style='background-color: white, opacity: 1'><font color='" + hazeConverter(north_psi) + "'>North<br /><center>" + north_psi + "</center></font></div>";
@@ -205,12 +137,13 @@
                     fire_checked = true;
                     $.getJSON("usecasetype.json", function(data){
                         $.each(data, function(index){
-                            var id = data[index].caseid;
+                            var id = data[index].pk;
                             var lat = data[index].latitude;
                             var lon = data[index].longitude;
                             var cat = data[index].category;
-                            var desc = data[index].description;
+                            var desc = data[index].detail;
                             var stat = data[index].status;
+                            var place_name = data[index].place_name;
 
                             var counter = $('#cases').children('tr').length;
                             if(cat === 1){
@@ -226,7 +159,7 @@
                                     stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
                                 }
                                 counter = counter + 1;
-                                $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                                $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
 
                                 var myLatLng = {lat: lat, lng: lon};
                                 var marker = new google.maps.Marker({
@@ -259,12 +192,13 @@
                     transportation_checked = true
                     $.getJSON("usecasetype.json", function(data){
                         $.each(data, function(index){
-                            var id = data[index].caseid;
+                            var id = data[index].pk;
                             var lat = data[index].latitude;
                             var lon = data[index].longitude;
                             var cat = data[index].category;
-                            var desc = data[index].description;
+                            var desc = data[index].detail;
                             var stat = data[index].status;
+                            var place_name = data[index].place_name;
 
                             var counter = $('#cases').children('tr').length;
                             if(cat === 2){
@@ -280,7 +214,7 @@
                                     stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
                                 }
                                 counter = counter + 1;
-                                $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                                $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
                                 var myLatLng = {lat: lat, lng: lon};
                                 var marker = new google.maps.Marker({
                                     position: myLatLng,
@@ -312,12 +246,13 @@
                     terrorism_checked = true
                     $.getJSON("usecasetype.json", function(data){
                         $.each(data, function(index){
-                            var id = data[index].caseid;
+                            var id = data[index].pk;
                             var lat = data[index].latitude;
                             var lon = data[index].longitude;
                             var cat = data[index].category;
-                            var desc = data[index].description;
+                            var desc = data[index].detail;
                             var stat = data[index].status;
+                            var place_name = data[index].place_name;
 
                             var counter = $('#cases').children('tr').length;
                             if(cat === 3){
@@ -333,7 +268,7 @@
                                     stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
                                 }
                                 counter = counter + 1;
-                                $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                                $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
 
                                 var myLatLng = {lat: lat, lng: lon};
                                 var marker = new google.maps.Marker({
@@ -367,12 +302,13 @@
                     gasLeak_checked = true
                     $.getJSON("usecasetype.json", function(data){
                         $.each(data, function(index){
-                            var id = data[index].caseid;
+                            var id = data[index].pk;
                             var lat = data[index].latitude;
                             var lon = data[index].longitude;
                             var cat = data[index].category;
-                            var desc = data[index].description;
+                            var desc = data[index].detail;
                             var stat = data[index].status;
+                            var place_name = data[index].place_name;
 
                             var counter = $('#cases').children('tr').length;
                             if(cat === 4){
@@ -388,7 +324,7 @@
                                     stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
                                 }
                                 counter = counter + 1;
-                                $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                                $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" +  "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
                                 var myLatLng = {lat: lat, lng: lon};
                                 var marker = new google.maps.Marker({
                                     position: myLatLng,
@@ -527,10 +463,10 @@
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="/assets/js/html5shiv.js"></script>
+    <script src="assets/js/html5shiv.js"></script>
     <![endif]-->
     <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="/crisis/assets/ico/minus.png">
+    <link rel="shortcut icon" href="assets/ico/minus.png">
 </head>
 
 <body>
@@ -897,6 +833,9 @@
                                         Category
                                     </th>
                                     <th data-hide="phone,tablet">
+                                        Place
+                                    </th>
+                                    <th data-hide="phone,tablet">
                                         Status
                                     </th>
                                     <th data-hide="phone">
@@ -951,19 +890,19 @@
 <!--  END OF PAPER WRAP -->
 
 <!-- MAIN EFFECT -->
-<script type="text/javascript" src="/crisis/assets/js/preloader.js"></script>
-<script type="text/javascript" src="/crisis/assets/js/bootstrap.js"></script>
-<script type="text/javascript" src="/crisis/assets/js/app.js"></script>
-<script type="text/javascript" src="/crisis/assets/js/load.js"></script>
-<script type="text/javascript" src="/crisis/assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/preloader.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/load.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
 
 <!-- GAGE -->
-<script type="text/javascript" src="/crisis/assets/js/toggle_close.js"></script>
-<script src="/crisis/assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
-<script src="/crisis/assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script>
-<script src="/crisis/assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
-<script src="/crisis/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
-<script src="/crisis/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script type="text/javascript" src="assets/js/toggle_close.js"></script>
+<script src="assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
+<script src="assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+<script src="assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
 
 </body>
 

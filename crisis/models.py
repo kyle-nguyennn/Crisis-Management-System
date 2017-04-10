@@ -50,9 +50,10 @@ class Case(models.Model):
     dead = models.IntegerField(default=0)
     injured = models.IntegerField(default=0)
     place_name = models.CharField(max_length=100, default="")
-    name = models.CharField(max_length=10, default="")
-    phoneNum = models.CharField(max_length=10, default="")
-    gender = models.CharField(max_length=10, choices=[('male', 'Male'), ('female','Female')])
+    region = models.IntegerField()
+    name = models.CharField(max_length=20, default="")
+    phoneNum = models.CharField(max_length=20, default="")
+    gender = models.IntegerField(choices=[(1, 'Male'), (2,'Female')])
     ic = models.CharField(max_length=8, default="")
 
     def __str__(self):
@@ -77,3 +78,49 @@ class haze_PSI_24hr(models.Model):
 
     def getReading(self):
         return self.reading
+
+# class CaseManager(models.Model):
+#     #This is a singleton
+#     point = models.IntegerField()
+#     crisisLevel = models.IntegerField()
+#     total_number_of_case = models.IntegerField()
+#     number_of_active_case = models.IntegerField()
+#     number_of_resolved_case = models.IntegerField()
+#     # start of making it singleton
+#     class Meta:
+#         abstract = True
+#
+#     def save(self, *args, **kwargs):
+#         """
+#         Save object to the database. Removes all other entries if there
+#         are any.
+#         """
+#         self.__class__.objects.exclude(id=self.id).delete()
+#         super(CaseManager, self).save(*args, **kwargs)
+#
+#     @classmethod
+#     def load(cls):
+#         """
+#         Load object from the database. Failing that, create a new empty
+#         (default) instance of the object and return it (without saving it
+#         to the database).
+#         """
+#
+#         try:
+#             return cls.objects.get()
+#         except cls.DoesNotExist:
+#             return cls()
+#     # end of making it singleton
+#
+#     def getActive(self):
+#         return self.number_of_active_case
+#
+#     def getResolved(self):
+#         return self.number_of_resolved_case
+#
+#     def getTotal(self):
+#         return self.total_number_of_case
+#
+#     def getCrisisLevel(self):
+#         return self.crisisLevel
+#

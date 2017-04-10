@@ -10,8 +10,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
 from django.core import serializers
 
-from crisis import caseDao
-from crisis.caseDao import CaseDao
+from crisis.dao import CaseDao
+from crisis.caseManager import CaseManager
 from crisis.models import MyUser, Case
 from .forms import UserForm, CaseForm
 
@@ -48,7 +48,7 @@ class UserFormView(View):
 
 class CaseFormView(View):
     form_class = CaseForm
-    template_name = 'crisis/new_case_2.html'
+    template_name = 'crisis/report_incident.html'
 
     # display blank form
     def get(self, request):
@@ -59,11 +59,14 @@ class CaseFormView(View):
     def post(self, request):
         form = self.form_class(request.POST)
         if form.is_valid():
+            print("form is valid")
             case = form.save(commit=False)
             # cleaned data
+        else:
+            print("form is not fucking valid")
+            return HttpResponse({"status": "failed"})
 
-
-        return HttpResponse({})
+        return HttpResponse(request)
 
 def login_user(request):
     if request.method == "POST":
@@ -76,8 +79,9 @@ def login_user(request):
             if user.is_active:
                 login(request, user)
                 user = request.user
-                context = {'user': user}
-                return render(request, '../index.html', context)
+                context = {'username': user.username}
+                return redirect('crisis:index')
+                #return render(request, '/crisis/index.html', context)
                 #inside index.html, there is a js script with AJAX call to 'crisis:index'
                 #to get what cases should be fetched from server
             else:
@@ -93,7 +97,38 @@ def logout_user(request):
     return render(request, 'crisis/login.html')
 
 def index(request):
+    if request.user.is_authenticated():
+        user = request.user
+        if user.userType == 0:
+            return redirect('crisis:dashboard')
     return render(request, 'crisis/index.html')
+
+
+def dashboard(request):
+    if request.user.is_authenticated():
+        usertype = request.user.userType
+        if usertype == 0:
+            return render(request, 'crisis/dashboard.html')
+        else:
+            return redirect('crisis:index')
+    return redirect('crisis:index')
+
+def summary(request):
+    if request.user.is_authenticated():
+        user = request.user
+        userType = user.userType
+        if userType == 0:
+            summary = {}
+            summary["active"] = CaseManager.getActive()
+            summary["resolved"] = CaseManager.getResolved()
+            summary["total"] = CaseManager.getTotal()
+            summary["crisislevel"] = CaseManager.getCrisisLevel()
+            print(summary)
+            return HttpResponse(json.dumps(summary), content_type='json')
+        return HttpResponse({})
+    else:
+        return HttpResponse({})
+
 
 def get_cases(request):
     if request.user.is_authenticated():
@@ -102,20 +137,24 @@ def get_cases(request):
         print(userType)
         cases = CaseDao.getByUserType(CaseDao(), userType)
         data = serializers.serialize('json', cases,
-                                     fields=('pk', 'longitude', 'latitude', 'category', 'status', 'detail'))
-        return HttpResponse(data, content_type='application/json')
+                                     fields=('pk', 'longitude', 'latitude', 'category', 'status', 'detail', 'place_name'))
+        return HttpResponse(data, content_type='json')
     else:
         return None
 
 def new_case(request):
-    context = {}
     if request.user is not None:
-        if request.method == "POST":
-            return HttpResponse(json.dumps(request.POST), content_type='application/json')
+        user = request.user
+        userType = user.userType
+        if userType == 0:
+            if request.method == "POST":
+                return HttpResponse(json.dumps(request.POST), content_type='json')
+            else:
+                return render(request, 'crisis/report_incident.html', {})
         else:
-            return render(request, 'crisis/new_case.html', {})
+            return HttpResponse(json.dumps({'status': 'no authority'}), content_type='json')
     else:
-        return HttpResponse(json.dumps({'status':'no user'}), content_type='application/json')
+        return HttpResponse(json.dumps({'status':'no user'}), content_type='json')
 
 def change_case_status(request):
     if request.user.is_authenticated():
@@ -123,23 +162,17 @@ def change_case_status(request):
         if user.userType != 1:
             caseId = request.POST['pk']
             newStatus = request.POST['status']
-            if CaseDao.upDateStatus(user.userType, caseId, newStatus): #update success:
-                return HttpResponse(json.dumps({'status', 'success'}), content_type='application/json')
+            if CaseDao.upDateStatus(CaseDao(), user.userType, caseId, newStatus): #update success:
+                return HttpResponse(json.dumps({'status', 'success'}), content_type='json')
             else:
                 return HttpResponse(json.dumps({'status', 'user not authenticated to change this entry'}),
-                                    content_type='application/json')
+                                    content_type='json')
         else:
             return HttpResponse(json.dumps({'status', 'Call Operator is not authorised to change this entry'}),
-                                content_type='application/json')
+                                content_type='json')
     return None
 
-def update_severity(request):
-    return None
-
-def update_dead(request):
-    return None
-
-def update_injuries(request):
+def validate(request):
     return None
 
 def subscribe(request):
@@ -150,6 +183,27 @@ def unsubscribe(request):
 
 def changeSubscription(request):
     return render(request, 'crisis/changeSubscription.html')
+
+def reportToGovernment(request):
+    print(request.path)
+    if (str(request.path).__contains__('government')):
+        return render(request, 'crisis/government_report.html')
+    if (str(request.path).__contains__('case')):
+        #temporarily not handling this
+        return render(request, 'crisis/government_report.html')
+
+    if (str(request.path).__contains__('category')):
+        result = CaseManager.countCaseGroupByCategory()
+        return HttpResponse(json.dumps(result), content_type='json')
+
+    if (str(request.path).__contains__('injured')):
+        result = CaseManager.countInjuredGroupByCategory()
+        print(result)
+        return HttpResponse(json.dumps(result), content_type='json')
+    if (str(request.path).__contains__('dead')):
+        result = CaseManager.countDeadGroupByCategory()
+        return HttpResponse(json.dumps(result), content_type='json')
+    return None
 
 def test(request):
     return render(request, 'crisis/test.html', {})
