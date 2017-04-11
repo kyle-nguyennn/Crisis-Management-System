@@ -31,5 +31,5 @@ def send_to_pm(message):
     send_mail("Periodic Report"
               , message
               , 'cz3003cmsdev@gmail.com',
-              ['wuevans@hotmail.com'],
+              ['wuevans@hotmail.com', 'dn.kyle141@gmail.com'],
               fail_silently=False)

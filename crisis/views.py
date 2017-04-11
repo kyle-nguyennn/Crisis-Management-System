@@ -231,6 +231,7 @@ def resolve(request):
         dead = request.POST['dead']
         injured = request.POST['injured']
         if CaseDao.updateSeverity(usertype, pk, severity):
+            CaseManager.send_email_check()
             if CaseDao.updateDead(usertype, pk, dead):
                 if CaseDao.updateInjured(usertype, pk, injured):
                     CaseDao.upDateStatus(usertype, pk, 2)
