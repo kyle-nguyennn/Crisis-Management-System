@@ -14,6 +14,8 @@ from crisis.dao import CaseDao
 from crisis.caseManager import CaseManager
 from crisis.models import MyUser, Case, Subscriber
 from .forms import UserForm, CaseForm
+from crisis import services
+
 
 
 # Create your views here.
@@ -284,4 +286,11 @@ def reportToGovernment(request):
 def test(request):
     return render(request, 'crisis/test.html', {})
 
-
+def getHaze(request):
+    if request.method == "GET":
+        hazeJson = {}
+        hazeJson = services.get_psi_reading()
+        return HttpResponse(json.dumps(hazeJson), content_type='json')
+    else:
+        print("No POST method for haze")
+        return None

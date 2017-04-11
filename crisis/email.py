@@ -21,7 +21,7 @@ from django.core.mail import send_mail
 #               "Best,\nAllStarCMS"
 #         send_to_president(msg)
 
-def send_to_president(message):
+def send_to_pm(message):
     """
     Send custom message to PMO in case of any issue
 
@@ -30,6 +30,6 @@ def send_to_president(message):
     """
     send_mail("Periodic Report"
               , message
-              , 'wuevnas@gmail.com',
+              , 'cz3003cmsdev@gmail.com',
               ['wuevans@hotmail.com'],
               fail_silently=False)

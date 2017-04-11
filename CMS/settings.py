@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'crisis',
     'rest_framework',
     'corsheaders',
+    #'django_crontab',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -52,6 +53,10 @@ MIDDLEWARE_CLASSES = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
 ]
+
+# CRONJOBS = [
+#      ('* * * * *', 'crisis.scheduled_email.my_scheduled_job''>>crisis/cronlog.log'),
+# ]
 
 ROOT_URLCONF = 'CMS.urls'
 
@@ -138,8 +143,8 @@ NEA_KEY = '781CF461BB6606AD80A87393DAFA402A7EA9AD290B3A9747'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'wuevnas@gmail.com'
-EMAIL_HOST_PASSWORD = 'AXAwzh83826317'
+EMAIL_HOST_USER = 'cz3003cmsdev@gmail.com'
+EMAIL_HOST_PASSWORD = 'qazxcvbn'
 
 #allow CSRF token to be sent in cross domain communication
 CORS_ALLOW_CREDENTIALS = True

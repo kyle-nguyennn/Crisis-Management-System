@@ -1,5 +1,5 @@
-from twilio.rest import TwilioRestClient
-
+from twilio.rest import Client
+from twilio.base.exceptions import TwilioRestException
 
 def send_sms(contact, message):
     """
@@ -10,8 +10,11 @@ def send_sms(contact, message):
     """
     account_sid = "ACcd667f6f6e95aac7ccca9b6e03638198"
     auth_token = "04bdceaf5721cbca7668b7da4212ea18"
-    client = TwilioRestClient(account_sid, auth_token)
+    client = Client(account_sid, auth_token)
 
-    client.messages.create(body=message, to="+65"+contact, from_="+13142000173")
-
-    print("SMS has been sent to " + "+65"+contact)
+    try:
+        client.messages.create(body=message, to="+65"+contact, from_="+13142000173")
+        print("SMS has been sent to " + "+65"+contact)
+        return True
+    except TwilioRestException:
+        return False
