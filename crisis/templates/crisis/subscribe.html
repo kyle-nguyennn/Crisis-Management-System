@@ -49,7 +49,8 @@
                 <div class="col-md-4 col-md-offset-4">
                     <div class="account-box">
 
-                        <form role="form" action="localhost/subscribe">
+                        <form role="form" action="/subscribe/" method="post">
+                            {% csrf_token %}
                             <div class="control-group">
                                 <label class="control-label" for="contact">Contact Number :</label>
                                 <div class="input-group ">
@@ -57,7 +58,7 @@
                                     <i class="fa fa-phone-square"></i>
                                 </span>
                                     <input type="text" class="form-control" id="pu_contact"
-                                           name="pu_contact"
+                                           name="phoneNum"
                                            placeholder="Enter Contact">
                                     <span class="input-group-addon ">eg.(65) 1234-1234</span>
                                 </div>
@@ -73,22 +74,22 @@
                                     <ul class="list" list-style-type: 'none' style="padding-left: 0px; margin-top: 10px; list-style-type:none">
                                         <li>
                                             <input tabindex="11" type="checkbox" id="check-box-1"
-                                                   name="category">
+                                                   name="category" value="0">
                                             <label for="check-box-1">1. Fire Incident</label>
                                         </li>
                                         <li>
                                             <input tabindex="12" type="checkbox" id="check-box-2"
-                                                   name="category">
-                                            <label for="check-box-2">2. Transport Incident</label>
+                                                   name="category" value="1">
+                                            <label for="check-box-2">2. Traffic Accident</label>
                                         </li>
                                         <li>
                                             <input tabindex="12" type="checkbox" id="check-box-3"
-                                                   name="category">
-                                            <label for="check-box-3">3. Terrorism</label>
+                                                   name="category" value="2">
+                                            <label for="check-box-3">3. Terrorist Activity</label>
                                         </li>
                                         <li>
                                             <input tabindex="12" type="checkbox" id="check-box-4"
-                                                   name="category">
+                                                   name="category" value="3">
                                             <label for="check-box-4">4. Gas Leak</label>
                                         </li>
                                     </ul>
@@ -98,12 +99,12 @@
                             <label class="control-label" for="regional">Region </label>
                             <br />
                             <div class="controls">
-                                <select class="form-control" id="region_field">
-                                    <option>Central Region</option>
-                                    <option>North-East Region</option>
-                                    <option>North-West Region</option>
-                                    <option>South-East Region</option>
-                                    <option>South-West Region</option>
+                                <select class="form-control" id="region_field" name="region">
+                                    <option value="0">Central Region</option>
+                                    <option value="1">North-East Region</option>
+                                    <option value="2">North-West Region</option>
+                                    <option value="3">South-East Region</option>
+                                    <option value="4">South-West Region</option>
                                 </select>
                             </div>
                             <br />
@@ -112,7 +113,7 @@
                             </button>
                         </form>
                         <br/>
-                        <a class="forgotLnk" href="index.html"></a>
+                        <a class="forgotLnk" href="/index"></a>
                     </div>
                 </div>
             </div>

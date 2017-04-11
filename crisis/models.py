@@ -79,6 +79,12 @@ class haze_PSI_24hr(models.Model):
     def getReading(self):
         return self.reading
 
+REGION_CHOICE = [(0,'Central Region'), (1,'North-East Region'), (2,'North-West Region'), (3, 'South-East Region'), (4, 'South-West Region')]
+class Subscriber(models.Model):
+    phoneNum = models.IntegerField()
+    category = models.IntegerField(choices=CASE_CATEGORY_CHOICE)
+    region = models.IntegerField(choices=REGION_CHOICE)
+
 # class CaseManager(models.Model):
 #     #This is a singleton
 #     point = models.IntegerField()

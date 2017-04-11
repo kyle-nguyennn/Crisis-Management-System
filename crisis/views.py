@@ -12,7 +12,7 @@ from django.core import serializers
 
 from crisis.dao import CaseDao
 from crisis.caseManager import CaseManager
-from crisis.models import MyUser, Case
+from crisis.models import MyUser, Case, Subscriber
 from .forms import UserForm, CaseForm
 
 
@@ -60,7 +60,7 @@ class CaseFormView(View):
         form = self.form_class(request.POST)
         if form.is_valid():
             print("form is valid")
-            case = form.save(commit=False)
+            case = form.save()
             # cleaned data
         else:
             print("form is not fucking valid")
@@ -203,10 +203,56 @@ def change_case_status(request):
     return None
 
 def validate(request):
-    return None
+    if request.user.is_authenticated():
+        usertype = request.user.userType
+        print(request.POST)
+        pk = request.POST['pk']
+        valid = int(request.POST['valid'])
+        newStatus = -1
+        if valid == 1:
+            print('inside check')
+            newStatus = 1
+        elif valid == 0:
+            newStatus = 2
+        if newStatus != -1:
+            if CaseDao.upDateStatus(usertype, pk, newStatus):
+                return HttpResponse({'success':'Update status successfully'})
+        return HttpResponse({'error':'Invalid input'})
+    else:
+        return HttpResponse({'error':'You are not authorised to perform this action'})
+
+def resolve(request):
+    if request.user.is_authenticated():
+        usertype = request.user.userType
+        pk = request.POST['pk']
+        severity = request.POST['severity']
+        dead = request.POST['dead']
+        injured = request.POST['injured']
+        if CaseDao.updateSeverity(usertype, pk, severity):
+            if CaseDao.updateDead(usertype, pk, dead):
+                if CaseDao.updateInjured(usertype, pk, injured):
+                    CaseDao.upDateStatus(usertype, pk, 2)
+                    return HttpResponse({
+                        'success': 'Update case information successfully'})
+        return HttpResponse({'error': 'Invalid input'})
+    else:
+        return HttpResponse({'error': 'You are not authorised to perform this action'})
 
 def subscribe(request):
-    return render(request, 'crisis/subscribe.html')
+
+    if request.method=='GET':
+        return render(request, 'crisis/subscribe.html')
+    elif request.method=='POST':
+        categoryList = request.POST.getlist("category")
+        for x in categoryList:
+            subscriber = Subscriber(
+                phoneNum = request.POST["phoneNum"],
+                category = x,
+                region = request.POST['region']
+            )
+            subscriber.save()
+        return redirect('crisis:index')
+    return HttpResponse(request)
 
 def unsubscribe(request):
     return render(request, 'crisis/unsubscribe.html')

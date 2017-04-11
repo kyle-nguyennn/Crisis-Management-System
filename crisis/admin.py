@@ -14,6 +14,7 @@ class CaseAdmin(admin.ModelAdmin):
 class MyUserChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):
         model = MyUser
+
 class MyUserAdmin(UserAdmin):
     form = MyUserChangeForm
     list_display = ('username', 'userType')
@@ -21,4 +22,8 @@ class MyUserAdmin(UserAdmin):
             (None, {'fields': ('userType',)}),
     )
 
+
 admin.site.register(MyUser, MyUserAdmin)
+@admin.register(Subscriber)
+class SubscriberAdmin(admin.ModelAdmin):
+    list_display = ('pk','phoneNum', 'category', 'region')

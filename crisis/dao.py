@@ -12,45 +12,49 @@ class CaseDao:
                 querySet += Case.objects.filter(category=x[1])
         return querySet
 
-    def getById(self, caseId):
+    @classmethod
+    def getById(cls,caseId):
         return Case.objects.get(id=caseId)
 
-    def upDateStatus(self, userType, caseId, newStatus):
-        case = self.getById(caseId)
+    @classmethod
+    def upDateStatus(cls,userType, caseId, newStatus):
+        case = cls.getById(caseId)
         category = case.category
-        if (userType, category) in self.userCaseMatch:
-            case.staus = newStatus
-            case.save(update_fields='status')
+        if (userType, category) in cls.userCaseMatch:
+            print('new status is ' + str(newStatus))
+            Case.objects.filter(id=caseId).update(status=newStatus)
             return True
         else:
             return False
-
-    def updateSeverity(self, userType, caseId, newSeverity):
-        case = self.getById(caseId)
+    @classmethod
+    def updateSeverity(cls, userType, caseId, newSeverity):
+        case = cls.getById(caseId)
         category = case.category
-        if (userType, category) in self.userCaseMatch:
+        if (userType, category) in cls.userCaseMatch:
             case.severity = newSeverity
-            case.save(update_fields='severity')
+            case.save(update_fields=['severity'])
             return True
         else:
             return False
 
-    def updateCasualties(self, userType, caseId, newCasualties):
-        case = self.getById(caseId)
+    @classmethod
+    def updateDead(cls, userType, caseId, dead):
+        case = cls.getById(caseId)
         category = case.category
-        if (userType, category) in self.userCaseMatch:
-            case.casualties = newCasualties
-            case.save(update_fields='casualties')
+        if (userType, category) in cls.userCaseMatch:
+            case.dead = dead
+            case.save(update_fields=['dead'])
             return True
         else:
             return False
 
-    def updateInjured(self, userType, caseId, newInjured):
-        case = self.getById(caseId)
+    @classmethod
+    def updateInjured(cls, userType, caseId, newInjured):
+        case = cls.getById(caseId)
         category = case.category
-        if (userType, category) in self.userCaseMatch:
+        if (userType, category) in cls.userCaseMatch:
             case.injured = newInjured
-            case.save(update_fields='injured')
+            case.save(update_fields=['injured'])
             return True
         else:
             return False

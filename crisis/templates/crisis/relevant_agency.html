@@ -99,48 +99,79 @@
 
             var marker_array = [];
             var labels = "ABCD";
-            $.getJSON('usecasetype.json', function(data){
-            //$.getJSON("/get_cases", function(data){
+            //$.getJSON('usecasetype.json', function(data){
+            $.ajax({
+                type: "POST",
+                url: "/get_cases/",
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+                success: function (data, status, xhttp) {
                 var counter = 0;
                 $.each(data, function(index){
+                    console.log("bajingan");
                     var id = data[index].pk;
-                    var lat = data[index].latitude;
-                    var lon = data[index].longitude;
-                    var cat = data[index].category;
-                    var desc = data[index].detail;
-                    var stat = data[index].status;
-                    var place_name = data[index].place_name;
+                    var lat = parseFloat(data[index].fields.latitude);
+                    var lon = parseFloat(data[index].fields.longitude);
+                    var cat = data[index].fields.category;
+                    var desc = data[index].fields.detail;
+                    var stat = data[index].fields.status;
+                    var place_name = data[index].fields.place_name;
                     counter = counter + 1;
                     if(stat === 0){
-                        stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="status' + id +'"></input>';
+                        stat = '<td><input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="status' + id +'"></input></td>';
                         var check = '<input value="Accept" type="button" id="accept' + id + '"class = "btn btn-success accepted"></input>   <input value="Reject" id="reject' + id + '"type="button" class="btn btn-danger rejected"></input>';
+                        $('#cases').append("<tr><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + stat + "</td>" + "<td>" + check + "</td>" + "<td><input type='number' name='casualities_number' id='casualities_number"+ id + "' /></td>" + "<td><input type='number' name='injuries_number' id='injuries_number" + id + "' /></td>" + "<td><input type='number' name='severity' min='1' max='5' id='severity" + id + "' /></td></tr>");
                     }
                     else
                     if(stat === 1){
-                        stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="status' + id +'"></input>';
-                        var check = '<input value="Done" type="button" class="btn btn-info resolving" id="resolving' + id + '"></input>';
+                        console.log("Masuk stat 1 button");
+                        stat = '<td><input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="status' + id +'"></input></td>';
+                        var check = '<input value="Done" type="button" id="resolving' + id + '" class = "btn btn-info resolving"></input>';
+                        $('#cases').append("<tr><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + stat + "</td>" + "<td>" + check + "</td>" + "<td><input type='number' name='casualities_number' id='casualities_number"+ id + "'/></td>" +"<td><input type='number' name='injuries_number' id='injuries_number" + id + "'/></td>" +  "<td><input type='number' name='severity' min='1' max='5' id='severity" + id + "'/></td></tr>");
                     }
                     else
                     if(stat === 2){
-                        stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="status' + id +'" disabled></input>';
+                        stat = '<td><input value="Closed" type="button" class ="status-metro status-active statusnow" id="status' + id +'" disabled></input></td>';
                         var check = "";
+                        $('#cases').append("<tr><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + stat + "</td>" + "<td>" + check + "</td>" + "<td><input type='number' name='casualities_number' id='casualities_number"+ id + "' disabled/></td>" +"<td><input type='number' name='injuries_number' id='injuries_number" + id + "' disabled/></td>" +  "<td><input type='number' name='severity' min='1' max='5' id='severity" + id + "' disabled/></td></tr>");
                     }
 
-                    if(stat === 1){
-                        $('#cases').append("<tr><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + stat + "</td>" + "<td>" + check + "</td>" + "<td><input type='number' name='casualities_number' id='casualities_number"+ id + "' /></td>" + "<td><input type='number' name='injuries_number' id='injuries_number" + id + "' /></td>" + "<td><input type='number' name='severity' min='1' max='5' id='severity" + id + "' /></td></tr>");
-                    }
-                    else{
-                        $('#cases').append("<tr><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + stat + "</td>" + "<td>" + check + "</td>" + "<td><input type='number' name='casualities_number' id='casualities_number"+ id + "' disabled/></td>" +"<td><input type='number' name='injuries_number' id='injuries_number" + id + "' disabled/></td>" +  "<td><input type='number' name='severity' min='1' max='5' id='severity" + id + "' disabled/></td></tr>");
-                    }
                      var myLatLng = {lat: lat, lng: lon};
-                     var marker = new google.maps.Marker({
-                         position: myLatLng,
-                         label: labels[0],
-                         title:"Hello World!"
-                     });
+                     if(cat === 0){
+                         var marker = new google.maps.Marker({
+                             position: myLatLng,
+                             label: labels[0],
+                             title:"Hello World!"
+                         });
+                     }
+                     else
+                     if(cat === 1){
+                         var marker = new google.maps.Marker({
+                             position: myLatLng,
+                             label: labels[1],
+                             title:"Hello World!"
+                         });
+                     }
+                     else
+                     if(cat === 2){
+                         var marker = new google.maps.Marker({
+                             position: myLatLng,
+                             label: labels[2],
+                             title:"Hello World!"
+                         });
+                     }
+                     else
+                     if(cat === 3){
+                         var marker = new google.maps.Marker({
+                             position: myLatLng,
+                             label: labels[3],
+                             title:"Hello World!"
+                         });
+                     }
                      marker.setMap(map_google);
                 })
+                }
             })
+
             $(document).on("click",".accepted", function(){
                 var id_now = this.id;
                 var id_status = "#status" + id_now.slice(6);
@@ -164,20 +195,21 @@
                 $(severity_index).prop("required", true);
                 $(injuries_number).prop("required", true);
                 var changedObject = {
-                    "pk" : parseInt(id_now.slice(6)),
-                    "valid" : 1
+                    "pk" : id_now.slice(6),
+                    "valid" : 1,
+                    csrfmiddlewaretoken: '{{ csrf_token }}'
                 };
 
                 $.ajax({
                     type: "POST",
-                    url: "/validate",
+                    url: "/validate/",
                     dataType: "json",
                     data: changedObject,
                     success: function(data){
-                        alert('Success');
+                        alert(data);
                     },
-                    error: function(){
-                        alert('Error');
+                    error: function(err){
+                        alert(err);
                     }
                 });
             })
@@ -190,19 +222,20 @@
                 $(this).remove();
                 $("#accept" + id_now.slice(6)).remove();
                 var changedObject = {
-                    "pk" : parseInt(id_now.slice(6)),
-                    "status" : 0
+                    "pk" : id_now.slice(6),
+                    "valid" : 0,
+                    csrfmiddlewaretoken: '{{ csrf_token }}'
                 };
                 $.ajax({
                     type: "POST",
-                    url: "/validate",
+                    url: "/validate/",
                     dataType: "json",
                     data: changedObject,
                     success: function(data){
-                        alert('Success');
+                        alert(data);
                     },
-                    error: function(){
-                        alert('Error');
+                    error: function(err){
+                        alert(err);
                     }
                 });
             })
@@ -223,14 +256,15 @@
                     $(injuries_number).prop("disabled", true);
                     $(injuries_number).prop("required", false);
                     var changedObject = {
-                        "pk" : parseInt(id_now.slice(9)),
+                        "pk" : id_now.slice(9),
                         "severity" : $(severity_index).val(),
                         "dead" : $(casualities_number).val(),
                         "injured" : $(injuries_number).val(),
+                        csrfmiddlewaretoken: '{{ csrf_token }}'
                     }
                     $.ajax({
                         type: "POST",
-                        url: "/resolve",
+                        url: "/resolve/",
                         dataType: "json",
                         data: changedObject,
                         success: function(data){
@@ -279,16 +313,16 @@
             return (temp -273) * 9 / 5;
         }
         function changeCategory(category){
-            if(category === 1){
+            if(category === 0){
                 return "Fire";
             }
-            else if(category === 2){
+            else if(category === 1){
                 return "Traffic Accident";
             }
-            else if(category === 3){
+            else if(category === 2){
                 return "Terrorists Activity";
             }
-            else if(category === 4){
+            else if(category === 3){
                 return "Gas Leak";
             }
         }
@@ -351,14 +385,9 @@
 
 
                 <li>
-                    <!--{% if user %}
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             Hi, {{ user.username }} <b class="caret"></b>
                         </a>
-                    {% endif %} -->
-                    <form action="login.html">
-                        <button type="submit" margin-top="20px" class="btn btn-info">Login</input>
-                    </form>
                     <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
                         <li>
                             <a href="#">
@@ -370,7 +399,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">
+                            <a href="/logout/">
                                 <span class="entypo-logout"></span>&#160;&#160;Logout</a>
                         </li>
                     </ul>

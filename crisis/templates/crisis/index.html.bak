@@ -10,20 +10,20 @@
     <!-- Le styles -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/loader-style.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/loader-style.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
 
-    <link rel="stylesheet" href="assets/js/button/ladda/ladda.min.css">
+    <link rel="stylesheet" href="/assets/js/button/ladda/ladda.min.css">
 
-    <link href="assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css"/>
-    <link href="assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css"/>
+    <link href="/assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css"/>
 
-    <link rel="stylesheet" href="assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css"/>
-    <link rel="stylesheet" href="assets/js/dataTable/css/datatables.responsive.css"/>
+    <link rel="stylesheet" href="/assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css"/>
+    <link rel="stylesheet" href="/assets/js/dataTable/css/datatables.responsive.css"/>
 
-    <link rel="stylesheet" href="assets/css/hazeMap.css">
+    <link rel="stylesheet" href="/assets/css/hazeMap.css">
 
     <script>
         $(document).ready(function () {
@@ -35,59 +35,64 @@
                 success: function (data, status, xhttp) {
                     console.log("sumitted successfully");
                     $.each(data, function (index) {
-                    var id = data[index].pk;
-                    var lat = data[index].latitude;
-                    var lon = data[index].longitude;
-                    var cat = data[index].category;
-                    var desc = data[index].detail;
-                    var stat = data[index].status;
-                    var place_name = data[index].place_name;
+                            var id = data[index].pk;
+                            var lat = data[index].latitude;
+                            var lon = data[index].longitude;
+                            var cat = data[index].category;
+                            var desc = data[index].detail;
+                            var stat = data[index].status;
+                            var place_name = data[index].place_name;
 
-                    var counter = $('#cases').children('tr').length;
-                    if (stat === 0) {
-                        stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
-                    }
-                    else if (stat === 1) {
-                        stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
-                    }
-                    else if (stat === 2) {
-                        stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
-                    }
-                    counter = counter + 1;
-                    if(cat === 1){
-                        $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
-                    }
-                    else if(cat === 2){
-                        $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
-                    }
-                    else if (cat === 3){
-                        $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
-                    }
-                    else if(cat === 4){
-                        $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                            var counter = $('#cases').children('tr').length;
+                            if (stat === 0) {
+                                stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
+                            }
+                            else if (stat === 1) {
+                                stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
+                            }
+                            else if (stat === 2) {
+                                stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
+                            }
+                            counter = counter + 1;
+                            if (cat === 1) {
+                                $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                            }
+                            else if (cat === 2) {
+                                $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                            }
+                            else if (cat === 3) {
+                                $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                            }
+                            else if (cat === 4) {
+                                $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                            }
+
+                            var myLatLng = {lat: lat, lng: lon};
+                            var marker = new google.maps.Marker({
+                                position: myLatLng,
+                                label: labels[0],
+                                title: "Hello World!"
+                            });
+                            marker.setMap(map_google);
+                            var marker_object = {
+                                marker: marker,
+                                category: 1
+                            };
+                            marker_array.push(marker_object);
+                        });
+                    },
+                    error: function (err) {
+                        console.log(err)
                     }
 
-                    var myLatLng = {lat: lat, lng: lon};
-                    var marker = new google.maps.Marker({
-                        position: myLatLng,
-                        label: labels[0],
-                        title: "Hello World!"
-                    });
-                    marker.setMap(map_google);
-                    var marker_object = {
-                        marker: marker,
-                        category: 1
-                    };
-                    marker_array.push(marker_object);
-                },
-                error: function (err) {
-                    console.log(err)
-                },
-                dataType: "json",
-                async: true
-            });
+                    ,
+                    dataType: "json",
+                        async
+                    :
+                    true
+                });
 
-{#            $.ajaxSetup({cache: false});#}
+            {#            $.ajaxSetup({cache: false});#}
 
             var east_psi;
             var west_psi;
@@ -263,7 +268,7 @@
             $(document).on("change", "#fire", function () {
                 if (this.checked === true && !fire_checked) {
                     fire_checked = true;
-                    $.getJSON("usecasetype.json", function (data) {
+                    $.getJSON("/get_cases/", function (data) {
                         $.each(data, function (index) {
                             var id = data[index].pk;
                             var lat = data[index].latitude;
@@ -316,7 +321,7 @@
             $(document).on("change", "#transportation", function () {
                 if (this.checked === true && !transportation_checked) {
                     transportation_checked = true
-                    $.getJSON("usecasetype.json", function (data) {
+                    $.getJSON("/get_cases/", function (data) {
                         $.each(data, function (index) {
                             var id = data[index].pk;
                             var lat = data[index].latitude;
@@ -368,7 +373,7 @@
             $(document).on("change", "#terrorism", function () {
                 if (this.checked === true && !terrorism_checked) {
                     terrorism_checked = true
-                    $.getJSON("usecasetype.json", function (data) {
+                    $.getJSON("/get_cases/", function (data) {
                         $.each(data, function (index) {
                             var id = data[index].pk;
                             var lat = data[index].latitude;
@@ -422,7 +427,7 @@
             $(document).on("change", "#gasLeak", function () {
                 if (this.checked === true && !gasLeak_checked) {
                     gasLeak_checked = true
-                    $.getJSON("usecasetype.json", function (data) {
+                    $.getJSON("/get_cases/", function (data) {
                         $.each(data, function (index) {
                             var id = data[index].pk;
                             var lat = data[index].latitude;
@@ -577,10 +582,10 @@
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="assets/js/html5shiv.js"></script>
+    <script src="/assets/js/html5shiv.js"></script>
     <![endif]-->
     <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/minus.png">
+    <link rel="shortcut icon" href="/assets/ico/minus.png">
 </head>
 
 <body>
@@ -631,26 +636,21 @@
 
             <ul style="margin-right:0;" class="nav navbar-nav navbar-right">
 
+                <form action="/login">
+                    <button type="submit" margin-top="20px" class="btn btn-info">Login</button>
+                </form>
+                <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
+                    <li>
+                        <a href="#">
+                            <span class="entypo-vcard"></span>&#160;&#160;Account Setting</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="entypo-lifebuoy"></span>&#160;&#160;Help</a>
+                    </li>
+                    <li class="divider"></li>
 
-                <li>
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        Hi, {{ user.username }} <b class="caret"></b>
-                    </a>
-                    <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
-                        <li>
-                            <a href="#">
-                                <span class="entypo-vcard"></span>&#160;&#160;Account Setting</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="entypo-lifebuoy"></span>&#160;&#160;Help</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="/logout">
-                                <span class="entypo-logout"></span>&#160;&#160;Logout</a>
-                        </li>
-                    </ul>
+                </ul>
                 </li>
                 <li class="divider"></li>
                 <li>
@@ -695,20 +695,20 @@
     <a id="toggle">
         <span class="entypo-menu"></span>
     </a>
-    <div class="dark">
-        <form action="#">
-                <span>
-                    <input type="text" name="search" value="" class="search rounded id_search"
-                           placeholder="Search Menu..." autofocus/>
-                </span>
-        </form>
-    </div>
+{#    <div class="dark">#}
+{#        <form action="#">#}
+{#                <span>#}
+{#                    <input type="text" name="search" value="" class="search rounded id_search"#}
+{#                           placeholder="Search Menu..." autofocus/>#}
+{#                </span>#}
+{#        </form>#}
+{#    </div>#}
 
-    <div class="search-hover">
-        <form id="demo-2">
-            <input type="search" placeholder="Search Menu..." class="id_search">
-        </form>
-    </div>
+{#    <div class="search-hover">#}
+{#        <form id="demo-2">#}
+{#            <input type="search" placeholder="Search Menu..." class="id_search">#}
+{#        </form>#}
+{#    </div>#}
 
     <div class="skin-part">
         <div id="tree-wrap">
@@ -1006,19 +1006,19 @@
 <!--  END OF PAPER WRAP -->
 
 <!-- MAIN EFFECT -->
-<script type="text/javascript" src="assets/js/preloader.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.js"></script>
-<script type="text/javascript" src="assets/js/app.js"></script>
-<script type="text/javascript" src="assets/js/load.js"></script>
-<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript" src="/assets/js/preloader.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="/assets/js/app.js"></script>
+<script type="text/javascript" src="/assets/js/load.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script>
 
 <!-- GAGE -->
-<script type="text/javascript" src="assets/js/toggle_close.js"></script>
-<script src="assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
-<script src="assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script>
-<script src="assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
-<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
-<script src="assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script type="text/javascript" src="/assets/js/toggle_close.js"></script>
+<script src="/assets/js/footable/js/footable.js?v=2-0-1" type="text/javascript"></script>
+<script src="/assets/js/footable/js/footable.sort.js?v=2-0-1" type="text/javascript"></script>
+<script src="/assets/js/footable/js/footable.filter.js?v=2-0-1" type="text/javascript"></script>
+<script src="/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+<script src="/assets/js/footable/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
 
 </body>
 

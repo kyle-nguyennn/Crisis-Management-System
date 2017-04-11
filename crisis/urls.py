@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^test/$', views.test, name='test'),
     url(r'^new_case/$', views.new_case, name='new_case'),
     url(r'^validate/$', views.validate, name='validate'),
+    url(r'^resolve/$', views.resolve, name='resolve'),
     # url(r'^change_case_status/$', views.change_case_status, name='change_case_status'),
     # url(r'^update_severity/$', views.update_severity, name='update_severity'),
     # url(r'^update_dead/$', views.update_dead, name='update_dead'),

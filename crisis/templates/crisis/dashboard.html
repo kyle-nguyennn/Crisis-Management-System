@@ -46,6 +46,70 @@
             });
             $.ajaxSetup({ cache: false });
 
+            $.ajax({
+                type: "POST",
+                url: "/get_cases/",
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+                success: function (data, status, xhttp) {
+                    console.log("sumitted successfully");
+                    $.each(data, function (index) {
+                            console.log(data[index].pk);
+                            var id = data[index].pk;
+                            var lat = parseFloat(data[index].fields.latitude);
+                            var lon = parseFloat(data[index].fields.longitude);
+                            var cat = data[index].fields.category;
+                            var desc = data[index].fields.detail;
+                            var stat = data[index].fields.status;
+                            var place_name = data[index].fields.place_name;
+
+                            var counter = $('#cases').children('tr').length;
+                            if (stat === 0) {
+                                stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
+                            }
+                            else if (stat === 1) {
+                                stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
+                            }
+                            else if (stat === 2) {
+                                stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
+                            }
+                            counter = counter + 1;
+                            if (cat === 1) {
+                                $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                            }
+                            else if (cat === 2) {
+                                $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                            }
+                            else if (cat === 3) {
+                                $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                            }
+                            else if (cat === 4) {
+                                $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                            }
+
+                            var myLatLng = {lat: lat, lng: lon};
+                            var marker = new google.maps.Marker({
+                                position: myLatLng,
+                                label: labels[0],
+                                title: "Hello World!"
+                            });
+                            marker.setMap(map_google);
+                            var marker_object = {
+                                marker: marker,
+                                category: 1
+                            };
+                            marker_array.push(marker_object);
+                        });
+                    },
+                    error: function (err) {
+                        console.log(err)
+                    }
+
+                    ,
+                    dataType: "json",
+                        async
+                    :
+                    true
+                });
             var east_psi;
             var west_psi;
             var south_psi;
@@ -105,7 +169,7 @@
             south_marker.setVisible(false);
             centre_marker.setVisible(false);
 
-            $.getJSON('haze.json',function(data){
+            $.getJSON('/get_cases',function(data){
                 east_psi = data.east;
                 west_psi = data.west;
                 south_psi = data.south;
@@ -211,11 +275,11 @@
 
             var marker_array = [];
             var labels = "ABCD";
-            var fire_checked = false;
-            var ambulance_checked = false;
-            var terrorism_checked = false;
-            var transportation_checked = false;
-            var gasLeak_checked = false;
+            var fire_checked = true;
+            var ambulance_checked = true;
+            var terrorism_checked = true;
+            var transportation_checked = true;
+            var gasLeak_checked = true;
 
             $.ajax({
                 type: "POST",
@@ -257,15 +321,19 @@
             $(document).on("change","#fire", function(){
                 if(this.checked === true && !fire_checked){
                     fire_checked = true;
-                    $.getJSON("usecasetype.json", function(data){
+                    $.ajax({
+                        type: "POST",
+                        url: "/get_cases/",
+                        data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+                success: function (data, status, xhttp) {
                         $.each(data, function(index){
                             var id = data[index].pk;
-                            var lat = data[index].latitude;
-                            var lon = data[index].longitude;
-                            var cat = data[index].category;
-                            var desc = data[index].detail;
-                            var stat = data[index].status;
-                            var place_name = data[index].place_name;
+                            var lat = parseFloat(data[index].fields.latitude);
+                            var lon = parseFloat(data[index].fields.longitude);
+                            var cat = data[index].fields.category;
+                            var desc = data[index].fields.detail;
+                            var stat = data[index].fields.status;
+                            var place_name = data[index].fields.place_name;
 
                             var counter = $('#cases').children('tr').length;
                             if(cat === 1){
@@ -297,6 +365,7 @@
                                 marker_array.push(marker_object);
                             }
                         })
+                    }
                     })
                 }
                 else if(this.checked === false && fire_checked){
@@ -312,15 +381,19 @@
              $(document).on("change","#transportation", function(){
                 if(this.checked === true && !transportation_checked){
                     transportation_checked = true
-                    $.getJSON("usecasetype.json", function(data){
+                    $.ajax({
+                type: "POST",
+                url: "/get_cases/",
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+                success: function (data, status, xhttp) {
                         $.each(data, function(index){
                             var id = data[index].pk;
-                            var lat = data[index].latitude;
-                            var lon = data[index].longitude;
-                            var cat = data[index].category;
-                            var desc = data[index].detail;
-                            var stat = data[index].status;
-                            var place_name = data[index].place_name;
+                            var lat = parseFloat(data[index].fields.latitude);
+                            var lon = parseFloat(data[index].fields.longitude);
+                            var cat = data[index].fields.category;
+                            var desc = data[index].fields.detail;
+                            var stat = data[index].fields.status;
+                            var place_name = data[index].fields.place_name;
 
                             var counter = $('#cases').children('tr').length;
                             if(cat === 2){
@@ -351,6 +424,7 @@
                                 marker_array.push(marker_object);
                             }
                         })
+                    }
                     })
                 }
                 else if(this.checked === false && transportation_checked){
@@ -366,15 +440,19 @@
             $(document).on("change","#terrorism", function(){
                 if(this.checked === true && !terrorism_checked){
                     terrorism_checked = true
-                    $.getJSON("usecasetype.json", function(data){
+                    $.ajax({
+                type: "POST",
+                url: "/get_cases/",
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+                success: function (data, status, xhttp) {
                         $.each(data, function(index){
                             var id = data[index].pk;
-                            var lat = data[index].latitude;
-                            var lon = data[index].longitude;
-                            var cat = data[index].category;
-                            var desc = data[index].detail;
-                            var stat = data[index].status;
-                            var place_name = data[index].place_name;
+                            var lat = parseFloat(data[index].fields.latitude);
+                            var lon = parseFloat(data[index].fields.longitude);
+                            var cat = data[index].fields.category;
+                            var desc = data[index].fields.detail;
+                            var stat = data[index].fields.status;
+                            var place_name = data[index].fields.place_name;
 
                             var counter = $('#cases').children('tr').length;
                             if(cat === 3){
@@ -406,6 +484,7 @@
                                 marker_array.push(marker_object);
                             }
                         })
+                    }
                     })
                 }
                 else if(this.checked === false && terrorism_checked){
@@ -422,15 +501,19 @@
             $(document).on("change","#gasLeak", function(){
                 if(this.checked === true && !gasLeak_checked){
                     gasLeak_checked = true
-                    $.getJSON("usecasetype.json", function(data){
+                    $.ajax({
+                type: "POST",
+                url: "/get_cases/",
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+                success: function (data, status, xhttp) {
                         $.each(data, function(index){
                             var id = data[index].pk;
-                            var lat = data[index].latitude;
-                            var lon = data[index].longitude;
-                            var cat = data[index].category;
-                            var desc = data[index].detail;
-                            var stat = data[index].status;
-                            var place_name = data[index].place_name;
+                            var lat = parseFloat(data[index].fields.latitude);
+                            var lon = parseFloat(data[index].fields.longitude);
+                            var cat = data[index].fields.category;
+                            var desc = data[index].fields.detail;
+                            var stat = data[index].fields.status;
+                            var place_name = data[index].fields.place_name;
 
                             var counter = $('#cases').children('tr').length;
                             if(cat === 4){
@@ -461,6 +544,7 @@
                                 marker_array.push(marker_object);
                             }
                         })
+                    }
                     })
                 }
                 else if(this.checked === false && gasLeak_checked){
@@ -658,7 +742,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="/logout">
+                            <a href="/logout/">
                                 <span class="entypo-logout"></span>&#160;&#160;Logout</a>
                         </li>
                     </ul>
@@ -736,7 +820,7 @@
                     </li>
 
                     <li>
-                        <a class="tooltip-tip ajax-load" href="/index" title="Dashboard">
+                        <a class="tooltip-tip ajax-load" href="/" title="Dashboard">
                             <i class="icon-window"></i>
                             <span>Dashboard</span>
 
@@ -744,19 +828,19 @@
                     </li>
 
                     <li>
-                        <a class="tooltip-tip2 ajax-load" href="/new_case" title="New Incident">
+                        <a class="tooltip-tip2 ajax-load" href="/new_case/" title="New Incident">
                             <i class="icon-document"></i><span>New Incident</span></a>
                     </li>
 
                     <li>
-                        <a class="tooltip-tip " href="/logout" title="Logout">
+                        <a class="tooltip-tip " href="/logout/" title="Logout">
                             <i class="entypo-logout"></i>
                             <span>Login Out</span>
                         </a>
                     </li>
 
                     <li>
-                        <a class="tootltip-tip2 ajax-load" href="/new_user" title="New User">
+                        <a class="tootltip-tip2 ajax-load" href="/register/" title="New User">
                             <i class="icon-document"></i><span>New User</span></a>s
                     </li>
 
@@ -777,14 +861,14 @@
         <!--TITLE -->
         <div class="row">
             <div id="paper-top">
-                <div class="col-sm-3">
-                    <h2 class="tittle-content-header">
-                        <i class="icon-media-record"></i>
-                        <span>Map Overview
-                            </span>
-                    </h2>
-
-                </div>
+{#                <div class="col-sm-3">#}
+{#                    <h2 class="tittle-content-header">#}
+{#                        <i class="icon-media-record"></i>#}
+{#                        <span>Map Overview#}
+{#                            </span>#}
+{#                    </h2>#}
+{##}
+{#                </div>#}
 
                 <div class="col-sm-9">
                     <div class="devider-vertical visible-lg"></div>
@@ -979,16 +1063,16 @@
             <center>
             <div class="row">
                 <label class="checkbox-inline">
-                    <input type="checkbox" id="fire" value="">Fire</input>
+                    <input type="checkbox" id="fire" value="" checked>Fire</input>
                 </label>
                 <label class="checkbox-inline">
-                    <input type="checkbox" id="transportation" value="">Traffic Accident</input>
+                    <input type="checkbox" id="transportation" value="" checked>Traffic Accident</input>
                 </label>
                 <label class="checkbox-inline">
-                    <input type="checkbox" id="terrorism" value="">Terrorists Activity</input>
+                    <input type="checkbox" id="terrorism" value="" checked>Terrorists Activity</input>
                 </label>
                 <label class="checkbox-inline">
-                    <input type="checkbox" id="gasLeak" value="">Gas Leak</input>
+                    <input type="checkbox" id="gasLeak" value="" checked>Gas Leak</input>
                 </label>
             </div>
              </center>
