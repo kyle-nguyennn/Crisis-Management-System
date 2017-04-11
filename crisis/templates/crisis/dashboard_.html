@@ -73,16 +73,16 @@
                                 stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                             }
                             counter = counter + 1;
-                            if (cat === 0) {
+                            if (cat === 1) {
                                 $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
                             }
-                            else if (cat === 1) {
+                            else if (cat === 2) {
                                 $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
                             }
-                            else if (cat === 2) {
+                            else if (cat === 3) {
                                 $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
                             }
-                            else if (cat === 3) {
+                            else if (cat === 4) {
                                 $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
                             }
 
@@ -93,30 +93,10 @@
                                 title: "Hello World!"
                             });
                             marker.setMap(map_google);
-                            if(cat === 0){
-                                var marker_object = {
-                                    marker: marker,
-                                    category: 0
-                                };
-                            }
-                            else if(cat === 1){
-                                var marker_object = {
-                                    marker: marker,
-                                    category: 1
-                                };
-                            }
-                            else if(cat === 2){
-                                var marker_object = {
-                                    marker: marker,
-                                    category: 2
-                                };
-                            }
-                            else if(cat === 3){
-                                var marker_object = {
-                                    marker: marker,
-                                    category: 3
-                                };
-                            }
+                            var marker_object = {
+                                marker: marker,
+                                category: 1
+                            };
                             marker_array.push(marker_object);
                         });
                     },
@@ -356,7 +336,7 @@
                             var place_name = data[index].fields.place_name;
 
                             var counter = $('#cases').children('tr').length;
-                            if(cat === 0){
+                            if(cat === 1){
                                 if(stat === 0){
                                     stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id +'"></input>';
                                 }
@@ -380,7 +360,7 @@
                                 marker.setMap(map_google);
                                 var marker_object = {
                                     marker : marker,
-                                    category: 0
+                                    category: 1
                                 };
                                 marker_array.push(marker_object);
                             }
@@ -416,7 +396,7 @@
                             var place_name = data[index].fields.place_name;
 
                             var counter = $('#cases').children('tr').length;
-                            if(cat === 1){
+                            if(cat === 2){
                                 if(stat === 0){
                                     stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id +'"></input>';
                                 }
@@ -439,7 +419,7 @@
                                 marker.setMap(map_google);
                                 var marker_object = {
                                     marker : marker,
-                                    category: 1
+                                    category: 2
                                 };
                                 marker_array.push(marker_object);
                             }
@@ -475,7 +455,7 @@
                             var place_name = data[index].fields.place_name;
 
                             var counter = $('#cases').children('tr').length;
-                            if(cat === 2){
+                            if(cat === 3){
                                 if(stat === 0){
                                     stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id +'"></input>';
                                 }
@@ -499,7 +479,7 @@
                                 marker.setMap(map_google);
                                 var marker_object = {
                                     marker : marker,
-                                    category: 2
+                                    category: 3
                                 };
                                 marker_array.push(marker_object);
                             }
@@ -536,7 +516,7 @@
                             var place_name = data[index].fields.place_name;
 
                             var counter = $('#cases').children('tr').length;
-                            if(cat === 3){
+                            if(cat === 4){
                                 if(stat === 0){
                                     stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id +'"></input>';
                                 }
@@ -559,7 +539,7 @@
                                 marker.setMap(map_google);
                                 var marker_object = {
                                     marker : marker,
-                                    category: 3
+                                    category: 4
                                 };
                                 marker_array.push(marker_object);
                             }
@@ -671,16 +651,16 @@
             return (temp -273) * 9 / 5;
         }
         function changeCategory(category){
-            if(category === 0){
+            if(category === 1){
                 return "Fire";
             }
-            else if(category === 1){
+            else if(category === 2){
                 return "Traffic Accident";
             }
-            else if(category === 2){
+            else if(category === 3){
                 return "Terrorists Activity";
             }
-            else if(category === 3){
+            else if(category === 4){
                 return "Gas Leak";
             }
         }
@@ -811,12 +791,12 @@
         <span class="entypo-menu"></span>
     </a>
     <div class="dark">
-{#        <form action="#">#}
-{#                <span>#}
-{#                    <input type="text" name="search" value="" class="search rounded id_search"#}
-{#                           placeholder="Search Menu..." autofocus/>#}
-{#                </span>#}
-{#        </form>#}
+        <form action="#">
+                <span>
+                    <input type="text" name="search" value="" class="search rounded id_search"
+                           placeholder="Search Menu..." autofocus/>
+                </span>
+        </form>
     </div>
 
     <div class="search-hover">

@@ -16,35 +16,17 @@
 
     <link rel="stylesheet" href="/assets/js/button/ladda/ladda.min.css">
 
-    <link href="/assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
-    <link href="/assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/js/footable/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css"/>
+    <link href="/assets/js/footable/css/footable.standalone.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/js/footable/css/footable-demos.css" rel="stylesheet" type="text/css"/>
 
-    <link rel="stylesheet" href="/assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css" />
-    <link rel="stylesheet" href="/assets/js/dataTable/css/datatables.responsive.css" />
+    <link rel="stylesheet" href="/assets/js/dataTable/lib/jquery.dataTables/css/DT_bootstrap.css"/>
+    <link rel="stylesheet" href="/assets/js/dataTable/css/datatables.responsive.css"/>
 
     <link rel="stylesheet" href="/assets/css/hazeMap.css">
 
     <script>
-        $(document).ready(function(){
-            $.ajax({
-                type: "POST",
-                url: "/get_cases/",
-                data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
-                success: function (data, status, xhttp) {
-                    console.log("sumitted successfully");
-                    $.each(data, function (idx, acase) {
-                        console.log(acase.pk);
-                        {#                    console.log(acase.fields.longitude)#}
-                    });
-                },
-                error: function (err) {
-                    console.log(err)
-                },
-                dataType: "json",
-                async: true
-            });
-            $.ajaxSetup({ cache: false });
+        $(document).ready(function () {
 
             $.ajax({
                 type: "POST",
@@ -73,16 +55,16 @@
                                 stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                             }
                             counter = counter + 1;
-                            if (cat === 0) {
+                            if (cat === 1) {
                                 $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
                             }
-                            else if (cat === 1) {
+                            else if (cat === 2) {
                                 $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
                             }
-                            else if (cat === 2) {
+                            else if (cat === 3) {
                                 $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
                             }
-                            else if (cat === 3) {
+                            else if (cat === 4) {
                                 $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
                             }
 
@@ -93,30 +75,10 @@
                                 title: "Hello World!"
                             });
                             marker.setMap(map_google);
-                            if(cat === 0){
-                                var marker_object = {
-                                    marker: marker,
-                                    category: 0
-                                };
-                            }
-                            else if(cat === 1){
-                                var marker_object = {
-                                    marker: marker,
-                                    category: 1
-                                };
-                            }
-                            else if(cat === 2){
-                                var marker_object = {
-                                    marker: marker,
-                                    category: 2
-                                };
-                            }
-                            else if(cat === 3){
-                                var marker_object = {
-                                    marker: marker,
-                                    category: 3
-                                };
-                            }
+                            var marker_object = {
+                                marker: marker,
+                                category: 1
+                            };
                             marker_array.push(marker_object);
                         });
                     },
@@ -130,6 +92,9 @@
                     :
                     true
                 });
+
+            {#            $.ajaxSetup({cache: false});#}
+
             var east_psi;
             var west_psi;
             var south_psi;
@@ -162,14 +127,14 @@
                 optimized: false
             });
 
-             var north_marker = new google.maps.Marker({
+            var north_marker = new google.maps.Marker({
                 position: north_pos,
                 map: map_google,
                 title: "Halo",
                 optimized: false
             });
 
-             var south_marker = new google.maps.Marker({
+            var south_marker = new google.maps.Marker({
                 position: south_pos,
                 map: map_google,
                 title: "Halo",
@@ -189,7 +154,7 @@
             south_marker.setVisible(false);
             centre_marker.setVisible(false);
 
-            $.getJSON('/get_cases',function(data){
+            $.getJSON('haze.json', function (data) {
                 east_psi = data.east;
                 west_psi = data.west;
                 south_psi = data.south;
@@ -213,12 +178,12 @@
 
 
                 var contentString = "<div style='background-color: white, opacity: 1'><font color='" + hazeConverter(south_psi) + "'>South<br /><center>" + south_psi + "</center></font></div>";
-                 window.south_infoWindow = new google.maps.InfoWindow({
+                window.south_infoWindow = new google.maps.InfoWindow({
                     content: contentString
                 });
 
                 var contentString = "<div style='background-color: white, opacity: 1'><font color='" + hazeConverter(center_psi) + "'>Center<br /><center>" + center_psi + "</center></div>";
-                 window.centre_infoWindow = new google.maps.InfoWindow({
+                window.centre_infoWindow = new google.maps.InfoWindow({
                     content: contentString
                 });
             });
@@ -231,26 +196,26 @@
             var am_pm = hour_now <= 11 ? "AM" : "PM";
             $('.temperature').append("<b>" + day_now + "</b>, " + hour_now + ":" + minute_now + " " + am_pm);
 
-            $.getJSON("http://api.openweathermap.org/data/2.5/forecast?id=1880252&APPID=9cf15d7fd4d3917e79f7c0f3e386f7af",function(data){
+            $.getJSON("http://api.openweathermap.org/data/2.5/forecast?id=1880252&APPID=9cf15d7fd4d3917e79f7c0f3e386f7af", function (data) {
                 var weather_convert = {
-                    "01d" : "wi-day-sunny",
-                    "01n" : "wi-night-clear",
-                    "02d" : "wi-day-cloudy",
-                    "02n" : "wi-night-cloudy",
-                    "03d" : "wi-day-cloudy",
-                    "03n" : "wi-night-cloudy",
-                    "04d" : "wi-day-cloudy",
-                    "04n" : "wi-night-cloudy",
-                    "09d" : "wi-day-rain",
-                    "09n" : "wi-night-rain",
-                    "10d" : "wi-day-rain",
-                    "10n" : "wi-night-rain",
-                    "11d" : "wi-day-thunderstorm",
-                    "11n" : "wi-night-thunderstorm",
-                    "13d" : "wi-day-snow",
-                    "13n" : "wi-night-snow",
-                    "50d" : "wi-day-fog",
-                    "50n" : "wi-night-fog"
+                    "01d": "wi-day-sunny",
+                    "01n": "wi-night-clear",
+                    "02d": "wi-day-cloudy",
+                    "02n": "wi-night-cloudy",
+                    "03d": "wi-day-cloudy",
+                    "03n": "wi-night-cloudy",
+                    "04d": "wi-day-cloudy",
+                    "04n": "wi-night-cloudy",
+                    "09d": "wi-day-rain",
+                    "09n": "wi-night-rain",
+                    "10d": "wi-day-rain",
+                    "10n": "wi-night-rain",
+                    "11d": "wi-day-thunderstorm",
+                    "11n": "wi-night-thunderstorm",
+                    "13d": "wi-day-snow",
+                    "13n": "wi-night-snow",
+                    "50d": "wi-day-fog",
+                    "50n": "wi-night-fog"
                 };
                 weather_array = [];
                 weather_array.push(data.list[0].weather[0].icon);
@@ -279,74 +244,37 @@
                 var day_now = d.getDay();
 
                 day_array.push(convertToDay(day_now));
-                day_array.push(convertToDay((day_now+1) % 7));
-                day_array.push(convertToDay((day_now+2) % 7));
-                day_array.push(convertToDay((day_now+3) % 7));
+                day_array.push(convertToDay((day_now + 1) % 7));
+                day_array.push(convertToDay((day_now + 2) % 7));
+                day_array.push(convertToDay((day_now + 3) % 7));
 
                 $('#dashboard_weather_icon').append("<i class='" + weather_convert[weather_array[0]] + "'></i>");
                 $('#dashboard_weather_text').append("<h2>Singapore<br><i>" + weather_convert[weather_array[0]].slice(3) + "</i></h2>");
                 $('#temp_now').append("<h3><i class='wi-thermometer'></i>" + parseInt(temp_now) + "<i class='wi-celcius'</i></h3>");
 
-                $('#weather1').append("<h2>" + day_array[0].slice(0,3) + "</h2><h3>" + parseInt(temp_array[0]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[0]] + "'></i></h4><h5>" + wind_speed_array[0] + "<br /><i>m/s</i></h5>");
-                $('#weather2').append("<h2>" + day_array[1].slice(0,3) + "</h2><h3>" + parseInt(temp_array[1]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[1]] + "'></i></h4><h5>" + wind_speed_array[1] + "<br /><i>m/s</i></h5>");
-                $('#weather3').append("<h2>" + day_array[2].slice(0,3) + "</h2><h3>" + parseInt(temp_array[2]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[2]] + "'></i></h4><h5>" + wind_speed_array[2] + "<br /><i>m/s</i></h5>");
-                $('#weather4').append("<h2>" + day_array[3].slice(0,3) + "</h2><h3>" + parseInt(temp_array[3]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[3]] + "'></i></h4><h5>" + wind_speed_array[3] + "<br /><i>m/s</i></h5>");
-            })
+                $('#weather1').append("<h2>" + day_array[0].slice(0, 3) + "</h2><h3>" + parseInt(temp_array[0]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[0]] + "'></i></h4><h5>" + wind_speed_array[0] + "<br /><i>m/s</i></h5>");
+                $('#weather2').append("<h2>" + day_array[1].slice(0, 3) + "</h2><h3>" + parseInt(temp_array[1]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[1]] + "'></i></h4><h5>" + wind_speed_array[1] + "<br /><i>m/s</i></h5>");
+                $('#weather3').append("<h2>" + day_array[2].slice(0, 3) + "</h2><h3>" + parseInt(temp_array[2]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[2]] + "'></i></h4><h5>" + wind_speed_array[2] + "<br /><i>m/s</i></h5>");
+                $('#weather4').append("<h2>" + day_array[3].slice(0, 3) + "</h2><h3>" + parseInt(temp_array[3]) + "<span><br /><i class='wi-fahrenheit'></i></span></h3><h4><i class='" + weather_convert[weather_array[3]] + "'></i></h4><h5>" + wind_speed_array[3] + "<br /><i>m/s</i></h5>");
+            });
 
             var marker_array = [];
-            var labels = "ABCD";
+            var labels = "ABCD"
             var fire_checked = true;
             var ambulance_checked = true;
             var terrorism_checked = true;
             var transportation_checked = true;
             var gasLeak_checked = true;
 
-            $.ajax({
-                type: "POST",
-                url: "/summary/",
-                data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
-                success: function (data) {
-                    console.log("submitted successfully")
-                    var active = data.active;
-                    var active_node = document.createElement("span");
-                    var textnode = document.createTextNode(active);
-                    active_node.appendChild(textnode);
-                    document.getElementById("getting-started").appendChild(active_node);
-
-                    var resolved = data.resolved;
-                    var resolved_node = document.createElement("span");
-                    var textnode = document.createTextNode(resolved);
-                    resolved_node.appendChild(textnode);
-                    document.getElementById("resolved").appendChild(resolved_node);
-
-                    var total = data.total;
-                    var total_node = document.createElement("span");
-                    var textnode = document.createTextNode(total);
-                    total_node.appendChild(textnode);
-                    document.getElementById("total").appendChild(total_node);
-
-                    var crisislevel = data.crisislevel;
-                    var crisis_node = document.createElement("span");
-                    var textnode = document.createTextNode(crisislevel);
-                    crisis_node.appendChild(textnode);
-                    document.getElementById("crisis").appendChild(crisis_node);
-                },
-                error: function (err) {
-                    console.log(err)
-                },
-                dataType: "json",
-                async: true
-            });
-
-            $(document).on("change","#fire", function(){
-                if(this.checked === true && !fire_checked){
+            $(document).on("change", "#fire", function () {
+                if (this.checked === true && !fire_checked) {
                     fire_checked = true;
                     $.ajax({
-                        type: "POST",
-                        url: "/get_cases/",
-                        data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+                type: "POST",
+                url: "/get_cases/",
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
                 success: function (data, status, xhttp) {
-                        $.each(data, function(index){
+                        $.each(data, function (index) {
                             var id = data[index].pk;
                             var lat = parseFloat(data[index].fields.latitude);
                             var lon = parseFloat(data[index].fields.longitude);
@@ -356,17 +284,15 @@
                             var place_name = data[index].fields.place_name;
 
                             var counter = $('#cases').children('tr').length;
-                            if(cat === 0){
-                                if(stat === 0){
-                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id +'"></input>';
+                            if (cat === 1) {
+                                if (stat === 0) {
+                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 1){
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
+                                else if (stat === 1) {
+                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 2){
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
+                                else if (stat === 2) {
+                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                                 }
                                 counter = counter + 1;
                                 $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
@@ -375,70 +301,11 @@
                                 var marker = new google.maps.Marker({
                                     position: myLatLng,
                                     label: labels[0],
-                                    title:"Hello World!"
+                                    title: "Hello World!"
                                 });
                                 marker.setMap(map_google);
                                 var marker_object = {
-                                    marker : marker,
-                                    category: 0
-                                };
-                                marker_array.push(marker_object);
-                            }
-                        })
-                    }
-                    })
-                }
-                else if(this.checked === false && fire_checked){
-                    fire_checked = false;
-                    $('.fire_cases').remove();
-                    for(var i=0; i<marker_array.length; i++){
-                        if(marker_array[i].category === 1){
-                            marker_array[i].marker.setMap(null);
-                        }
-                    }
-                }
-             })
-             $(document).on("change","#transportation", function(){
-                if(this.checked === true && !transportation_checked){
-                    transportation_checked = true
-                    $.ajax({
-                type: "POST",
-                url: "/get_cases/",
-                data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
-                success: function (data, status, xhttp) {
-                        $.each(data, function(index){
-                            var id = data[index].pk;
-                            var lat = parseFloat(data[index].fields.latitude);
-                            var lon = parseFloat(data[index].fields.longitude);
-                            var cat = data[index].fields.category;
-                            var desc = data[index].fields.detail;
-                            var stat = data[index].fields.status;
-                            var place_name = data[index].fields.place_name;
-
-                            var counter = $('#cases').children('tr').length;
-                            if(cat === 1){
-                                if(stat === 0){
-                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id +'"></input>';
-                                }
-                                else
-                                if(stat === 1){
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
-                                }
-                                else
-                                if(stat === 2){
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
-                                }
-                                counter = counter + 1;
-                                $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
-                                var myLatLng = {lat: lat, lng: lon};
-                                var marker = new google.maps.Marker({
-                                    position: myLatLng,
-                                    label: labels[1],
-                                    title:"Hello World!"
-                                });
-                                marker.setMap(map_google);
-                                var marker_object = {
-                                    marker : marker,
+                                    marker: marker,
                                     category: 1
                                 };
                                 marker_array.push(marker_object);
@@ -447,25 +314,26 @@
                     }
                     })
                 }
-                else if(this.checked === false && transportation_checked){
-                    transportation_checked = false;
-                    $('.transportation_cases').remove();
-                    for(var i=0; i<marker_array.length; i++){
-                        if(marker_array[i].category === 2){
+                else if (this.checked === false && fire_checked) {
+                    fire_checked = false;
+
+                    $('.fire_cases').remove();
+                    for (var i = 0; i < marker_array.length; i++) {
+                        if (marker_array[i].category === 1) {
                             marker_array[i].marker.setMap(null);
                         }
                     }
                 }
-             })
-            $(document).on("change","#terrorism", function(){
-                if(this.checked === true && !terrorism_checked){
-                    terrorism_checked = true
+            })
+            $(document).on("change", "#transportation", function () {
+                if (this.checked === true && !transportation_checked) {
+                    transportation_checked = true
                     $.ajax({
                 type: "POST",
                 url: "/get_cases/",
                 data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
                 success: function (data, status, xhttp) {
-                        $.each(data, function(index){
+                        $.each(data, function (index) {
                             var id = data[index].pk;
                             var lat = parseFloat(data[index].fields.latitude);
                             var lon = parseFloat(data[index].fields.longitude);
@@ -475,17 +343,72 @@
                             var place_name = data[index].fields.place_name;
 
                             var counter = $('#cases').children('tr').length;
-                            if(cat === 2){
-                                if(stat === 0){
-                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id +'"></input>';
+                            if (cat === 2) {
+                                if (stat === 0) {
+                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 1){
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
+                                else if (stat === 1) {
+                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 2){
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
+                                else if (stat === 2) {
+                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
+                                }
+                                counter = counter + 1;
+                                $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                                var myLatLng = {lat: lat, lng: lon};
+                                var marker = new google.maps.Marker({
+                                    position: myLatLng,
+                                    label: labels[1],
+                                    title: "Hello World!"
+                                });
+                                marker.setMap(map_google);
+                                var marker_object = {
+                                    marker: marker,
+                                    category: 2
+                                };
+                                marker_array.push(marker_object);
+                            }
+                        })
+                    }
+                })
+                }
+                else if (this.checked === false && transportation_checked) {
+                    transportation_checked = false;
+                    $('.transportation_cases').remove();
+                    for (var i = 0; i < marker_array.length; i++) {
+                        if (marker_array[i].category === 2) {
+                            marker_array[i].marker.setMap(null);
+                        }
+                    }
+                }
+            })
+            $(document).on("change", "#terrorism", function () {
+                if (this.checked === true && !terrorism_checked) {
+                    terrorism_checked = true
+                    $.ajax({
+                type: "POST",
+                url: "/get_cases/",
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+                success: function (data, status, xhttp) {
+                        $.each(data, function (index) {
+                            var id = data[index].pk;
+                            var lat = parseFloat(data[index].fields.latitude);
+                            var lon = parseFloat(data[index].fields.longitude);
+                            var cat = data[index].fields.category;
+                            var desc = data[index].fields.detail;
+                            var stat = data[index].fields.status;
+                            var place_name = data[index].fields.place_name;
+
+                            var counter = $('#cases').children('tr').length;
+                            if (cat === 3) {
+                                if (stat === 0) {
+                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
+                                }
+                                else if (stat === 1) {
+                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
+                                }
+                                else if (stat === 2) {
+                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                                 }
                                 counter = counter + 1;
                                 $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
@@ -494,39 +417,39 @@
                                 var marker = new google.maps.Marker({
                                     position: myLatLng,
                                     label: labels[2],
-                                    title:"Hello World!"
+                                    title: "Hello World!"
                                 });
                                 marker.setMap(map_google);
                                 var marker_object = {
-                                    marker : marker,
-                                    category: 2
+                                    marker: marker,
+                                    category: 3
                                 };
                                 marker_array.push(marker_object);
                             }
                         })
                     }
-                    })
+                })
                 }
-                else if(this.checked === false && terrorism_checked){
+                else if (this.checked === false && terrorism_checked) {
                     terrorism_checked = false;
                     $('.terrorism_cases').remove();
-                    for(var i=0; i<marker_array.length; i++){
-                        if(marker_array[i].category === 3){
+                    for (var i = 0; i < marker_array.length; i++) {
+                        if (marker_array[i].category === 3) {
                             marker_array[i].marker.setMap(null);
                         }
                     }
                 }
-             })
+            })
 
-            $(document).on("change","#gasLeak", function(){
-                if(this.checked === true && !gasLeak_checked){
+            $(document).on("change", "#gasLeak", function () {
+                if (this.checked === true && !gasLeak_checked) {
                     gasLeak_checked = true
                     $.ajax({
                 type: "POST",
                 url: "/get_cases/",
                 data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
                 success: function (data, status, xhttp) {
-                        $.each(data, function(index){
+                        $.each(data, function (index) {
                             var id = data[index].pk;
                             var lat = parseFloat(data[index].fields.latitude);
                             var lon = parseFloat(data[index].fields.longitude);
@@ -536,76 +459,73 @@
                             var place_name = data[index].fields.place_name;
 
                             var counter = $('#cases').children('tr').length;
-                            if(cat === 3){
-                                if(stat === 0){
-                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id +'"></input>';
+                            if (cat === 4) {
+                                if (stat === 0) {
+                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 1){
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
+                                else if (stat === 1) {
+                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
                                 }
-                                else
-                                if(stat === 2){
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
+                                else if (stat === 2) {
+                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                                 }
                                 counter = counter + 1;
-                                $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" +  "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                                $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
                                 var myLatLng = {lat: lat, lng: lon};
                                 var marker = new google.maps.Marker({
                                     position: myLatLng,
                                     label: labels[3],
-                                    title:"Hello World!"
+                                    title: "Hello World!"
                                 });
                                 marker.setMap(map_google);
                                 var marker_object = {
-                                    marker : marker,
-                                    category: 3
+                                    marker: marker,
+                                    category: 4
                                 };
                                 marker_array.push(marker_object);
                             }
                         })
                     }
-                    })
+                })
                 }
-                else if(this.checked === false && gasLeak_checked){
+                else if (this.checked === false && gasLeak_checked) {
                     gasLeak_checked = false;
                     $('.gasLeak_cases').remove();
-                    for(var i=0; i<marker_array.length; i++){
-                        if(marker_array[i].category === 4){
+                    for (var i = 0; i < marker_array.length; i++) {
+                        if (marker_array[i].category === 4) {
                             marker_array[i].marker.setMap(null);
                         }
                     }
                 }
-             })
+            })
 
-
-            $(document).on('click', '#haze', function(){
+            $(document).on('click', '#haze', function () {
                 /*var styledMapType = new google.maps.StyledMapType(
-                    [
-                        {
-                            featureType: "all",
-                            elementType: "all",
-                            stylers:[
-                                { "invert_lightness" : true}
-                            ]
-                        }
-                    ],
-                    {name : 'Styled Map'});
-                */
+                 [
+                 {
+                 featureType: "all",
+                 elementType: "all",
+                 stylers:[
+                 { "invert_lightness" : true}
+                 ]
+                 }
+                 ],
+                 {name : 'Styled Map'});
+                 */
                 map_google.setZoom(12);
                 //map_google.mapTypes.set('styled_map', styledMapType);
                 //map_google.setMapTypeId('styled_map');
 
-                east_infoWindow.open(map_google,east_marker);
+                east_infoWindow.open(map_google, east_marker);
                 west_infoWindow.open(map_google, west_marker);
-                north_infoWindow.open(map_google,north_marker);
-                south_infoWindow.open(map_google,south_marker);
-                centre_infoWindow.open(map_google,centre_marker);
+                north_infoWindow.open(map_google, north_marker);
+                south_infoWindow.open(map_google, south_marker);
+                centre_infoWindow.open(map_google, centre_marker);
 
                 $('#google_map_base').append("<div class='overlay'></div>");
             })
 
-            $(document).on('click', '#incident', function(){
+            $(document).on('click', '#incident', function () {
                 east_marker.setMap(null);
                 west_marker.setMap(null);
                 north_marker.setMap(null);
@@ -613,81 +533,73 @@
                 centre_marker.setMap(null);
 
                 $('.overlay').remove();
-                for(var i=0; i<marker_array.length; i++){
+                for (var i = 0; i < marker_array.length; i++) {
                     marker_array[i].marker.setMap(map_google);
                 }
             })
         });
     </script>
+
     <script>
-        function hazeConverter(psi){
-            if(psi > 300){
+        function hazeConverter(psi) {
+            if (psi > 300) {
                 return "red";
             }
-            else if(psi > 200){
+            else if (psi > 200) {
                 return "orange";
             }
-            else if(psi > 100){
+            else if (psi > 100) {
                 return "yellow";
             }
-            else if(psi > 50) {
+            else if (psi > 50) {
                 return "blue";
             }
-            else{
+            else {
                 return "green";
             }
         }
-        function convertToDay(today){
-            if(today === 0){
+
+        function convertToDay(today) {
+            if (today === 0) {
                 return "Sunday";
             }
-            else
-            if(today === 1){
+            else if (today === 1) {
                 return "Monday";
             }
-            else
-            if(today === 2){
+            else if (today === 2) {
                 return "Tuesday";
             }
-            else
-            if(today === 3){
+            else if (today === 3) {
                 return "Wednesday";
             }
-            else
-            if(today === 4){
+            else if (today === 4) {
                 return "Thursday";
             }
-            else
-            if(today === 5){
+            else if (today === 5) {
                 return "Friday";
             }
-            else
-            if(today === 6){
+            else if (today === 6) {
                 return "Saturday";
             }
         }
 
-        function kelvinToFahrenheit(temp){
-            return (temp -273) * 9 / 5;
+        function kelvinToFahrenheit(temp) {
+            return (temp - 273) * 9 / 5;
         }
-        function changeCategory(category){
-            if(category === 0){
+        function changeCategory(category) {
+            if (category === 1) {
                 return "Fire";
             }
-            else if(category === 1){
+            else if (category === 2) {
                 return "Traffic Accident";
             }
-            else if(category === 2){
+            else if (category === 3) {
                 return "Terrorists Activity";
             }
-            else if(category === 3){
+            else if (category === 4) {
                 return "Gas Leak";
             }
         }
-    </script>
-
-    <script>
-
     </script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -746,26 +658,21 @@
 
             <ul style="margin-right:0;" class="nav navbar-nav navbar-right">
 
+                <form action="/login">
+                    <button type="submit" margin-top="20px" class="btn btn-info">Login</button>
+                </form>
+                <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
+                    <li>
+                        <a href="#">
+                            <span class="entypo-vcard"></span>&#160;&#160;Account Setting</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="entypo-lifebuoy"></span>&#160;&#160;Help</a>
+                    </li>
+                    <li class="divider"></li>
 
-                <li>
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        Hi, {{ user.username }} <b class="caret"></b>
-                    </a>
-                    <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
-                        <li>
-                            <a href="#">
-                                <span class="entypo-vcard"></span>&#160;&#160;Account Setting</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="entypo-lifebuoy"></span>&#160;&#160;Help</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="/logout/">
-                                <span class="entypo-logout"></span>&#160;&#160;Logout</a>
-                        </li>
-                    </ul>
+                </ul>
                 </li>
                 <li class="divider"></li>
                 <li>
@@ -810,65 +717,48 @@
     <a id="toggle">
         <span class="entypo-menu"></span>
     </a>
-    <div class="dark">
+{#    <div class="dark">#}
 {#        <form action="#">#}
 {#                <span>#}
 {#                    <input type="text" name="search" value="" class="search rounded id_search"#}
 {#                           placeholder="Search Menu..." autofocus/>#}
 {#                </span>#}
 {#        </form>#}
-    </div>
+{#    </div>#}
 
-    <div class="search-hover">
-        <form id="demo-2">
-            <input type="search" placeholder="Search Menu..." class="id_search">
-        </form>
-    </div>
-
+{#    <div class="search-hover">#}
+{#        <form id="demo-2">#}
+{#            <input type="search" placeholder="Search Menu..." class="id_search">#}
+{#        </form>#}
+{#    </div>#}
 
     <div class="skin-part">
         <div id="tree-wrap">
             <div class="side-bar">
                 <ul class="topnav menu-left-nest">
                     <li>
-                        <a href="#" style="border-left:0px solid!important;" class="title-menu-left">
-
-                            <span class="main-menu_item"></span>
-                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
-
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="tooltip-tip ajax-load" href="/" title="Dashboard">
+                        <a class="tooltip-tip ajax-load" href="/subscribe" title="Dashboard">
                             <i class="icon-window"></i>
-                            <span>Dashboard</span>
-
+                            <span>Subscribe</span>
                         </a>
                     </li>
-
                     <li>
-                        <a class="tooltip-tip2 ajax-load" href="/new_case/" title="New Incident">
-                            <i class="icon-document"></i><span>New Incident</span></a>
-                    </li>
-
-                    <li>
-                        <a class="tooltip-tip " href="/logout/" title="Logout">
-                            <i class="entypo-logout"></i>
-                            <span>Login Out</span>
+                        <a class="tooltip-tip ajax-load" href="/unsubscribe" title="Dashboard">
+                            <i class="icon-window"></i>
+                            <span>Unsubscribe</span>
                         </a>
                     </li>
-
                     <li>
-                        <a class="tootltip-tip2 ajax-load" href="/register/" title="New User">
-                            <i class="icon-document"></i><span>New User</span></a>s
+                        <a class="tooltip-tip ajax-load" href="/changeSubscription" title="Dashboard">
+                            <i class="icon-window"></i>
+                            <span>Change Subscription</span>
+                        </a>
                     </li>
-
                 </ul>
-
             </div>
         </div>
     </div>
+
 </div>
 <!-- END OF SIDE MENU -->
 
@@ -881,14 +771,14 @@
         <!--TITLE -->
         <div class="row">
             <div id="paper-top">
-{#                <div class="col-sm-3">#}
-{#                    <h2 class="tittle-content-header">#}
-{#                        <i class="icon-media-record"></i>#}
-{#                        <span>Map Overview#}
-{#                            </span>#}
-{#                    </h2>#}
-{##}
-{#                </div>#}
+                <div class="col-sm-3">
+                    <h2 class="tittle-content-header">
+                        <i class="icon-media-record"></i>
+                        <span>Map Overview
+                            </span>
+                    </h2>
+
+                </div>
 
                 <div class="col-sm-9">
                     <div class="devider-vertical visible-lg"></div>
@@ -939,15 +829,13 @@
                         <div class="nest">
                             <div class="body-nest">
                                 <div id="google_map_base" style="width: 100%; height:630px; "></div>
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAO8DAewXZ2oJDavX6qFxLJCBhkWYpwcY&callback=initMap" async defer></script>
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAO8DAewXZ2oJDavX6qFxLJCBhkWYpwcY&callback=initMap"
+                                        async defer></script>
                                 <script>
                                     var map_google;
                                     function initMap() {
                                         map_google = new google.maps.Map(document.getElementById('google_map_base'), {
-                                            center: {lat: 1.290270, lng: 103.851959},
-                                            mapTypeControlOptions: {
-                                                mapTypeIds : ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map']
-                                            },
+                                            center: {lat: 1.376010, lng: 103.8153315},
                                             zoom: 13
                                         });
                                     }
@@ -962,141 +850,33 @@
             </div>
 
             <div style="margin-top: 20px;"></div>
+
             <div class="row">
                 <center>
-                 <form>
-                    <input type="button" id="incident" class="btn btn-primary" value="Incident"></input>
-                    <input type="button" id="haze" class="btn btn-success" value="Haze"></input>
-                </form>
-                <center>
+                    <form>
+                        <input type="button" id="incident" class="btn btn-primary" value="Incident"></input>
+                        <input type="button" id="haze" class="btn btn-success" value="Haze"></input>
+                    </form>
+                    <center>
             </div>
-            <br />
-            <br />
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="profit" id="profitClose">
-                        <div class="headline ">
-                            <h3>
-                                    <span>
-                                        <i class="entypo-attention"></i>&#160;&#160;Active Cases</span>
-                            </h3>
-                            <div class="titleClose">
-                            </div>
-                        </div>
-
-                        <div class="value">
-                                <span class="pull-left"><i class="entypo-attention"></i>
-                                </span>
-                            <div id="getting-started">
-
-                            </div>
-
-                        </div>
-
-                        <div class="progress-tinny">
-                            <div style="width: 50%" class="bar"></div>
-                        </div>
-                        <div class="profit-line">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="member" >
-                        <div class="headline ">
-                            <h3>
-                                    <span>
-                                        <i class="entypo-check"></i>
-                                        &#160;&#160;Resolve Cases
-                                    </span>
-                            </h3>
-                            <div class="titleClose">
-
-                            </div>
-                        </div>
-                        <div class="value">
-                            <div id="resolved">
-
-                            </div>
-                        </div>
-                        <div class="progress-tinny">
-                            <div style="width: 50%" class="bar"></div>
-                        </div>
-                        <div class="profit-line">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="revenue" id="revenueClose">
-                        <div class="headline ">
-
-                            <h3>
-                                <span>
-                                    <i class="entypo-traffic-cone"></i>&#160;&#160;Total</span>
-                            </h3>
-
-                            <div class="titleClose">
-
-                            </div>
-                        </div>
-                        <div class="value" id ="total">
-                            <canvas id="canvas4" width="70" height="70"></canvas>
-                            <i class="pull-right"></i>
-
-                        </div>
-
-
-                        <div class="progress-tinny">
-                            <div style="width: 50%" class="bar"></div>
-                        </div>
-                        <div class="profit-line">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="order" id="orderClose">
-                        <div class="headline ">
-                            <h3>
-                                    <span>
-                                        <i class="entypo-alert"></i>&#160;&#160; Crisis level</span>
-                            </h3>
-                            <div class="titleClose">
-                                <a href="#orderClose" class="gone">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="value" id="crisis">
-
-
-                        </div>
-
-                        <div class="progress-tinny">
-                            <div style="width: 10%" class="bar"></div>
-                        </div>
-                        <div class="profit-line">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <br/>
+            <br/>
             <center>
-            <div class="row">
-                <label class="checkbox-inline">
-                    <input type="checkbox" id="fire" value="" checked>Fire</input>
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" id="transportation" value="" checked>Traffic Accident</input>
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" id="terrorism" value="" checked>Terrorists Activity</input>
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" id="gasLeak" value="" checked>Gas Leak</input>
-                </label>
-            </div>
-             </center>
-
+                <div class="row">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="" id="fire" checked>Fire</input>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="" id="transportation" checked>Traffic Accident</input>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="" id="terrorism" checked>Terrorists Activity</input>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="gasLeak" value="" checked>Gas Leak</input>
+                    </label>
+                </div>
+            </center>
             <div class="row">
                 <div class="col-sm-4">
                     <div class="weather-wrap">
@@ -1109,12 +889,10 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="weather-icon" id="dashboard_weather_icon">
-
                                 </div>
                             </div>
                             <div class="col-sm-8">
                                 <div class="weather-text" id="dashboard_weather_text">
-
                                 </div>
                             </div>
                         </div>
@@ -1173,22 +951,24 @@
 
                         <div class="body-nest" id="Footable">
 
-                            <p class="lead well">FooTable is a jQuery plugin that aims to make HTML tables on smaller devices look awesome - No matter how many columns of data you may have in them. And it's responsive i think this better than DataTable in some way</p>
+                            <p class="lead well">FooTable is a jQuery plugin that aims to make HTML tables on smaller
+                                devices look awesome - No matter how many columns of data you may have in them. And it's
+                                responsive i think this better than DataTable in some way</p>
 
                             <table class="table-striped footable-res footable metro-blue" data-page-size="6">
                                 <thead>
                                 <tr>
                                     <th>
-                                        No
+                                        NO
                                     </th>
                                     <th>
                                         Latitude
                                     </th>
-                                    <th data-hide="phone,tablet">
+                                    <th>
                                         Longitude
                                     </th>
                                     <th data-hide="phone,tablet">
-                                        category
+                                        Category
                                     </th>
                                     <th data-hide="phone,tablet">
                                         Place
@@ -1219,8 +999,6 @@
 
 
                 </div>
-
-            </div>
 
             </div>
             <!-- /END OF CONTENT -->

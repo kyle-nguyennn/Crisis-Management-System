@@ -116,56 +116,34 @@
                     var place_name = data[index].fields.place_name;
                     counter = counter + 1;
                     if(stat === 0){
-                        stat = '<td><input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="status' + id +'"></input></td>';
+                        stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="status' + id +'"></input>';
                         var check = '<input value="Accept" type="button" id="accept' + id + '"class = "btn btn-success accepted"></input>   <input value="Reject" id="reject' + id + '"type="button" class="btn btn-danger rejected"></input>';
-                        $('#cases').append("<tr><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + stat + "</td>" + "<td>" + check + "</td>" + "<td><input type='number' name='casualities_number' id='casualities_number"+ id + "' /></td>" + "<td><input type='number' name='injuries_number' id='injuries_number" + id + "' /></td>" + "<td><input type='number' name='severity' min='1' max='5' id='severity" + id + "' /></td></tr>");
                     }
                     else
                     if(stat === 1){
-                        console.log("Masuk stat 1 button");
-                        stat = '<td><input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="status' + id +'"></input></td>';
-                        var check = '<input value="Done" type="button" id="resolving' + id + '" class = "btn btn-info resolving"></input>';
-                        $('#cases').append("<tr><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + stat + "</td>" + "<td>" + check + "</td>" + "<td><input type='number' name='casualities_number' id='casualities_number"+ id + "'/></td>" +"<td><input type='number' name='injuries_number' id='injuries_number" + id + "'/></td>" +  "<td><input type='number' name='severity' min='1' max='5' id='severity" + id + "'/></td></tr>");
+                        stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="status' + id +'"></input>';
+                        var check = '<input value="Done" type="button" class="btn btn-info resolving" id="resolving' + id + '"></input>';
                     }
                     else
                     if(stat === 2){
-                        stat = '<td><input value="Closed" type="button" class ="status-metro status-active statusnow" id="status' + id +'" disabled></input></td>';
+                        stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="status' + id +'" disabled></input>';
                         var check = "";
-                        $('#cases').append("<tr><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + stat + "</td>" + "<td>" + check + "</td>" + "<td><input type='number' name='casualities_number' id='casualities_number"+ id + "' disabled/></td>" +"<td><input type='number' name='injuries_number' id='injuries_number" + id + "' disabled/></td>" +  "<td><input type='number' name='severity' min='1' max='5' id='severity" + id + "' disabled/></td></tr>");
                     }
 
+                    console.log('statusss' + stat)
+                    if(stat === 1){
+                        console.log('status is 1')
+                        $('#cases').append("<tr><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + stat + "</td>" + "<td>" + check + "</td>" + "<td><input type='number' name='casualities_number' id='casualities_number"+ id + "' /></td>" + "<td><input type='number' name='injuries_number' id='injuries_number" + id + "' /></td>" + "<td><input type='number' name='severity' min='1' max='5' id='severity" + id + "' /></td></tr>");
+                    }
+                    else{
+                        $('#cases').append("<tr><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + stat + "</td>" + "<td>" + check + "</td>" + "<td><input type='number' name='casualities_number' id='casualities_number"+ id + "' disabled/></td>" +"<td><input type='number' name='injuries_number' id='injuries_number" + id + "' disabled/></td>" +  "<td><input type='number' name='severity' min='1' max='5' id='severity" + id + "' disabled/></td></tr>");
+                    }
                      var myLatLng = {lat: lat, lng: lon};
-                     if(cat === 0){
-                         var marker = new google.maps.Marker({
-                             position: myLatLng,
-                             label: labels[0],
-                             title:"Hello World!"
-                         });
-                     }
-                     else
-                     if(cat === 1){
-                         var marker = new google.maps.Marker({
-                             position: myLatLng,
-                             label: labels[1],
-                             title:"Hello World!"
-                         });
-                     }
-                     else
-                     if(cat === 2){
-                         var marker = new google.maps.Marker({
-                             position: myLatLng,
-                             label: labels[2],
-                             title:"Hello World!"
-                         });
-                     }
-                     else
-                     if(cat === 3){
-                         var marker = new google.maps.Marker({
-                             position: myLatLng,
-                             label: labels[3],
-                             title:"Hello World!"
-                         });
-                     }
+                     var marker = new google.maps.Marker({
+                         position: myLatLng,
+                         label: labels[0],
+                         title:"Hello World!"
+                     });
                      marker.setMap(map_google);
                 })
                 }
@@ -312,13 +290,13 @@
             return (temp -273) * 9 / 5;
         }
         function changeCategory(category){
-            if(category === 0){
+            if(category === 1){
                 return "Fire";
             }
             else if(category === 2){
                 return "Traffic Accident";
             }
-            else if(category === 2){
+            else if(category === 3){
                 return "Terrorists Activity";
             }
             else if(category === 4){

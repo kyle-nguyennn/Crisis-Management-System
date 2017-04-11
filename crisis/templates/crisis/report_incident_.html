@@ -51,8 +51,8 @@
                     });
                     var latitude = results[0].geometry.location.lat();
                     var longitude = results[0].geometry.location.lng();
-                    document.getElementById("latVal").value = latitude;
-                    document.getElementById("longVal").value = longitude;
+                    document.getElementById("longVal").value = latitude;
+                    document.getElementById("latVal").value = longitude;
                 }
                 else{
                     alert('Geocode was not successful for the following reason: ' + status);
@@ -120,7 +120,7 @@
 
                 <li>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        Hi, {{ user.username }} <b class="caret"></b>
+                        Hi, Dave Mattew <b class="caret"></b>
                     </a>
                     <ul style="margin-top:14px;" role="menu" class="dropdown-setting dropdown-menu">
                         <li>
@@ -211,30 +211,30 @@
                     </li>
 
                     <li>
-                        <a class="tooltip-tip ajax-load" href="/dashboard/" title="Dashboard">
+                        <a class="tooltip-tip ajax-load" href="index.html" title="Dashboard">
                             <i class="icon-window"></i>
                             <span>Dashboard</span>
 
                         </a>
                     </li>
 
-{#                    <li>#}
-{#                        <a class="tooltip-tip ajax-load" href="map_overview.html" title="Map Overview">#}
-{#                            <i class="icon-location"></i>#}
-{#                            <span>Map Overview</span>#}
-{##}
-{#                        </a>#}
-{#                    </li>#}
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="map_overview.html" title="Map Overview">
+                            <i class="icon-location"></i>
+                            <span>Map Overview</span>
+
+                        </a>
+                    </li>
 
                     <li>
-                        <a class="tooltip-tip2 ajax-load" href="#" title="New Incident">
+                        <a class="tooltip-tip2 ajax-load" href="report_incident.html" title="New Incident">
                             <i class="icon-document"></i><span>New Incident</span></a>
                     </li>
 
-{#                    <li>#}
-{#                        <a class="tooltip-tip2 ajax-load" href="table-dynamic.html" title="List Of Incidents">#}
-{#                            <i class="fontawesome-th-list"></i><span>List Of Incidents</span></a>#}
-{#                    </li>#}
+                    <li>
+                        <a class="tooltip-tip2 ajax-load" href="table-dynamic.html" title="List Of Incidents">
+                            <i class="fontawesome-th-list"></i><span>List Of Incidents</span></a>
+                    </li>
 
                 </ul>
 
