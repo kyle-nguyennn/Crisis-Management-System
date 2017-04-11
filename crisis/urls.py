@@ -27,5 +27,5 @@ urlpatterns = [
     url(r'^number_by_category/$', views.reportToGovernment, name='number_by_category'),
     url(r'^number_of_injured/$', views.reportToGovernment, name='number_of_injured'),
     url(r'^number_of_dead/$', views.reportToGovernment, name='number_of_dead'),
-    url(r'^haze/$', views.getHaze, name='haze'),
+    url(r'^haze/*$', views.getHaze, name='haze'),
 ]

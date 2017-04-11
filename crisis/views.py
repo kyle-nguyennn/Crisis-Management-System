@@ -290,7 +290,13 @@ def getHaze(request):
     if request.method == "GET":
         hazeJson = {}
         hazeJson = services.get_psi_reading()
-        return HttpResponse(json.dumps(hazeJson), content_type='json')
+        data = {}
+        data['east'] = hazeJson['rEA']
+        data['west'] = hazeJson['rWE']
+        data['south'] = hazeJson['rSO']
+        data['north'] = hazeJson['rNO']
+        data['center'] = hazeJson['rCE']
+        return HttpResponse(json.dumps(data), content_type='json')
     else:
         print("No POST method for haze")
         return None
