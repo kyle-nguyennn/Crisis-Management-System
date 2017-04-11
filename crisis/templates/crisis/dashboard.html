@@ -67,10 +67,10 @@
                                 stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
                             }
                             else if (stat === 1) {
-                                stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
+                                stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
                             }
                             else if (stat === 2) {
-                                stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
+                                stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                             }
                             counter = counter + 1;
                             if (cat === 0) {
@@ -189,7 +189,7 @@
             south_marker.setVisible(false);
             centre_marker.setVisible(false);
 
-            $.getJSON('/get_cases',function(data){
+            $.getJSON('/haze/',function(data){
                 east_psi = data.east;
                 west_psi = data.west;
                 south_psi = data.south;
@@ -314,10 +314,10 @@
                     document.getElementById("getting-started").appendChild(active_node);
 
                     var resolved = data.resolved;
-                    var resolved_node = document.createElement("span");
+                    var Closed_node = document.createElement("span");
                     var textnode = document.createTextNode(resolved);
-                    resolved_node.appendChild(textnode);
-                    document.getElementById("resolved").appendChild(resolved_node);
+                    Closed_node.appendChild(textnode);
+                    document.getElementById("Closed").appendChild(Closed_node);
 
                     var total = data.total;
                     var total_node = document.createElement("span");
@@ -362,11 +362,11 @@
                                 }
                                 else
                                 if(stat === 1){
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
+                                    stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
                                 }
                                 else
                                 if(stat === 2){
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
+                                    stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
                                 }
                                 counter = counter + 1;
                                 $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
@@ -422,11 +422,11 @@
                                 }
                                 else
                                 if(stat === 1){
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
+                                    stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
                                 }
                                 else
                                 if(stat === 2){
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
+                                    stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
                                 }
                                 counter = counter + 1;
                                 $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
@@ -481,11 +481,11 @@
                                 }
                                 else
                                 if(stat === 1){
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
+                                    stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
                                 }
                                 else
                                 if(stat === 2){
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
+                                    stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
                                 }
                                 counter = counter + 1;
                                 $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
@@ -542,11 +542,11 @@
                                 }
                                 else
                                 if(stat === 1){
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
+                                    stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="' + id +'"></input>';
                                 }
                                 else
                                 if(stat === 2){
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
+                                    stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="' + id +'" disabled></input>';
                                 }
                                 counter = counter + 1;
                                 $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" +  "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
@@ -1014,7 +1014,7 @@
                             </div>
                         </div>
                         <div class="value">
-                            <div id="resolved">
+                            <div id="Closed">
 
                             </div>
                         </div>

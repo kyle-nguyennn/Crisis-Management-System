@@ -49,10 +49,10 @@
                                 stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
                             }
                             else if (stat === 1) {
-                                stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
+                                stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
                             }
                             else if (stat === 2) {
-                                stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
+                                stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                             }
                             counter = counter + 1;
                             if (cat === 0) {
@@ -69,7 +69,6 @@
                             }
 
                             var myLatLng = {lat: lat, lng: lon};
-                            marker.setMap(map_google);
                             if(cat === 0){
                                 var marker = new google.maps.Marker({
                                     position: myLatLng,
@@ -80,6 +79,7 @@
                                     marker: marker,
                                     category: 0
                                 };
+                                marker.setMap(map_google);
                             }
                             else if(cat === 1){
                                 var marker = new google.maps.Marker({
@@ -91,6 +91,7 @@
                                     marker: marker,
                                     category: 1
                                 };
+                                marker.setMap(map_google);
                             }
                             else if(cat === 2){
                                 var marker = new google.maps.Marker({
@@ -102,6 +103,7 @@
                                     marker: marker,
                                     category: 2
                                 };
+                                marker.setMap(map_google);
                             }
                             else if(cat === 3){
                                 var marker = new google.maps.Marker({
@@ -113,6 +115,7 @@
                                     marker: marker,
                                     category: 3
                                 };
+                                marker.setMap(map_google);
                             }
                             marker_array.push(marker_object);
                         });
@@ -324,10 +327,10 @@
                                     stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
                                 }
                                 else if (stat === 1) {
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
+                                    stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
                                 }
                                 else if (stat === 2) {
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
+                                    stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                                 }
                                 counter = counter + 1;
                                 $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
@@ -383,10 +386,10 @@
                                     stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
                                 }
                                 else if (stat === 1) {
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
+                                    stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
                                 }
                                 else if (stat === 2) {
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
+                                    stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                                 }
                                 counter = counter + 1;
                                 $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
@@ -440,10 +443,10 @@
                                     stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
                                 }
                                 else if (stat === 1) {
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
+                                    stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
                                 }
                                 else if (stat === 2) {
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
+                                    stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                                 }
                                 counter = counter + 1;
                                 $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
@@ -499,10 +502,10 @@
                                     stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
                                 }
                                 else if (stat === 1) {
-                                    stat = '<input value="Dispatched" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
+                                    stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
                                 }
                                 else if (stat === 2) {
-                                    stat = '<input value="Resolved" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
+                                    stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
                                 }
                                 counter = counter + 1;
                                 $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
