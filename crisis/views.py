@@ -181,10 +181,11 @@ def new_case(request):
                 # case = Case(case)
                 try:
                     case.save()
-
+                    print("send sms to RA for new case")
+                    NotificationManager.alertRANewIncident(case)
                     # NotificationManager.alertSubscriber(case)
                 except:
-                    print()
+                    print("case.save() error")
                 return redirect('crisis:dashboard')
             else:
                 return render(request, 'crisis/report_incident.html', {})

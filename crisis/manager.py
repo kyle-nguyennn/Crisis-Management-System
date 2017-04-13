@@ -154,9 +154,9 @@ class NotificationManager:
                 print('error')
 
     @classmethod
-    def alertRANewIncident(cls, caseId):
+    def alertRANewIncident(cls, case):
         CASE_CATEGORY_CHOICE = [(0, 'Fire'), (1, 'Traffic Accient'), (2, 'Terrorist Attack'), (3, 'Gas leak')]
-        case = Case.objects.get(id=caseId)
+        agency_contact = ['83826317', '83826317', '83826317', '83826317'] # The number RAs.
         categoryNo = case.category
         categoryText = "unknown"
         for x in CASE_CATEGORY_CHOICE:
@@ -169,16 +169,6 @@ class NotificationManager:
                 break
         message = "Dear agency officer, a new incident of " + categoryText + " is occuring at " + case.place_name + \
                   ". Please login your account in the portal to proceed."
-        #post_on_twitter(message)
 
-        agencies = list(Subscriber.objects.filter(category=categoryNo))
-        print(agencies)
-        for agency in agencies:
-            print(agency.phoneNum)
-            print(agency.category)
-            try:
-                phoneText = str(agency.phoneNum)
-                print("string phone " + phoneText)
-                send_sms(phoneText, message)
-            except:
-                print('error')
+        print('alertRA: invoke send_sms, contact: ' + str(agency_contact[int(categoryNo)]))
+        send_sms(str(agency_contact[int(categoryNo)]), message)
