@@ -127,6 +127,7 @@ class NotificationManager:
         CASE_CATEGORY_CHOICE = [(0, 'Fire'), (1, 'Traffic Accient'), (2, 'Terrorist Attack'), (3, 'Gas leak')]
         case = Case.objects.get(id=caseId)
         categoryNo = case.category
+        caseRegion = case.region
         categoryText = "unknown"
         for x in CASE_CATEGORY_CHOICE:
             print("case " + str(x))
@@ -140,13 +141,43 @@ class NotificationManager:
                         " The number of dead is " + str(case.dead) + " and the number of injured is "+\
                         str(case.injured) +". The estimated severity of this incident is " + str(case.severity) +\
                         "/5."
-        subscribers = list(Subscriber.objects.filter(category=categoryNo))
+        subscribers = list(Subscriber.objects.filter(category=categoryNo).filter(region=caseRegion))
         print(subscribers)
         for subscriber in subscribers:
             print(subscriber.phoneNum)
             print(subscriber.category)
             try:
                 phoneText = str(subscriber.phoneNum)
+                print("string phone " + phoneText)
+                send_sms(phoneText, message)
+            except:
+                print('error')
+
+    @classmethod
+    def alertRANewIncident(cls, caseId):
+        CASE_CATEGORY_CHOICE = [(0, 'Fire'), (1, 'Traffic Accient'), (2, 'Terrorist Attack'), (3, 'Gas leak')]
+        case = Case.objects.get(id=caseId)
+        categoryNo = case.category
+        categoryText = "unknown"
+        for x in CASE_CATEGORY_CHOICE:
+            print("case " + str(x))
+            print("x[0] " + str(x[0]))
+            print("cat no " + str(categoryNo))
+            if int(x[0]) == int(categoryNo):
+                categoryText = x[1]
+                print(x[1])
+                break
+        message = "Dear agency officer, a new incident of " + categoryText + " is occuring at " + case.place_name + \
+                  ". Please login your account in the portal to proceed."
+        #post_on_twitter(message)
+
+        agencies = list(Subscriber.objects.filter(category=categoryNo))
+        print(agencies)
+        for agency in agencies:
+            print(agency.phoneNum)
+            print(agency.category)
+            try:
+                phoneText = str(agency.phoneNum)
                 print("string phone " + phoneText)
                 send_sms(phoneText, message)
             except:

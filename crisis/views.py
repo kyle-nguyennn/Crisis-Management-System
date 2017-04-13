@@ -181,6 +181,7 @@ def new_case(request):
                 # case = Case(case)
                 try:
                     case.save()
+
                     # NotificationManager.alertSubscriber(case)
                 except:
                     print()
@@ -238,11 +239,13 @@ def resolve(request):
     if request.user.is_authenticated():
         usertype = request.user.userType
         pk = request.POST['pk']
-        severity = request.POST['severity']
+        print("get severity from POST")
+        #severity = request.POST['severity']
         dead = request.POST['dead']
         injured = request.POST['injured']
         if CaseDao.updateDead(usertype, pk, dead):
             if CaseDao.updateInjured(usertype, pk, injured):
+                #if CaseDao.updateSeverity(usertype, pk, severity):
                 if CaseDao.upDateStatus(usertype, pk, 2):
                     NotificationManager.alertSubscriberCloseIncident(pk)
                     return HttpResponse({
