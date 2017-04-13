@@ -39,6 +39,7 @@ class MyUser(AbstractUser):
 
 STATUS_CHOICES = [(0, 'Pending'), (1, 'Resolving'), (2, 'Closed')]
 CASE_CATEGORY_CHOICE = [(0,'Fire'), (1,'Traffic Accient'), (2,'Terrorist Attack'), (3, 'Gas leak')]
+REGION_CHOICE = [(0,'Central Region'), (1,'North-East Region'), (2,'North-West Region'), (3, 'South-East Region'), (4, 'South-West Region')]
 class Case(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     longitude = models.DecimalField(max_digits=12, decimal_places=7)
@@ -50,7 +51,7 @@ class Case(models.Model):
     dead = models.IntegerField(default=0)
     injured = models.IntegerField(default=0)
     place_name = models.CharField(max_length=100, default="")
-    region = models.IntegerField()
+    region = models.IntegerField(choices=REGION_CHOICE)
     name = models.CharField(max_length=20, default="")
     phoneNum = models.CharField(max_length=20, default="")
     gender = models.IntegerField(choices=[(1, 'Male'), (2,'Female')])
@@ -79,7 +80,6 @@ class haze_PSI_24hr(models.Model):
     def getReading(self):
         return self.reading
 
-REGION_CHOICE = [(0,'Central Region'), (1,'North-East Region'), (2,'North-West Region'), (3, 'South-East Region'), (4, 'South-West Region')]
 class Subscriber(models.Model):
     phoneNum = models.IntegerField()
     category = models.IntegerField(choices=CASE_CATEGORY_CHOICE)

@@ -8,7 +8,7 @@ from crisis.models import *
 
 @admin.register(Case)
 class CaseAdmin(admin.ModelAdmin):
-    list_display = ('id', 'longitude', 'latitude', 'category', 'status')
+    list_display = ('place_name', 'region', 'longitude', 'latitude', 'category', 'status', 'severity', 'injured', 'dead')
 
 
 class MyUserChangeForm(UserChangeForm):

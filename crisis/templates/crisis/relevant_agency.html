@@ -188,7 +188,7 @@
                 $(this).attr('id', 'resolving' + id_now.slice(6));
                 $('#reject' + id_now.slice(6)).remove();
                 $(casualities_number).prop("disabled", false);
-                $(severity_index).prop("disabled", false);
+                $(severity_index).prop("disabled", true);
                 $(injuries_number).prop("disabled", false);
                 $(casualities_number).prop("required", true);
                 $(severity_index).prop("required", true);
@@ -196,6 +196,7 @@
                 var changedObject = {
                     "pk" : id_now.slice(6),
                     "valid" : 1,
+                    "severity" : $(severity_index).val(),
                     csrfmiddlewaretoken: '{{ csrf_token }}'
                 };
 
@@ -205,10 +206,10 @@
                     dataType: "json",
                     data: changedObject,
                     success: function(data){
-                        alert(data);
+{#                        alert(data);#}
                     },
                     error: function(err){
-                        alert(err);
+{#                        alert(err);#}
                     }
                 });
             })
@@ -231,10 +232,10 @@
                     dataType: "json",
                     data: changedObject,
                     success: function(data){
-                        alert(data);
+{#                        alert(data);#}
                     },
                     error: function(err){
-                        alert(err);
+{#                        alert(err);#}
                     }
                 });
             })
@@ -256,7 +257,6 @@
                     $(injuries_number).prop("required", false);
                     var changedObject = {
                         "pk" : id_now.slice(9),
-                        "severity" : $(severity_index).val(),
                         "dead" : $(casualities_number).val(),
                         "injured" : $(injuries_number).val(),
                         csrfmiddlewaretoken: '{{ csrf_token }}'
@@ -267,10 +267,10 @@
                         dataType: "json",
                         data: changedObject,
                         success: function(data){
-                            alert('Success');
+{#                            alert('Success');#}
                         },
                         error: function(){
-                            alert('Error');
+{#                            alert('Error');#}
                         }
                     });
                 }
@@ -315,13 +315,13 @@
             if(category === 0){
                 return "Fire";
             }
-            else if(category === 2){
+            else if(category === 1){
                 return "Traffic Accident";
             }
             else if(category === 2){
                 return "Terrorists Activity";
             }
-            else if(category === 4){
+            else if(category === 3){
                 return "Gas Leak";
             }
         }
@@ -522,8 +522,8 @@
                                     var map_google;
                                     function initMap() {
                                         map_google = new google.maps.Map(document.getElementById('google_map_base'), {
-                                            center: {lat: 1.376010, lng: 103.8153315},
-                                            zoom: 13
+                                            center: {lat: 1.354203, lng: 103.8121483},
+                                            zoom: 12
                                         });
                                     }
                                 </script>

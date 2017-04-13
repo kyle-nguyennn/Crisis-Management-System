@@ -11,7 +11,7 @@ from django.views.generic import View
 from django.core import serializers
 
 from crisis.dao import CaseDao
-from crisis.caseManager import CaseManager
+from crisis.manager import CaseManager, NotificationManager
 from crisis.models import MyUser, Case, Subscriber
 from .forms import UserForm, CaseForm
 from crisis import services
@@ -179,7 +179,11 @@ def new_case(request):
                 # case['place_name'] = request.POST['place_name']
                 # case['region'] = request.POST['region']
                 # case = Case(case)
-                case.save()
+                try:
+                    case.save()
+                    # NotificationManager.alertSubscriber(case)
+                except:
+                    print()
                 return redirect('crisis:dashboard')
             else:
                 return render(request, 'crisis/report_incident.html', {})
@@ -210,6 +214,10 @@ def validate(request):
         print(request.POST)
         pk = request.POST['pk']
         valid = int(request.POST['valid'])
+        try:
+            severity = request.POST['severity']
+        except:
+            severity = 0
         newStatus = -1
         if valid == 1:
             print('inside check')
@@ -218,7 +226,10 @@ def validate(request):
             newStatus = 2
         if newStatus != -1:
             if CaseDao.upDateStatus(usertype, pk, newStatus):
-                return HttpResponse({'success':'Update status successfully'})
+                if CaseDao.updateSeverity(usertype, pk, severity):
+                    CaseManager.send_email_check()
+                    NotificationManager.alertSubscriberNewIncident(pk)
+                    return HttpResponse({'success':'Update status successfully'})
         return HttpResponse({'error':'Invalid input'})
     else:
         return HttpResponse({'error':'You are not authorised to perform this action'})
@@ -230,11 +241,10 @@ def resolve(request):
         severity = request.POST['severity']
         dead = request.POST['dead']
         injured = request.POST['injured']
-        if CaseDao.updateSeverity(usertype, pk, severity):
-            CaseManager.send_email_check()
-            if CaseDao.updateDead(usertype, pk, dead):
-                if CaseDao.updateInjured(usertype, pk, injured):
-                    CaseDao.upDateStatus(usertype, pk, 2)
+        if CaseDao.updateDead(usertype, pk, dead):
+            if CaseDao.updateInjured(usertype, pk, injured):
+                if CaseDao.upDateStatus(usertype, pk, 2):
+                    NotificationManager.alertSubscriberCloseIncident(pk)
                     return HttpResponse({
                         'success': 'Update case information successfully'})
         return HttpResponse({'error': 'Invalid input'})
@@ -247,13 +257,15 @@ def subscribe(request):
         return render(request, 'crisis/subscribe.html')
     elif request.method=='POST':
         categoryList = request.POST.getlist("category")
+        regionList = request.POST.getlist("region")
         for x in categoryList:
-            subscriber = Subscriber(
-                phoneNum = request.POST["phoneNum"],
-                category = x,
-                region = request.POST['region']
-            )
-            subscriber.save()
+            for y in regionList:
+                subscriber = Subscriber(
+                    phoneNum = request.POST["phoneNum"],
+                    category = x,
+                    region = y,
+                )
+                subscriber.save()
         return redirect('crisis:index')
     return HttpResponse(request)
 

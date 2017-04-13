@@ -11,7 +11,7 @@
     <!-- Le styles -->
     <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 
-   <!--  <link rel="stylesheet" href="/assets/css/style.css"> -->
+    <!--  <link rel="stylesheet" href="/assets/css/style.css"> -->
     <link rel="stylesheet" href="/assets/css/loader-style.css">
     <link rel="stylesheet" href="/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/assets/css/signin.css">
@@ -26,121 +26,144 @@
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div id="status">&nbsp;</div>
-    </div>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
 
-    <div class="container">
+<div class="container">
 
-        <div class="" id="login-wrapper">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                    <div id="logo-login">
-                        <h1>Crisis Management
-                            <span>v1.0</span>
-                        </h1>
-                    </div>
+    <div class="" id="login-wrapper">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div id="logo-login">
+                    <h1>Crisis Management
+                        <span>v1.0</span>
+                    </h1>
                 </div>
-
             </div>
 
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                    <div class="account-box">
+        </div>
 
-                        <form role="form" action="/subscribe/" method="post">
-                            {% csrf_token %}
-                            <div class="control-group">
-                                <label class="control-label" for="contact">Contact Number :</label>
-                                <div class="input-group ">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="account-box">
+
+                    <form role="form" action="/subscribe/" method="post">
+                        {% csrf_token %}
+                        <div class="control-group">
+                            <label class="control-label" for="contact">Contact Number :</label>
+                            <div class="input-group ">
                                 <span class="input-group-addon btn-success">
                                     <i class="fa fa-phone-square"></i>
                                 </span>
-                                    <input type="text" class="form-control" id="pu_contact"
-                                           name="phoneNum"
-                                           placeholder="Enter Contact">
-                                    <span class="input-group-addon ">eg.(65) 1234-1234</span>
-                                </div>
+                                <input type="text" class="form-control" id="pu_contact"
+                                       name="phoneNum"
+                                       placeholder="Enter Contact">
+                                <span class="input-group-addon ">eg.(65) 1234-1234</span>
                             </div>
-                            <br />
-                            <div style="clear:both;"></div>
-                            <div class="control-group">
-                                <label class="control-label" for="categoryText"
-                                   style="float: left; margin-top: 6%">Select Category :</label>
-                                <div style="clear:both;"></div>
-                                <br/>
-                                <div class="skin skin-flat">
-                                    <ul class="list" list-style-type: 'none' style="padding-left: 0px; margin-top: 10px; list-style-type:none">
-                                        <li>
-                                            <input tabindex="11" type="checkbox" id="check-box-1"
-                                                   name="category" value="0">
-                                            <label for="check-box-1">1. Fire Incident</label>
-                                        </li>
-                                        <li>
-                                            <input tabindex="12" type="checkbox" id="check-box-2"
-                                                   name="category" value="1">
-                                            <label for="check-box-2">2. Traffic Accident</label>
-                                        </li>
-                                        <li>
-                                            <input tabindex="12" type="checkbox" id="check-box-3"
-                                                   name="category" value="2">
-                                            <label for="check-box-3">3. Terrorist Activity</label>
-                                        </li>
-                                        <li>
-                                            <input tabindex="12" type="checkbox" id="check-box-4"
-                                                   name="category" value="3">
-                                            <label for="check-box-4">4. Gas Leak</label>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Map_of_the_CDC_Districts_of_Singapore.png/600px-Map_of_the_CDC_Districts_of_Singapore.png" width="100%" />
-                            <label class="control-label" for="regional">Region </label>
-                            <br />
-                            <div class="controls">
-                                <select class="form-control" id="region_field" name="region">
-                                    <option value="0">Central Region</option>
-                                    <option value="1">North-East Region</option>
-                                    <option value="2">North-West Region</option>
-                                    <option value="3">South-East Region</option>
-                                    <option value="4">South-West Region</option>
-                                </select>
-                            </div>
-                            <br />
-                            <button class="btn btn btn-primary pull-right" type="submit">
-                                Subscribe
-                            </button>
-                        </form>
+                        </div>
                         <br/>
-                        <a class="forgotLnk" href="/index"></a>
-                    </div>
+                        <div style="clear:both;"></div>
+                        <div class="control-group">
+                            <label class="control-label" for="categoryText"
+                                   style="float: left; margin-top: 6%">Select Category :</label>
+                            <div style="clear:both;"></div>
+                            <br/>
+                            <div class="skin skin-flat">
+                                <ul class="list" list-style-type:
+                                'none' style="padding-left: 0px; margin-top: 10px; list-style-type:none">
+                                <li>
+                                    <input tabindex="11" type="checkbox" id="check-box-1"
+                                           name="category" value="0">
+                                    <label for="check-box-1">1. Fire Incident</label>
+                                </li>
+                                <li>
+                                    <input tabindex="12" type="checkbox" id="check-box-2"
+                                           name="category" value="1">
+                                    <label for="check-box-2">2. Traffic Accident</label>
+                                </li>
+                                <li>
+                                    <input tabindex="12" type="checkbox" id="check-box-3"
+                                           name="category" value="2">
+                                    <label for="check-box-3">3. Terrorist Activity</label>
+                                </li>
+                                <li>
+                                    <input tabindex="12" type="checkbox" id="check-box-4"
+                                           name="category" value="3">
+                                    <label for="check-box-4">4. Gas Leak</label>
+                                </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Map_of_the_CDC_Districts_of_Singapore.png/600px-Map_of_the_CDC_Districts_of_Singapore.png"
+                             width="100%"/>
+                        <label class="control-label" for="regional">Region </label>
+                        <br/>
+                        <div class="controls">
+                            <ul class="list" list-style-type:
+                            'none' style="padding-left: 0px; margin-top: 10px; list-style-type:none">
+                            <li>
+                                <input tabindex="12" type="checkbox" id="check-box-5"
+                                       name="region" value="0">
+                                <label for="check-box-1">Central Region</label>
+                            </li>
+                            <li>
+                                <input tabindex="12" type="checkbox" id="check-box-6"
+                                       name="region" value="1">
+                                <label for="check-box-2">North-East Region</label>
+                            </li>
+                            <li>
+                                <input tabindex="12" type="checkbox" id="check-box-7"
+                                       name="region" value="2">
+                                <label for="check-box-3">North-West Region</label>
+                            </li>
+                            <li>
+                                <input tabindex="12" type="checkbox" id="check-box-8"
+                                       name="region" value="3">
+                                <label for="check-box-4">South-East Region</label>
+                            </li>
+                            <li>
+                                <input tabindex="12" type="checkbox" id="check-box-9"
+                                       name="region" value="4">
+                                <label for="check-box-1">South-West Region</label>
+                            </li>
+                            </ul>
+                        </div>
+                        <br/>
+                        <button class="btn btn btn-primary pull-right" type="submit">
+                            Subscribe
+                        </button>
+                    </form>
+                    <br/>
+                    <a class="forgotLnk" href="/index"></a>
                 </div>
             </div>
         </div>
-
-        <div style="text-align:center;margin:0 auto;">
-            <h6 style="color:#fff;">Release Version 1.0 Powered by © Themesmiles 2014</h6>
-        </div>
-
     </div>
 
-    <!--  END OF PAPER WRAP -->
+    <div style="text-align:center;margin:0 auto;">
+        <h6 style="color:#fff;">Release Version 1.0 Powered by © Themesmiles 2014</h6>
+    </div>
+
+</div>
+
+<!--  END OF PAPER WRAP -->
 
 
-    <!-- MAIN EFFECT -->
-    <script type="text/javascript" src="/assets/js/preloader.js"></script>
-    <script type="text/javascript" src="/assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/assets/js/app.js"></script>
-    <script type="text/javascript" src="/assets/js/load.js"></script>
-    <script type="text/javascript" src="/assets/js/main.js"></script>
+<!-- MAIN EFFECT -->
+<script type="text/javascript" src="/assets/js/preloader.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="/assets/js/app.js"></script>
+<script type="text/javascript" src="/assets/js/load.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script>
 
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
-    <script type="text/javascript" src="/assets/js/map/gmap3.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+<script type="text/javascript" src="/assets/js/map/gmap3.js"></script>
 
 
-    <script type="text/javascript">
-    $(function() {
+<script type="text/javascript">
+    $(function () {
 
         $("#googleMap").gmap3({
             marker: {
@@ -149,11 +172,11 @@
                     draggable: true
                 },
                 events: {
-                    dragend: function(marker) {
+                    dragend: function (marker) {
                         $(this).gmap3({
                             getaddress: {
                                 latLng: marker.getPosition(),
-                                callback: function(results) {
+                                callback: function (results) {
                                     var map = $(this).gmap3("get"),
                                         infowindow = $(this).gmap3({
                                             get: "infowindow"
@@ -188,7 +211,7 @@
     });
 
 
-    </script>
+</script>
 
 </body>
 

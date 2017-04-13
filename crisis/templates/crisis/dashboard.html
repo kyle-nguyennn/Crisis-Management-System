@@ -63,62 +63,63 @@
                             var place_name = data[index].fields.place_name;
 
                             var counter = $('#cases').children('tr').length;
-                            if (stat === 0) {
-                                stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
-                            }
-                            else if (stat === 1) {
-                                stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
-                            }
-                            else if (stat === 2) {
-                                stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
-                            }
-                            counter = counter + 1;
-                            if (cat === 0) {
-                                $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
-                            }
-                            else if (cat === 1) {
-                                $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
-                            }
-                            else if (cat === 2) {
-                                $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
-                            }
-                            else if (cat === 3) {
-                                $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
-                            }
 
-                            var myLatLng = {lat: lat, lng: lon};
-                            var marker = new google.maps.Marker({
-                                position: myLatLng,
-                                label: labels[0],
-                                title: "Hello World!"
+                                if (stat === 0) {
+                                    stat = '<input value="Pending" type="button" class ="status-metro status-suspended statusnow" id="' + id + '"></input>';
+                                }
+                                else if (stat === 1) {
+                                    stat = '<input value="Resolving" type="button" class ="status-metro status-disabled statusnow" id="' + id + '"></input>';
+                                }
+                                else if (stat === 2) {
+                                    stat = '<input value="Closed" type="button" class ="status-metro status-active statusnow" id="' + id + '" disabled></input>';
+                                }
+                                counter = counter + 1;
+                                if (cat === 0) {
+                                    $('#cases').append("<tr class='fire_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                                }
+                                else if (cat === 1) {
+                                    $('#cases').append("<tr class='transportation_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                                }
+                                else if (cat === 2) {
+                                    $('#cases').append("<tr class='terrorism_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                                }
+                                else if (cat === 3) {
+                                    $('#cases').append("<tr class='gasLeak_cases'><td>" + counter + "</td>" + "<td>" + lat + "</td>" + "<td>" + lon + "</td>" + "<td>" + changeCategory(cat) + "</td>" + "<td>" + place_name + "</td>" + "<td>" + stat + "</td>" + "<td>" + desc + "</td>" + "</tr>");
+                                }
+
+                                var myLatLng = {lat: lat, lng: lon};
+                                var marker = new google.maps.Marker({
+                                    position: myLatLng,
+                                    label: labels[0],
+                                    title: "Hello World!"
+                                });
+                                marker.setMap(map_google);
+                                if (cat === 0) {
+                                    var marker_object = {
+                                        marker: marker,
+                                        category: 0
+                                    };
+                                }
+                                else if (cat === 1) {
+                                    var marker_object = {
+                                        marker: marker,
+                                        category: 1
+                                    };
+                                }
+                                else if (cat === 2) {
+                                    var marker_object = {
+                                        marker: marker,
+                                        category: 2
+                                    };
+                                }
+                                else if (cat === 3) {
+                                    var marker_object = {
+                                        marker: marker,
+                                        category: 3
+                                    };
+                                }
+                                marker_array.push(marker_object);
                             });
-                            marker.setMap(map_google);
-                            if(cat === 0){
-                                var marker_object = {
-                                    marker: marker,
-                                    category: 0
-                                };
-                            }
-                            else if(cat === 1){
-                                var marker_object = {
-                                    marker: marker,
-                                    category: 1
-                                };
-                            }
-                            else if(cat === 2){
-                                var marker_object = {
-                                    marker: marker,
-                                    category: 2
-                                };
-                            }
-                            else if(cat === 3){
-                                var marker_object = {
-                                    marker: marker,
-                                    category: 3
-                                };
-                            }
-                            marker_array.push(marker_object);
-                        });
                     },
                     error: function (err) {
                         console.log(err)
@@ -944,11 +945,11 @@
                                     var map_google;
                                     function initMap() {
                                         map_google = new google.maps.Map(document.getElementById('google_map_base'), {
-                                            center: {lat: 1.290270, lng: 103.851959},
+                                            center: {lat: 1.354203, lng: 103.8121483},
                                             mapTypeControlOptions: {
                                                 mapTypeIds : ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map']
                                             },
-                                            zoom: 13
+                                            zoom: 12
                                         });
                                     }
                                 </script>
@@ -1006,7 +1007,7 @@
                             <h3>
                                     <span>
                                         <i class="entypo-check"></i>
-                                        &#160;&#160;Resolve Cases
+                                        &#160;&#160;Resolved Cases
                                     </span>
                             </h3>
                             <div class="titleClose">
