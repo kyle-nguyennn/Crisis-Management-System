@@ -5,7 +5,7 @@ import json
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.http import JsonResponse
-from django.shortcuts import render, redirect, render_to_response
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.views.generic import View
 from django.core import serializers
@@ -99,7 +99,7 @@ def logout_user(request):
     return render(request, 'crisis/login.html')
 
 def index(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         user = request.user
         if user.userType == 0:
             return redirect('crisis:dashboard')
@@ -109,7 +109,7 @@ def index(request):
 
 
 def dashboard(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         usertype = request.user.userType
         if usertype == 0:
             return render(request, 'crisis/dashboard.html')
@@ -121,7 +121,7 @@ def relevant_agency(request):
     return render(request, 'crisis/relevant_agency.html')
 
 def summary(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         user = request.user
         userType = user.userType
         if userType == 0:
@@ -138,7 +138,7 @@ def summary(request):
 
 
 def get_cases(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         user = request.user
         userType = user.userType
         print(userType)
@@ -195,7 +195,7 @@ def new_case(request):
         return HttpResponse(json.dumps({'status':'no user'}), content_type='json')
 
 def change_case_status(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         user = MyUser.objects.filter(username=request.user.username)
         if user.userType != 1:
             caseId = request.POST['pk']
@@ -211,7 +211,7 @@ def change_case_status(request):
     return None
 
 def validate(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         usertype = request.user.userType
         print(request.POST)
         pk = request.POST['pk']
@@ -237,7 +237,7 @@ def validate(request):
         return HttpResponse({'error':'You are not authorised to perform this action'})
 
 def resolve(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         usertype = request.user.userType
         pk = request.POST['pk']
         print("get severity from POST")
