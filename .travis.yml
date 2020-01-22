@@ -1,9 +1,16 @@
 language: python
 python:
-    - "3.6"      # current default Python on Travis CI
-    - "3.7"
-    - "3.8"
-    - "3.8-dev"  # 3.8 development branch
-  # command to install dependencies
-  install:
-    - pip install -r requirements.txt
+- '3.6'
+- '3.7'
+- '3.8'
+- 3.8-dev
+install:
+- pip install -r requirements.txt
+script: python crisis/tests.py
+deploy:
+  provider: heroku
+  api_key:
+    secure: E2Fel0GsBuI0fjSKkVUmOZUjzmM5dG05IcPuGxkyoJ6oJzuIk93UjtJh+w5rVVN3Jgsv4E9DAjtvtOGYx7TG7D3pSw69fDEOTA4eilCgWkoJji8v4Iibbi0NlQ/Z3UDxLGsHZXRqUYugELKDkEV3r5ZQjtEXPavKkhKZ+ONUUHnegmCFUvGGs6k3fJIdQ9o171H12Ytxu3IU0J3ahgfE2SeIaNVmPeSjE55E2R42n193UNyEkEjmxgJGqr1r9d+AtItmJE0yDZKMR5y6Anl9VidJvw3OtRuIMCVZk2w0TNGcYDjvxISr/+MufUqg8DWpAWT4qHxzZqCVzd7sUT6EZbMRL4rrr4qJcm900FK5Qb497SKLy+h7ltDno6DLErP2BhNXq8PqMSRkwBA1XqXKcOaXliaU4/m5PddSw2IxqlGnC24cHvmXA6QIhAyDWxq24f8jeANCnD3leL3f4rU6+c43LxmeCoC1VtbCT51FVvz5I7pJK/M/q6xSKjX/d2SLjvEdEw4t/QWoLMQXoS78FlkLRjgYFGKMF7v24ML04D7XXxZjN32pu2vKuzPasquOAlHOw7yCtBvW2oO4b0UqvHQtteJLwQmqao5pB+J/2U2Mk0F15/T0H2sqmWkcvL5mE2eHnjmhIbByI7EQ7S4S/uUrGaTASKv75M5PCFIsUhA=
+  app: Crisis-Management-System
+  on:
+    repo: helloWorld141/Crisis-Management-System
