@@ -2,8 +2,12 @@
 
 CMS/__pycache__
 
-cirsis/__pycache__
+crisis/__pycache__
 
 .DS_Store
 
-cirsis/.DS_Store
+crisis/.DS_Store
+crisis/migrations
+.vscode
+
+db.sqlite3
