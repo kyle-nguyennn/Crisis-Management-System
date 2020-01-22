@@ -1,7 +1,7 @@
 from django.db.models import Sum
 
 from crisis.models import *
-from crisis import email, sms, twitter_api
+from crisis import my_email, sms, twitter_api
 from crisis.sms import send_sms
 from crisis.twitter_api import post_on_twitter
 
@@ -72,7 +72,7 @@ class CaseManager:
 
         CMS Team
         '''
-        email.send_to_pm(message)
+        my_email.send_to_pm(message)
 
     @classmethod
     def send_email_check(cls):
